@@ -3,7 +3,7 @@ project(libft C)
 
 set(CMAKE_C_STANDARD 11)
 
-include_directories(char env file list math memory num regex string vector)
+include_directories(char env file list math memory num regex string vector search)
 
 add_executable(libft
         num/ft_atoi.c
@@ -82,4 +82,4 @@ add_executable(libft
         vector/ft_vector_remove.c
         file/get_next_line.c
         regex/match.c
-        regex/nmatch.c char/char_lib.h memory/mem_lib.h string/str_lib.h math/ft_min.c math/ft_max.c math/math_lib.h num/num_lib.h regex/regex_lib.h file/file_lib.h list/list_lib.h env/env_lib.h vector/vec_lib.h memory/ft_xmalloc.c)
+        regex/nmatch.c char/char_lib.h memory/mem_lib.h string/str_lib.h math/ft_min.c math/ft_max.c math/math_lib.h num/num_lib.h regex/regex_lib.h file/file_lib.h list/list_lib.h env/env_lib.h vector/vec_lib.h memory/ft_xmalloc.c search/search_lib.h search/ft_get_height.c search/ft_get_balance.c search/ft_new_node.c search/ft_right_rotate.c search/ft_left_rotate.c search/ft_insert_avl.c main.c)
