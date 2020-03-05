@@ -7,8 +7,7 @@
 
 typedef struct		s_avl
 {
-	void			*key;
-	void			*payload;
+	void			*content;
 	struct s_avl	*left;
 	struct s_avl	*right;
 	int				height;
@@ -18,13 +17,13 @@ int 				ft_get_height(t_avl *node);
 
 int 				ft_get_balance(t_avl *node);
 
-t_avl				*ft_new_node(void *key, void *payload);
+t_avl				*ft_new_node(void *content);
 
 t_avl				*ft_right_rotate(t_avl *y);
 
 t_avl				*ft_left_rotate(t_avl *x);
 
-t_avl				*ft_insert_avl(t_avl *node, void *key, void *payload, \
-int (*cmp)(void *, void *));
+t_avl				*ft_insert_avl(t_avl *node, void *content, void *params, \
+int (*cmp)(const void *, const void *, void *));
 
 #endif //SEARCH_LIB_H
