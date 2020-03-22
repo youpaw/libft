@@ -7,16 +7,16 @@ int (*cmp)(const void *, const void *, void *))
 	int balance;
 
 	balance = ft_get_balance(node);
-	if (balance > 1 && cmp(node->content, node->left->content, params) < 0)
+	if (balance > 1 && cmp(node->left->content, node->content, params) < 0)
 		return (ft_right_rotate(node));
-	if (balance < -1 && cmp(node->content, node->right->content, params) > 0)
+	if (balance < -1 && cmp( node->right->content, node->content, params) > 0)
 		return (ft_left_rotate(node));
-	if (balance > 1 && cmp(node->content, node->left->content, params) > 0)
+	if (balance > 1 && cmp(node->left->content, node->content, params) > 0)
 	{
 		node->left = ft_left_rotate(node->left);
 		return (ft_right_rotate(node));
 	}
-	if (balance < -1 && cmp(node->content, node->right->content, params) < 0)
+	if (balance < -1 && cmp(node->right->content, node->content, params) < 0)
 	{
 		node->right = ft_right_rotate(node->right);
 		return (ft_left_rotate(node));
@@ -31,10 +31,8 @@ int (*cmp)(const void *, const void *, void *))
 		return (ft_new_node(content));
 	if (cmp(content, node->content, params) < 0)
 		node->left = ft_insert_avl(node->left, content, params, cmp);
-	else if (cmp(content, node->content, params) > 0)
-		node->right = ft_insert_avl(node->right, content, params, cmp);
 	else
-		return (node);
+		node->right = ft_insert_avl(node->right, content, params, cmp);
 	node->height = (int) ft_max(ft_get_height(node->left), \
 	ft_get_height(node->right)) + 1;
 	return (ft_balance(node, params, cmp));
