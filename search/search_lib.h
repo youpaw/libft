@@ -26,6 +26,6 @@ t_avl				*ft_left_rotate(t_avl *x);
 t_avl				*ft_insert_avl(t_avl *node, void *content, void *params, \
 int (*cmp)(const void *, const void *, void *));
 
-void 				ft_del_avl(t_avl *avl, void (*del)(void *));
+void 				ft_del_avl(t_avl **avl, void (*del)(void *));
 
 #endif //SEARCH_LIB_H
