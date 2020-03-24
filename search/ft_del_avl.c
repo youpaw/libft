@@ -4,15 +4,13 @@
 
 #include <stdlib.h>
 #include "search_lib.h"
-#include "mem_lib.h"
 
-void	ft_del_avl(t_avl *avl, size_t size, void (*del)(void *, size_t))
+void	ft_del_avl(t_avl *avl, void (*del)(void *))
 {
 	if (!avl)
 		return ;
-	ft_del_avl(avl->left, size, del);
-	ft_del_avl(avl->right, size, del);
-	del(avl->content, size);
+	ft_del_avl(avl->left, del);
+	ft_del_avl(avl->right, del);
+	del(avl->content);
 	free(avl);
-	ft_bzero(avl, sizeof(t_avl));
 }
