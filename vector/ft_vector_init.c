@@ -17,13 +17,8 @@ t_vector	*ft_vector_init(size_t capacity, size_t datasize)
 {
 	t_vector *vector;
 
-	if (!(vector = (t_vector*)malloc(sizeof(t_vector))))
-		return (NULL);
-	if (!(vector->data = malloc(datasize * capacity + datasize)))
-	{
-		free(vector);
-		return (NULL);
-	}
+	vector = (t_vector*)ft_xmalloc(sizeof(t_vector));
+	vector->data = ft_xmalloc(datasize * capacity + datasize);
 	ft_bzero(vector->data, datasize * capacity + datasize);
 	vector->datasize = datasize;
 	vector->capacity = capacity;

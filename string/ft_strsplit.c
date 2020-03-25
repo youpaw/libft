@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "str_lib.h"
+#include "mem_lib.h"
 
 static int		is_separator(char c, char *charset)
 {
@@ -70,7 +71,7 @@ char			**ft_strsplit(char const *s, char *charset)
 	if (!s)
 		return (NULL);
 	wrdcnt = cntwords(s, charset);
-	sp = (char**)malloc(sizeof(char*) * (wrdcnt + 1));
+	sp = (char**)ft_xmalloc(sizeof(char*) * (wrdcnt + 1));
 	getwords(sp, s, charset);
 	sp[wrdcnt] = NULL;
 	return (sp);

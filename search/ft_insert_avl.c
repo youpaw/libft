@@ -24,15 +24,15 @@ int (*cmp)(const void *, const void *, void *))
 	return (node);
 }
 
-t_avl				*ft_insert_avl(t_avl *node, void *content, void *params, \
+t_avl				*ft_insert_avl(t_avl *node, t_avl *new, void *params, \
 int (*cmp)(const void *, const void *, void *))
 {
 	if (!node)
-		return (ft_new_node(content));
-	if (cmp(content, node->content, params) < 0)
-		node->left = ft_insert_avl(node->left, content, params, cmp);
+		return (new);
+	if (cmp(new->content, node->content, params) < 0)
+		node->left = ft_insert_avl(node->left, new, params, cmp);
 	else
-		node->right = ft_insert_avl(node->right, content, params, cmp);
+		node->right = ft_insert_avl(node->right, new, params, cmp);
 	node->height = (int) ft_max(ft_get_height(node->left), \
 	ft_get_height(node->right)) + 1;
 	return (ft_balance(node, params, cmp));

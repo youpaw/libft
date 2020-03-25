@@ -12,7 +12,7 @@
 
 #include "list_lib.h"
 
-void	ft_lstdelcircle(t_list **list, void (*del)(void*, size_t))
+void	ft_lstdelcircle(t_list **list, void (*del)(void*))
 {
 	t_list *check;
 	t_list *head;

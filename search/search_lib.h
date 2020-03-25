@@ -23,7 +23,7 @@ t_avl				*ft_right_rotate(t_avl *y);
 
 t_avl				*ft_left_rotate(t_avl *x);
 
-t_avl				*ft_insert_avl(t_avl *node, void *content, void *params, \
+t_avl				*ft_insert_avl(t_avl *node, t_avl *new, void *params, \
 int (*cmp)(const void *, const void *, void *));
 
 void 				ft_del_avl(t_avl **avl, void (*del)(void *));

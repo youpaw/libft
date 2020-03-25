@@ -12,12 +12,12 @@
 
 #include "list_lib.h"
 
-void	ft_lstdelone(t_list **alst, void (*del)(void*, size_t))
+void	ft_lstdelone(t_list **alst, void (*del)(void*))
 {
 	if (!alst || !*alst || !del)
 		return ;
 	if ((*alst)->content)
-		del((*alst)->content, (*alst)->content_size);
+		del((*alst)->content);
 	free(*alst);
 	*alst = NULL;
 }

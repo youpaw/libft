@@ -18,8 +18,7 @@ char	*ft_strnew(size_t size)
 
 	if (size + 1 == 0)
 		return (NULL);
-	if (!(ptr = (char*)ft_memalloc(sizeof(char) * (size + 1))))
-		return (NULL);
+	ptr = (char*)ft_xmalloc(sizeof(char) * (size + 1));
 	ft_memset(ptr, '\0', size + 1);
 	return (ptr);
 }

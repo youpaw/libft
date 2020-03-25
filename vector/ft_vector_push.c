@@ -13,21 +13,17 @@
 #include "vec_lib.h"
 #include "mem_lib.h"
 
-int		ft_vector_push(t_vector *vector, void *data)
+void	ft_vector_push(t_vector *vector, void *data)
 {
 	void *pdata;
 
 	if (!vector)
-		return (22);
+		return ;
 	if (vector->size >= vector->capacity)
 	{
 		pdata = vector->data;
-		if (!(vector->data = \
-		malloc(vector->datasize * vector->capacity * 2 + vector->datasize)))
-		{
-			vector->data = pdata;
-			return (12);
-		}
+		vector->data = \
+		ft_xmalloc(vector->datasize * vector->capacity * 2 + vector->datasize);
 		vector->data = ft_memcpy(vector->data, pdata, \
 		vector->datasize * vector->capacity);
 		free(pdata);
@@ -38,5 +34,4 @@ int		ft_vector_push(t_vector *vector, void *data)
 	pdata = vector->data + vector->size * vector->datasize;
 	ft_memcpy(pdata, data, vector->datasize);
 	vector->size++;
-	return (0);
 }
