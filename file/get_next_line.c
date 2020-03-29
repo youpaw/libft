@@ -85,7 +85,8 @@ int				get_next_line(const int fd, char **line)
 	if (!(file = find_fd(files, fd)))
 	{
 		file = ft_new_node(init_file(fd));
-		files = ft_insert_avl(files, file, NULL, &cmp);
+		files = ft_insert_avl(files, file, NULL, \
+        (int (*)(const void *, const void *, void *)) &cmp);
 	}
 	if (!file->content)
 		file->content = init_file(fd);
