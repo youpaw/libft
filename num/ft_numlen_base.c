@@ -4,7 +4,7 @@
 
 #include <zconf.h>
 
-int ft_lng_base(ssize_t num, int base)
+int ft_numlen_base(ssize_t num, int base)
 {
 	int lng;
 
