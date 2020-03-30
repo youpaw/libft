@@ -91,4 +91,4 @@ ADD_LIBRARY(ft STATIC
         search/ft_right_rotate.c
         search/ft_left_rotate.c
         search/ft_insert_avl.c
-        search/ft_del_avl.c)
+        search/ft_del_avl.c num/ft_lng.c num/ft_lng_base.c)
