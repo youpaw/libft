@@ -3,13 +3,10 @@ project(libft C)
 
 set(CMAKE_C_STANDARD 11)
 
-include_directories(char env file list math memory num regex string vector search)
+include_directories(char env file list math memory num regex string vector search date)
 
 ADD_LIBRARY(ft STATIC
-        num/ft_atoi.c
-        memory/ft_bzero.c
-        env/ft_get_env_field.c
-        env/ft_get_env_fval.c
+        char/char_lib.h
         char/ft_isalnum.c
         char/ft_isalpha.c
         char/ft_isascii.c
@@ -19,8 +16,16 @@ ADD_LIBRARY(ft STATIC
         char/ft_isspace.c
         char/ft_isupper.c
         char/ft_iswspace.c
-        string/ft_itoa.c
-        string/ft_itoabase.c
+        char/ft_putchar.c
+        char/ft_putchar_fd.c
+        char/ft_tolower.c
+        char/ft_toupper.c
+        env/env_lib.h
+        env/ft_get_env_field.c
+        env/ft_get_env_fval.c
+        file/file_lib.h
+        file/get_next_line.c
+        list/list_lib.h
         list/ft_lstadd.c
         list/ft_lstaddsort.c
         list/ft_lstcircle.c
@@ -30,6 +35,12 @@ ADD_LIBRARY(ft STATIC
         list/ft_lstiter.c
         list/ft_lstmap.c
         list/ft_lstnew.c
+        math/math_lib.h
+        math/ft_pow.c
+        math/ft_min.c
+        math/ft_max.c
+        memory/mem_lib.h
+        memory/ft_bzero.c
         memory/ft_memalloc.c
         memory/ft_memccpy.c
         memory/ft_memchr.c
@@ -38,14 +49,30 @@ ADD_LIBRARY(ft STATIC
         memory/ft_memdel.c
         memory/ft_memmove.c
         memory/ft_memset.c
-        string/ft_nstrjoin.c
-        math/ft_pow.c
-        char/ft_putchar.c
-        char/ft_putchar_fd.c
-        string/ft_putendl.c
-        string/ft_putendl_fd.c
+        memory/ft_xmalloc.c
+        num/num_lib.h
+        num/ft_atoi.c
+        num/ft_numlen.c
+        num/ft_numlen_base.c
         num/ft_putnbr.c
         num/ft_putnbr_fd.c
+        regex/regex_lib.h
+        regex/match.c
+        regex/nmatch.c
+        search/search_lib.h
+        search/ft_get_height.c
+        search/ft_get_balance.c
+        search/ft_new_node.c
+        search/ft_right_rotate.c
+        search/ft_left_rotate.c
+        search/ft_insert_avl.c
+        search/ft_del_avl.c
+        string/str_lib.h
+        string/ft_nstrjoin.c
+        string/ft_putendl.c
+        string/ft_putendl_fd.c
+        string/ft_itoa.c
+        string/ft_itoabase.c
         string/ft_putstr.c
         string/ft_putstr_fd.c
         string/ft_strcat.c
@@ -74,21 +101,9 @@ ADD_LIBRARY(ft STATIC
         string/ft_strstr.c
         string/ft_strsub.c
         string/ft_strtrim.c
-        char/ft_tolower.c
-        char/ft_toupper.c
+        vector/vec_lib.h
         vector/ft_vector_del.c
         vector/ft_vector_init.c
         vector/ft_vector_push.c
         vector/ft_vector_remove.c
-        file/get_next_line.c
-        regex/match.c
-        regex/nmatch.c
-        math/ft_min.c math/ft_max.c
-        memory/ft_xmalloc.c
-        search/ft_get_height.c
-        search/ft_get_balance.c
-        search/ft_new_node.c
-        search/ft_right_rotate.c
-        search/ft_left_rotate.c
-        search/ft_insert_avl.c
-        search/ft_del_avl.c num/ft_numlen.c num/ft_numlen_base.c)
+        )

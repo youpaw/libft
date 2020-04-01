@@ -11,7 +11,7 @@ int ft_numlen_base(ssize_t num, int base)
 	if (base < 2)
 		return (0);
 	lng = 1;
-	while (num > base)
+	while (num >= base || num <= (-base))
 	{
 		num /= base;
 		lng++;
