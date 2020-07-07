@@ -1,6 +1,7 @@
 #ifndef STR_LIB_H
 # define STR_LIB_H
 # include <stdlib.h>
+# include <zconf.h>
 
 size_t		ft_strlen(const char *s);
 char		*ft_strdup(const char *src);

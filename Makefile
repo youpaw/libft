@@ -6,7 +6,7 @@
 #    By: dbutterw <dbutterw@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/04 15:08:51 by dbutterw          #+#    #+#              #
-#    Updated: 2020/01/06 14:39:22 by dbutterw         ###   ########.fr        #
+#    Updated: 2020/07/07 18:05:33 by dbutterw         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,6 +51,8 @@ SRC = char/ft_isalnum.c   \
       num/ft_atoi.c   \
       num/ft_putnbr.c   \
       num/ft_putnbr_fd.c  \
+      num/ft_numlen.c		\
+      num/ft_numlen_base.c	\
       regex/match.c   \
       regex/nmatch.c  \
       string/ft_itoabase.c  \
@@ -95,7 +97,8 @@ SRC = char/ft_isalnum.c   \
       search/ft_insert_avl.c	\
       search/ft_left_rotate.c	\
       search/ft_new_node.c		\
-      search/ft_right_rotate.c
+      search/ft_right_rotate.c	\
+      search/ft_del_avl.c
 
 
 INC = -I char		\
