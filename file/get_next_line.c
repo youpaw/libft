@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "file_lib.h"
+#include "cc_file.h"
 #include "search_lib.h"
 #include "str_lib.h"
 #include "mem_lib.h"
