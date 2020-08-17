@@ -28,8 +28,8 @@ int			isdigit(int c);
 int			isascii(int c);
 int			isprint(int c);
 int			iswspace(char c);
-int			putchar(char c);
-int			fdputchar(char c, int fd);
+int			putchar(int c);
+int			fdputchar(int c, int fd);
 int			tolower(int c);
 int			toupper(int c);
 

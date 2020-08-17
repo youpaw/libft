@@ -13,18 +13,18 @@
 #include <monetary.h>
 #include "cc_char.h"
 
-static int	ft_putunsnbr_fd(unsigned int n, int fd)
+static int	fdputunsnbr(unsigned int n, int fd)
 {
 	static int cnt;
 
 	cnt++;
 	if (n > 9)
-		ft_putunsnbr_fd(n / 10, fd);
+		fdputunsnbr(n / 10, fd);
 	fdputchar(n % 10 + '0', fd);
 	return (cnt);
 }
 
-ssize_t	ft_putnbr_fd(int n, int fd)
+ssize_t	fdputnbr(int n, int fd)
 {
 	unsigned int t;
 
@@ -37,5 +37,5 @@ ssize_t	ft_putnbr_fd(int n, int fd)
 	}
 	else
 		t = (unsigned int)n;
-	return (ft_putunsnbr_fd(t, fd));
+	return (fdputunsnbr(t, fd));
 }

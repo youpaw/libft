@@ -11,43 +11,33 @@
 /* ************************************************************************** */
 
 #include "cc_file.h"
-#include "search_lib.h"
-#include "str_lib.h"
-#include "mem_lib.h"
+#include "cc_avl.h"
+#include "cc_str.h"
+#include "cc_mem.h"
 #include <unistd.h>
+#include <stdlib.h>
 
-static int 	cmp(int fd1, int fd2, void *param)
+static int			cmp(int fd1, int fd2, void *param)
 {
 	(void)param;
 	return (fd1 - fd2);
 }
 
-static t_avl	*find_fd(t_avl *files, int fd)
+static void			del(void *str)
 {
-	int dif;
-
-	if (!files)
-		return (NULL);
-	dif = cmp(fd, ((t_file*)files)->fd, NULL);
-	if (dif > 0)
-		return (find_fd(files->right, fd));
-	else if (dif < 0)
-		return (find_fd(files->left, fd));
-	else
-		return (files);
+	free(str);
 }
 
-static t_file	*init_file(int fd)
+static void			insert_file(t_avl_obj *files, int fd)
 {
-	t_file *file;
+	t_avl_pair pair;
 
-	file = (t_file *)ft_xmalloc(sizeof(t_file));
-	file->fd = fd;
-	file->buff = ft_strnew(0);
-	return (file);
+	pair.key = (void *) fd;
+	pair.value = strnew(0);
+	avl_insert(files, &pair);
 }
 
-static int		readline(t_file *file, char **line)
+static int		readline(t_avl_pair *file, char **line)
 {
 	char	buff[BUFF_SIZE + 1];
 	char	*rst;
@@ -57,39 +47,39 @@ static int		readline(t_file *file, char **line)
 	size = 1;
 	while (size > 0)
 	{
-		if ((rst = ft_strchr(file->buff, '\n')))
+		if ((rst = strchr(file->value, '\n')))
 			*rst++ = '\0';
-		tmp = ft_strjoin(*line, file->buff);
+		tmp = strjoin(*line, file->value);
 		free(*line);
 		*line = tmp;
 		if (rst)
 		{
-			*rst ? ft_strcpy(file->buff, rst) : ft_bzero(file->buff, 1);
+			*rst ? strcpy(file->value, rst) : bzero(file->value, 1);
 			return (1);
 		}
-		size = read(file->fd, buff, BUFF_SIZE);
+		size = read((int) file->key, buff, BUFF_SIZE);
 		if (!size && **line)
 			return (1);
-		file->buff = ft_strsub(buff, 0, size);
+		free(file->value);
+		file->value = strsub(buff, 0, size);
 	}
 	return (0);
 }
 
 int				get_next_line(const int fd, char **line)
 {
-	static t_avl		*files;
-	t_avl				*file;
+	static t_avl_obj 	*files = NULL;
+	t_avl_pair 			*file;
 
 	if (fd < 0 || !line || read(fd, NULL, 0) < 0)
 		return (-1);
-	if (!(file = find_fd(files, fd)))
+	if (!files)
+		files = avl_new(0, (int (*)(const void *, const void *, int)) &cmp, &del);
+	if (!(file = avl_get_pair(files, (const void *) fd)))
 	{
-		file = ft_new_node(init_file(fd));
-		files = ft_insert_avl(files, file, NULL, \
-        (int (*)(const void *, const void *, void *)) &cmp);
+		insert_file(files, fd);
+		file = avl_get_pair(files, (const void *) fd);
 	}
-	if (!file->content)
-		file->content = init_file(fd);
-	*line = ft_strnew(0);
-	return (readline(file->content, line));
+	*line = strnew(0);
+	return (readline(file, line));
 }

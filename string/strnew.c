@@ -16,6 +16,8 @@ char		*strnew(size_t size)
 {
 	char	*res;
 
+	if (!(size + 1))
+		return (NULL);
 	res = xmalloc(size + 1);
 	memset(res, 0, size + 1);
 	return (res);

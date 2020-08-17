@@ -12,7 +12,7 @@
 
 #include <unistd.h>
 
-int		fdputchar(char c, int fd)
+int		fdputchar(int c, int fd)
 {
 	if (fd == -1)
 		return (1);

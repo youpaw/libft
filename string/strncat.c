@@ -10,14 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "str_lib.h"
+#include "cc_str.h"
 
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+char	*strncat(char *s1, const char *s2, size_t n)
 {
 	size_t i;
 	size_t j;
 
-	i = ft_strlen(s1);
+	i = strlen(s1);
 	j = 0;
 	while (j < n && s2[j])
 	{

@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 
-char	*ft_strrchr(const char *s, int c)
+char	*strrchr(const char *s, int c)
 {
 	char	*found;
 

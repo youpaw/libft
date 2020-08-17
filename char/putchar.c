@@ -12,7 +12,7 @@
 
 #include "cc_char.h"
 
-int	putchar(char c)
+int	putchar(int c)
 {
 	return (fdputchar(c, 1));
 }

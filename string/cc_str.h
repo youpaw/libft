@@ -71,12 +71,19 @@ void		striteri(char *s, void (*f)(unsigned int, char *));
 char		*strjoin(char const *s1, char const *s2);
 size_t		strlcat(char *dst, const char *src, size_t size);
 size_t		strlen(const char *s);
+char		*strmap(char const *s, char (*f)(char));
+char		*strmapi(char const *s, char (*f)(unsigned int, char));
+char 		*strncat(char *s1, const char *s2, size_t n);
 int			strncmp(const char *s1, const char *s2, size_t n);
 char		*strncpy(char *dest, const char *src, size_t n);
+int			strnequ(char const *s1, char const *s2, size_t n);
 char 		*strnew(size_t size);
 char		*strnstr(const char *haystack, const char *needle, size_t len);
+char		*strrchr(const char *s, int c);
+char		**strsplit(char const *s);
 char		**strsplitcharset(char const *s, char *charset);
 char 		*strstr(const char *haystack, const char *needle);
 char		*strsub(char const *s, unsigned int start, size_t len);
 char		*strtrim(char const *s);
+
 #endif //CC_STR_H

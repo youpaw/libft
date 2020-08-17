@@ -9,8 +9,7 @@ file(MAKE_DIRECTORY ${LIBCC_BUILD_DIRECTORY})
 #set(CMAKE_CACHEFILE_DIR ${LIBCC_BUILD_DIRECTORY})
 include_directories(avl char file hash_map list math memory num string vector )
 
-ADD_EXECUTABLE(main
-		main.c
+ADD_LIBRARY(cc STATIC
 		avl/avl_balance.c
 		avl/avl_del.c
 		avl/avl_del_one.c
@@ -111,4 +110,11 @@ ADD_EXECUTABLE(main
 		string/strstr.c
 		string/strsub.c
 		string/strtrim.c
-		vector/vec_del_one.c)
+		vector/vec_del.c
+		vector/vec_del_one.c
+		vector/vec_get_at.c
+		vector/vec_get_last.c
+		vector/vec_new.c
+		vector/vec_push.c
+		vector/vec_rm_at.c
+		vector/vec_rm_last.c)

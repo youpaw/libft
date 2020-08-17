@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "str_lib.h"
+#include "cc_str.h"
 
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char			*str;
 	unsigned int	len;
@@ -22,8 +22,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	else
 		str = (char *)s;
-	len = (unsigned int)ft_strlen(str);
-	if (!(str = ft_strnew(len)))
+	len = (unsigned int)strlen(str);
+	if (!(str = strnew(len)))
 		return (NULL);
 	i = 0;
 	while (i < len)

@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vector_init.c                                   :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbutterw <dbutterw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/07 18:50:43 by dbutterw          #+#    #+#             */
+/*   Created: 2019/09/08 21:29:37 by dbutterw          #+#    #+#             */
 /*   Updated: 2020/01/06 14:39:22 by dbutterw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vec_lib.h"
-#include "mem_lib.h"
+#include "cc_lst.h"
+#include "cc_mem.h"
 
-t_vector	*ft_vector_init(size_t capacity, size_t datasize)
+t_list	*lst_new(void *content, size_t size)
 {
-	t_vector *vector;
+	t_list *newlst;
 
-	vector = (t_vector*)ft_xmalloc(sizeof(t_vector));
-	vector->data = ft_xmalloc(datasize * capacity + datasize);
-	ft_bzero(vector->data, datasize * capacity + datasize);
-	vector->datasize = datasize;
-	vector->capacity = capacity;
-	vector->size = 0;
-	return (vector);
+	newlst = (t_list*)xmalloc(sizeof(t_list));
+	if (!content)
+	{
+		newlst->content = NULL;
+		newlst->size = 0;
+	}
+	else
+	{
+		newlst->content = xmalloc(size);
+		newlst->content = memmove(newlst->content, content, size);
+		newlst->size = size;
+	}
+	newlst->next = NULL;
+	return (newlst);
 }
