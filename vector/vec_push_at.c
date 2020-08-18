@@ -23,7 +23,7 @@ int			vec_push_at(t_vec *vector, void *data, size_t index)
 	}
 	pdata = vector->data + (index * vector->datasize);
 	if (index < vector->size)
-		memmove(pdata,pdata + vector->datasize, vector->datasize);
+		memmove(pdata + vector->datasize, pdata, vector->datasize * (vector->size - index));
 	memmove(pdata, data, vector->datasize);
 	vector->size++;
 	bzero(vector->data + (vector->size * vector->datasize), vector->datasize);

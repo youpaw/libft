@@ -17,10 +17,10 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-static int			cmp(int fd1, int fd2, void *param)
+static int			cmp(const int *fd1, const int *fd2, void *param)
 {
 	(void)param;
-	return (fd1 - fd2);
+	return (*fd1 - *fd2);
 }
 
 static void			del(void *str)
@@ -33,7 +33,7 @@ static void			insert_file(t_avl_obj *files, int fd)
 	t_avl_pair pair;
 
 	pair.key = xmalloc(sizeof(int));
-	memmove(&pair.key, &fd, sizeof(int));
+	memmove(pair.key, &fd, sizeof(int));
 	pair.value = strnew(0);
 	avl_insert(files, &pair);
 }
@@ -58,7 +58,7 @@ static int		readline(t_avl_pair *file, char **line)
 			*rst ? strcpy(file->value, rst) : bzero(file->value, 1);
 			return (1);
 		}
-		size = read((int) file->key, buff, BUFF_SIZE);
+		size = read(*(int*)(file->key), buff, BUFF_SIZE);
 		if (!size && **line)
 			return (1);
 		free(file->value);
