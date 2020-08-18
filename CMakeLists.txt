@@ -7,7 +7,7 @@ file(MAKE_DIRECTORY ${LIBCC_BUILD_DIRECTORY})
 
 #set(LIBRARY_OUTPUT_PATH "build")
 #set(CMAKE_CACHEFILE_DIR ${LIBCC_BUILD_DIRECTORY})
-include_directories(avl char file hash_map list math memory num string vector )
+include_directories(avl char file hash_map list math memory num string vector)
 
 ADD_LIBRARY(cc STATIC
 		avl/avl_balance.c
@@ -116,5 +116,7 @@ ADD_LIBRARY(cc STATIC
 		vector/vec_get_last.c
 		vector/vec_new.c
 		vector/vec_push.c
+		vector/vec_push_at.c
 		vector/vec_rm_at.c
-		vector/vec_rm_last.c)
+		vector/vec_rm_last.c
+		)

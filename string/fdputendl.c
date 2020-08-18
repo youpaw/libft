@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "cc_str.h"
-#include "cc_char.h"
+#include "char/cc_char.h"
 
 void	fdputendl(char const *s, int fd)
 {

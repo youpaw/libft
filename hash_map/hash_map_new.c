@@ -2,7 +2,7 @@
 // Created by youpaw on 6/21/20.
 //
 #include "cc_hash_map.h"
-#include "cc_mem.h"
+#include "memory/cc_mem.h"
 
 t_hash_table 	*hash_map_new(size_t n_buckets, \
 	size_t (*hasher)(const void *), \

@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 
 #include "cc_file.h"
-#include "cc_avl.h"
-#include "cc_str.h"
-#include "cc_mem.h"
+#include "avl/cc_avl.h"
+#include "string/cc_str.h"
+#include "memory/cc_mem.h"
 #include <unistd.h>
 #include <stdlib.h>
 
@@ -32,7 +32,8 @@ static void			insert_file(t_avl_obj *files, int fd)
 {
 	t_avl_pair pair;
 
-	pair.key = (void *) fd;
+	pair.key = xmalloc(sizeof(int));
+	memmove(&pair.key, &fd, sizeof(int));
 	pair.value = strnew(0);
 	avl_insert(files, &pair);
 }
@@ -75,10 +76,10 @@ int				get_next_line(const int fd, char **line)
 		return (-1);
 	if (!files)
 		files = avl_new(0, (int (*)(const void *, const void *, int)) &cmp, &del);
-	if (!(file = avl_get_pair(files, (const void *) fd)))
+	if (!(file = avl_get_pair(files, &fd)))
 	{
 		insert_file(files, fd);
-		file = avl_get_pair(files, (const void *) fd);
+		file = avl_get_pair(files, &fd);
 	}
 	*line = strnew(0);
 	return (readline(file, line));

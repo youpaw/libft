@@ -3,7 +3,7 @@
 //
 
 #include "cc_vec.h"
-#include "cc_mem.h"
+#include "memory/cc_mem.h"
 
 int vec_del_one(t_vec *vector, size_t index)
 {

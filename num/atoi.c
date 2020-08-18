@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_char.h"
+#include "char/cc_char.h"
 
 int		atoi(const char *str)
 {

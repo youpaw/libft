@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_mem.h"
+#include "memory/cc_mem.h"
 
 char		*strnew(size_t size)
 {

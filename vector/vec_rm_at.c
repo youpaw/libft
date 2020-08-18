@@ -3,7 +3,7 @@
 //
 
 #include "cc_vec.h"
-#include "cc_mem.h"
+#include "memory/cc_mem.h"
 
 size_t	vec_rm_at(t_vec *vector, size_t index)
 {

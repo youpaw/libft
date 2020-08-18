@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <monetary.h>
-#include "cc_char.h"
+#include "char/cc_char.h"
 
 static int	fdputunsnbr(unsigned int n, int fd)
 {
