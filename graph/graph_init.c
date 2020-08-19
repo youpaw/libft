@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   graph_del.c                                        :+:      :+:    :+:   */
+/*   graph_init.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azomega <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/19 19:08:02 by azomega           #+#    #+#             */
-/*   Updated: 2020/08/19 19:08:06 by azomega          ###   ########.fr       */
+/*   Created: 2020/08/19 22:20:24 by azomega           #+#    #+#             */
+/*   Updated: 2020/08/19 22:20:26 by azomega          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cc_graph.h"
-#include "cc_lst.h"
 
-void	graph_del(t_graph *graph)
+void	graph_init(t_graph *graph)
 {
 	if (graph)
 	{
-		lst_del(&(graph->childs), (void (*)(void *))graph_del);
+		graph->symbol = '\0';
+		graph->index = 0;
 		graph->childs = NULL;
 	}
 }

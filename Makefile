@@ -126,6 +126,7 @@ SRC =   \
 		graph/graph_get_suffixes.c \
 		graph/graph_get_names.c \
 		graph/graph_del.c \
+		graph/graph_init.c \
 		graph/graph_new.c
 
 INC = 	-I . \
@@ -163,8 +164,8 @@ OBJ	= $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 
 NAME = libft.a
 
-CFLAGS = -Wall -Wextra -Werror
-#CFLAGS = 
+#CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g
 
 .PHONY: all clean fclean re
 

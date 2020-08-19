@@ -19,11 +19,9 @@ static const t_graph	*graph_find_entry(const t_graph *graph,
 	t_list	*found;
 	t_graph	new;
 
-	if (!(*word))
+	if (!word || !(*word))
 		return (graph);
 	new.symbol = *word;
-	new.index = graph->index + 1;
-	new.childs = NULL;
 	found = lst_find(graph->childs, (int (*)(const void *,
 			const void *))graph_cmp, &new);
 	if (!found)
@@ -36,8 +34,9 @@ static void				add_prefix(char **names, const char *prefix)
 	size_t	len;
 
 	len = strlen(prefix);
-	while (*names)
-		strncpy(*names++, prefix, len);
+	if (len)
+		while (*names)
+			strncpy(*names++, prefix, len);
 }
 
 char					**graph_get_names(const t_graph *graph,

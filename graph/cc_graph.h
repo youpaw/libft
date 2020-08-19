@@ -23,6 +23,7 @@ typedef struct	s_graph
 }				t_graph;
 
 t_graph			*graph_new(char symbol, size_t index);
+void			graph_init(t_graph *graph);
 void			graph_del(t_graph *graph);
 int				graph_cmp(const t_graph *lhs, const t_graph *rhs);
 void			graph_insert(t_graph *graph, const char *word);

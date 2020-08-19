@@ -17,6 +17,8 @@ void			graph_insert(t_graph *graph, const char *word)
 	t_list	*found;
 	t_graph	new;
 
+	if (!word)
+		return ;
 	new.symbol = *word;
 	new.index = graph->index + 1;
 	new.childs = NULL;
@@ -24,7 +26,8 @@ void			graph_insert(t_graph *graph, const char *word)
 			const void *))graph_cmp, &new);
 	if (!found)
 	{
-		lst_add(&(graph->childs), lst_new(&new, sizeof(new)));
+		lst_add_sort(&(graph->childs), lst_new(&new, sizeof(new)), NULL,
+					(int (*)(const void *, const void *, void *))graph_cmp);
 		found = lst_find(graph->childs,
 				(int (*)(const void *, const void *))graph_cmp, &new);
 	}

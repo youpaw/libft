@@ -12,15 +12,15 @@
 
 #include "cc_graph.h"
 
-static size_t	graph_get_size(const t_graph *g)
+static size_t	graph_get_size(const t_graph *graph)
 {
 	size_t	size;
 	t_list	*iter;
 
 	size = 0;
-	if (g->symbol == '\0')
+	if (graph->symbol == '\0' && graph->index > 0)
 		size++;
-	iter = g->childs;
+	iter = graph->childs;
 	while (iter)
 	{
 		size += graph_get_size(iter->content);
