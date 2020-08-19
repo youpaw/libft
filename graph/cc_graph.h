@@ -26,8 +26,6 @@ t_graph			*graph_new(char symbol, size_t index);
 void			graph_del(t_graph *graph);
 int				graph_cmp(const t_graph *lhs, const t_graph *rhs);
 void			graph_insert(t_graph *graph, const char *word);
-const t_graph	*graph_find_entry(const t_graph *graph, const char *word);
-size_t			graph_get_size(const t_graph *g);
 char			**graph_get_suffixes(const t_graph *graph);
 char			**graph_get_names(const t_graph *graph, const char *word);
 

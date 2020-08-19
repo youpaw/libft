@@ -12,5 +12,6 @@
 #include "regex/cc_regex.h"
 #include "string/cc_str.h"
 #include "vector/cc_vec.h"
+#include "graph/cc_graph.h"
 
 #endif

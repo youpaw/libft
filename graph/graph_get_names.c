@@ -13,7 +13,25 @@
 #include "cc_graph.h"
 #include "cc_str.h"
 
-static void	add_prefix(char **names, const char *prefix)
+static const t_graph	*graph_find_entry(const t_graph *graph,
+						const char *word)
+{
+	t_list	*found;
+	t_graph	new;
+
+	if (!(*word))
+		return (graph);
+	new.symbol = *word;
+	new.index = graph->index + 1;
+	new.childs = NULL;
+	found = lst_find(graph->childs, (int (*)(const void *,
+			const void *))graph_cmp, &new);
+	if (!found)
+		return (NULL);
+	return (graph_find_entry(found->content, ++word));
+}
+
+static void				add_prefix(char **names, const char *prefix)
 {
 	size_t	len;
 
@@ -22,7 +40,8 @@ static void	add_prefix(char **names, const char *prefix)
 		strncpy(*names++, prefix, len);
 }
 
-char		**graph_get_names(const t_graph *graph, const char *word)
+char					**graph_get_names(const t_graph *graph,
+						const char *word)
 {
 	const t_graph	*entry_point;
 	char			**names;

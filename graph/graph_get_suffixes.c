@@ -12,41 +12,70 @@
 
 #include "cc_graph.h"
 
-char	**graph_get_suffixes(const t_graph *graph)
+static size_t	graph_get_size(const t_graph *g)
+{
+	size_t	size;
+	t_list	*iter;
+
+	size = 0;
+	if (g->symbol == '\0')
+		size++;
+	iter = g->childs;
+	while (iter)
+	{
+		size += graph_get_size(iter->content);
+		iter = iter->next;
+	}
+	return (size);
+}
+
+static char		**alloc_arr(size_t size)
 {
 	char	**ret;
-	char	**child_suf;
+
+	ret = (char	**)malloc(sizeof(char *) * (size + 1));
+	ret[size] = NULL;
+	return (ret);
+}
+
+static char		**mv_arr(char **dest, t_graph *graph)
+{
+	char	**suf;
+	char	**head;
+
+	suf = graph_get_suffixes(graph);
+	head = suf;
+	while (*suf)
+		*dest++ = *suf++;
+	free(head);
+	return (dest);
+}
+
+char			**graph_get_suffixes(const t_graph *graph)
+{
+	char	**head;
+	char	**ret;
 	size_t	size;
-	size_t	i;
-	size_t	j;
 	t_list	*iter;
 
 	if (graph->symbol == '\0' && graph->index > 0)
 	{
-		ret = (char	**)malloc(sizeof(char *) * 2);
+		ret = alloc_arr(1);
 		ret[0] = (char *)malloc(sizeof(char) * graph->index);
 		ret[0][graph->index - 1] = '\0';
-		ret[1] = NULL;
 		return (ret);
 	}
-	size = graph_get_size(graph);
-	ret = (char	**)malloc(sizeof(char *) * (size + 1));
-	ret[size] = NULL;
+	ret = alloc_arr(graph_get_size(graph));
+	head = ret;
 	iter = graph->childs;
-	i = 0;
 	while (iter)
 	{
-		size = graph_get_size(iter->content);
-		j = 0;
-		child_suf = graph_get_suffixes(iter->content);
-		while (j < size)
-			ret[i++] = child_suf[j++];
-		free(child_suf);
+		ret = mv_arr(ret, iter->content);
 		iter = iter->next;
 	}
 	size = graph_get_size(graph);
 	if (graph->index > 0)
 		while (size-- > 0)
-			ret[size][graph->index - 1] = graph->symbol;
-	return (ret);
+			head[size][graph->index - 1] = graph->symbol;
+	return (head);
 }

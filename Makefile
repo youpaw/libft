@@ -122,9 +122,7 @@ SRC =   \
 		vector/vec_rm_at.c \
 		vector/vec_rm_last.c \
 		graph/graph_insert.c \
-		graph/graph_find_entry.c \
 		graph/graph_cmp.c \
-		graph/graph_get_size.c \
 		graph/graph_get_suffixes.c \
 		graph/graph_get_names.c \
 		graph/graph_del.c \
@@ -165,6 +163,9 @@ OBJ	= $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 
 NAME = libft.a
 
+CFLAGS = -Wall -Wextra -Werror
+#CFLAGS = 
+
 .PHONY: all clean fclean re
 
 all: $(NAME)
@@ -176,7 +177,7 @@ $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR) $(CMP_DIR)
 
 $(OBJ_DIR)/%.o: %.c $(HEAD)
-	gcc $(INC) -Wall -Wextra -Werror -c $< -o $@
+	gcc $(INC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -rf $(OBJ_DIR)
