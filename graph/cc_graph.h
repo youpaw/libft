@@ -13,7 +13,7 @@
 #ifndef CC_GRAPH_H
 # define CC_GRAPH_H
 
-# include "cc_lst.h"
+# include "list/cc_lst.h"
 
 typedef struct	s_graph
 {

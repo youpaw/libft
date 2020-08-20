@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "cc_graph.h"
-#include "cc_str.h"
+#include "string/cc_str.h"
 
 static const t_graph	*graph_find_entry(const t_graph *graph,
 						const char *word)

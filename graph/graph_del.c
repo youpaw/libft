@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "cc_graph.h"
-#include "cc_lst.h"
+#include "list/cc_lst.h"
 
 void	graph_del(t_graph *graph)
 {
