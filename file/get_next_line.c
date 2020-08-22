@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 
 #include "cc_file.h"
-#include "avl/cc_avl.h"
-#include "string/cc_str.h"
-#include "memory/cc_mem.h"
+#include "cc_avl.h"
+#include "cc_str.h"
+#include "cc_mem.h"
 #include <unistd.h>
 #include <stdlib.h>
 

@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "cc_str.h"
-#include "math/cc_math.h"
+#include "cc_math.h"
 
 size_t		strlcat(char *dst, const char *src, size_t size)
 {

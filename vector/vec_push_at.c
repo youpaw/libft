@@ -3,7 +3,7 @@
 //
 
 #include "cc_vec.h"
-#include "memory/cc_mem.h"
+#include "cc_mem.h"
 
 int			vec_push_at(t_vec *vector, void *data, size_t index)
 {

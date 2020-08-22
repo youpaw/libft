@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "char/cc_char.h"
+#include "cc_char.h"
 #include <limits.h>
 
 long long	atoll(const char *str)
