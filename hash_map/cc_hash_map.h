@@ -4,7 +4,7 @@
 
 #ifndef CC_HASH_MAP_H
 #define CC_HASH_MAP_H
-#include "list/cc_lst.h"
+#include "cc_lst.h"
 
 struct s_hash_pair{
 	void	*key;

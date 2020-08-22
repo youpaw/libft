@@ -7,7 +7,6 @@ file(MAKE_DIRECTORY ${LIBCC_BUILD_DIRECTORY})
 
 #set(LIBRARY_OUTPUT_PATH "build")
 #set(CMAKE_CACHEFILE_DIR ${LIBCC_BUILD_DIRECTORY})
-include_directories(avl char file graph hash_map list math memory num string vector)
 
 ADD_LIBRARY(cc STATIC
 		avl/avl_balance.c
@@ -59,6 +58,7 @@ ADD_LIBRARY(cc STATIC
 		list/lst_del.c
 		list/lst_del_circle.c
 		list/lst_del_one.c
+		list/lst_find.c
 		list/lst_iter.c
 		list/lst_map.c
 		list/lst_new.c
@@ -127,3 +127,5 @@ ADD_LIBRARY(cc STATIC
 		vector/vec_rm_at.c
 		vector/vec_rm_last.c
 		)
+
+target_include_directories(cc PUBLIC avl char file graph hash_map list math memory num string vector)

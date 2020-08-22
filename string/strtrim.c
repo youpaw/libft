@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "cc_str.h"
-#include "char/cc_char.h"
+#include "cc_char.h"
 
 char	*strtrim(char const *s)
 {

@@ -3,7 +3,7 @@
 //
 
 #include "cc_hash_map.h"
-#include "memory/cc_mem.h"
+#include "cc_mem.h"
 
 static void		replace_item(t_list *item, t_hash_pair *pair, void (*del)(t_hash_pair *))
 {

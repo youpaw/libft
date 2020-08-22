@@ -12,7 +12,7 @@
 
 #include <stdarg.h>
 #include "cc_str.h"
-#include "memory/cc_mem.h"
+#include "cc_mem.h"
 
 char		*nstrjoin(int n, ...)
 {
