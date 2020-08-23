@@ -128,4 +128,4 @@ ADD_LIBRARY(cc STATIC
 		vector/vec_rm_last.c
 		)
 
-target_include_directories(cc PUBLIC avl char file graph hash_map list math memory num string vector)
+target_include_directories(cc PUBLIC avl char file graph hash_map list math memory num string vector .)

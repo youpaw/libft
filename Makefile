@@ -145,7 +145,7 @@ DIRS = \
 
 NAME = libft.a
 
-INC = 	$(addprefix -I ,$(DIRS))
+INC = -I . $(addprefix -I ,$(DIRS))
 
 OBJ_DIR = ./obj
 OBJ_DIRS = 	$(addprefix $(OBJ_DIR)/,$(DIRS))
