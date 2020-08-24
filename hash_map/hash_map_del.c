@@ -4,7 +4,7 @@
 
 #include "cc_hash_map.h"
 
-void 			hash_map_del(t_hash_table **table)
+void 			hash_map_del(t_hash_map **table)
 {
 	size_t cnt;
 

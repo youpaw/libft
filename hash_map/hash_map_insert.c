@@ -22,7 +22,7 @@ static t_list	*get_item(t_list *bucket, void *key, \
 	return (bucket);
 }
 
-int				hash_map_insert(t_hash_table *table, t_hash_pair *pair)
+int				hash_map_insert(t_hash_map *table, t_hash_pair *pair)
 {
 
 	size_t index;

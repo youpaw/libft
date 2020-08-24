@@ -4,7 +4,7 @@
 
 #include "cc_hash_map.h"
 
-t_hash_pair 			*hash_map_get_pair(t_hash_table *table, const void *key)
+t_hash_pair 			*hash_map_get_pair(t_hash_map *table, const void *key)
 {
 	t_list *item;
 

@@ -3,7 +3,7 @@
 //
 #include "cc_hash_map.h"
 
-void 			hash_map_iter(t_hash_table *table, void (*f)(void *value))
+void 			hash_map_iter(t_hash_map *table, void (*f)(void *value))
 {
 	t_list *tmp;
 	t_hash_pair *pair;

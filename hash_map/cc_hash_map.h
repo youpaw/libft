@@ -13,7 +13,7 @@ struct s_hash_pair{
 
 typedef struct s_hash_pair	t_hash_pair;
 
-struct s_hash_table{
+struct s_hash_map{
 	t_list	**buckets;
 	size_t	size;
 	size_t	(*hasher)(const void *);
@@ -21,19 +21,19 @@ struct s_hash_table{
 	void 	(*del)(t_hash_pair *);
 };
 
-typedef struct s_hash_table	t_hash_table;
+typedef struct s_hash_map	t_hash_map;
 
-t_hash_table 	*hash_map_new(size_t n_buckets, \
+t_hash_map 	*hash_map_new(size_t n_buckets, \
 	size_t (*hasher)(const void *), \
 	int (*cmp)(const void *, const void *), \
 	void 	(*del)(t_hash_pair *));
-int				hash_map_insert(t_hash_table *table, t_hash_pair *pair);
-t_list 			*hash_map_get(t_hash_table *table, const void *key);
-t_hash_pair 	*hash_map_get_pair(t_hash_table *table, const void *key);
-void 			*hash_map_get_val(t_hash_table *table, const void *key);
-int 			hash_map_del_one(t_hash_table *table, const void *key);
-void 			hash_map_del(t_hash_table **table);
-void 			hash_map_iter_pair(t_hash_table *table, void (*f)(const t_hash_pair *pair));
-void 			hash_map_iter(t_hash_table *table, void (*f)(void *value));
+int				hash_map_insert(t_hash_map *table, t_hash_pair *pair);
+t_list 			*hash_map_get(t_hash_map *table, const void *key);
+t_hash_pair 	*hash_map_get_pair(t_hash_map *table, const void *key);
+void 			*hash_map_get_val(t_hash_map *table, const void *key);
+int 			hash_map_del_one(t_hash_map *table, const void *key);
+void 			hash_map_del(t_hash_map **table);
+void 			hash_map_iter_pair(t_hash_map *table, void (*f)(const t_hash_pair *pair));
+void 			hash_map_iter(t_hash_map *table, void (*f)(void *value));
 
 #endif //CC_HASH_MAP_H

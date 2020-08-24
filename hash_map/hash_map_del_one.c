@@ -20,7 +20,7 @@ static int 		del_item(t_list *bucket, const void *key, \
 	return (0);
 }
 
-int 			hash_map_del_one(t_hash_table *table, const void *key)
+int 			hash_map_del_one(t_hash_map *table, const void *key)
 {
 	size_t index;
 

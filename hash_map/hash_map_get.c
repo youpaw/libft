@@ -12,7 +12,7 @@ static t_list	*get_item(t_list *bucket, const void *key, \
 	return (bucket);
 }
 
-t_list 			*hash_map_get(t_hash_table *table, const void *key)
+t_list 			*hash_map_get(t_hash_map *table, const void *key)
 {
 	size_t index;
 
