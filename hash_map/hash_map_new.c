@@ -22,6 +22,6 @@ t_hash_map 	*hash_map_new(size_t n_buckets, \
 	table->hasher = hasher;
 	table->cmp = cmp;
 	table->del = del;
-	table->size = n_buckets;
+	table->buckets_size = n_buckets;
 	return (table);
 }

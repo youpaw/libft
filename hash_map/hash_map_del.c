@@ -9,7 +9,7 @@ void 			hash_map_del(t_hash_map **table)
 	size_t cnt;
 
 	cnt = 0;
-	while (cnt < (*table)->size)
+	while (cnt < (*table)->buckets_size)
 		lst_del(&((*table)->buckets[cnt++]), (void (*)(void *)) (*table)->del);
 	free((*table)->buckets);
 	free(*table);

@@ -4,7 +4,7 @@
 
 #include "cc_hash_map.h"
 
-void 			*hash_map_get_val(t_hash_map *table, const void *key)
+void 			*hash_map_get_val(const t_hash_map *table, const void *key)
 {
 	t_hash_pair *pair;
 
