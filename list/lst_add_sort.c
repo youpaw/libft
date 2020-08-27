@@ -12,8 +12,8 @@
 
 #include "cc_lst.h"
 
-int lst_add_sort(t_list **list, t_list *newlist, void *params, \
-		int (*cmp)(const void *, const void *, void *))
+int lst_add_sort(t_list **list, t_list *newlist,
+		int (*cmp)(const void *, const void *))
 {
 	t_list *prev;
 	t_list *head;
@@ -27,7 +27,7 @@ int lst_add_sort(t_list **list, t_list *newlist, void *params, \
 	}
 	prev = NULL;
 	head = *list;
-	while (head && cmp(newlist->content, head->content, params) > 0)
+	while (head && cmp(newlist->content, head->content) > 0)
 	{
 		prev = head;
 		head = head->next;

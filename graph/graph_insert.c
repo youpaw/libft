@@ -26,8 +26,8 @@ void			graph_insert(t_graph *graph, const char *word)
 			const void *))graph_cmp, &new);
 	if (!found)
 	{
-		lst_add_sort(&(graph->childs), lst_new(&new, sizeof(new)), NULL,
-					(int (*)(const void *, const void *, void *))graph_cmp);
+		lst_add_sort(&(graph->childs), lst_new(&new, sizeof(new)),
+					(int (*)(const void *, const void *))graph_cmp);
 		found = lst_find(graph->childs,
 				(int (*)(const void *, const void *))graph_cmp, &new);
 	}

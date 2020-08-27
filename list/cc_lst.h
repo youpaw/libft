@@ -6,7 +6,7 @@
 typedef struct		s_list
 {
 	void			*content;
-	size_t			size;
+	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
 
@@ -26,11 +26,17 @@ int					lst_circle(t_list *list);
 
 int					lst_del_circle(t_list **list, void (*del)(void*));
 
-int					lst_add_sort(t_list **list, t_list *newlist, void *params, \
-					int (*cmp)(const void *, const void *, void *));
+int 				lst_add_sort(t_list **list, t_list *newlist,
+				 	int (*cmp)(const void *, const void *));
 
-t_list				*lst_find(t_list *lst, int (*cmp)(const void *, const void *),
-					const void *content);
+t_list				*lst_find(t_list *lst, const void *content,
+					int (*cmp)(const void *, const void *));
+
+size_t				lst_get_size(const t_list *list);
+
+int					lst_del_one_if(t_list **alst, const void *content,
+						  int (*cmp)(const void *, const void *),
+						  void (*del)(void *));
 
 # define LST_OK 0
 # define LST_DNE LST_OK + 1

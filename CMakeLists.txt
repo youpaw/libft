@@ -45,12 +45,10 @@ ADD_LIBRARY(cc STATIC
 		graph/graph_new.c
 		hash_map/hash_map_del.c
 		hash_map/hash_map_del_one.c
-		hash_map/hash_map_get.c
 		hash_map/hash_map_get_pair.c
 		hash_map/hash_map_get_val.c
 		hash_map/hash_map_insert.c
 		hash_map/hash_map_iter.c
-		hash_map/hash_map_iter_pair.c
 		hash_map/hash_map_new.c
 		list/lst_add.c
 		list/lst_add_sort.c
@@ -126,6 +124,6 @@ ADD_LIBRARY(cc STATIC
 		vector/vec_push_at.c
 		vector/vec_rm_at.c
 		vector/vec_rm_last.c
-		)
+        hash_map/hash_map_get_size.c list/lst_get_size.c list/lst_del_one_if.c)
 
 target_include_directories(cc PUBLIC avl char file graph hash_map list math memory num string vector .)

@@ -21,13 +21,13 @@ t_list	*lst_new(void *content, size_t size)
 	if (!content)
 	{
 		newlst->content = NULL;
-		newlst->size = 0;
+		newlst->content_size = 0;
 	}
 	else
 	{
 		newlst->content = xmalloc(size);
 		newlst->content = memmove(newlst->content, content, size);
-		newlst->size = size;
+		newlst->content_size = size;
 	}
 	newlst->next = NULL;
 	return (newlst);
