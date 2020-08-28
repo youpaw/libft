@@ -45,7 +45,7 @@ char					**graph_get_names(const t_graph *graph,
 	const t_graph	*entry_point;
 	char			**names;
 
-	if (!(entry_point = graph_find_entry(graph, word)))
+	if (!graph || !(entry_point = graph_find_entry(graph, word)))
 		return (NULL);
 	names = graph_get_suffixes(entry_point);
 	add_prefix(names, word);

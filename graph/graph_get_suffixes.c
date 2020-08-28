@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "cc_graph.h"
+#include "cc_mem.h"
 
 static size_t	graph_get_size(const t_graph *graph)
 {
@@ -33,7 +34,7 @@ static char		**alloc_arr(size_t size)
 {
 	char	**ret;
 
-	ret = (char	**)malloc(sizeof(char *) * (size + 1));
+	ret = (char	**)xmalloc(sizeof(char *) * (size + 1));
 	ret[size] = NULL;
 	return (ret);
 }
@@ -61,7 +62,7 @@ char			**graph_get_suffixes(const t_graph *graph)
 	if (graph->symbol == '\0' && graph->index > 0)
 	{
 		ret = alloc_arr(1);
-		ret[0] = (char *)malloc(sizeof(char) * graph->index);
+		ret[0] = (char *)xmalloc(sizeof(char) * graph->index);
 		ret[0][graph->index - 1] = '\0';
 		return (ret);
 	}

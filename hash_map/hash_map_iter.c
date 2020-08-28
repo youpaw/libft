@@ -3,22 +3,21 @@
 //
 #include "cc_hash_map.h"
 
-void 			hash_map_iter(t_hash_table *table, void (*f)(void *value))
+void 			hash_map_iter(t_hash_map *table, void (*f)(void *content))
 {
-	t_list *tmp;
+	t_list *bucket;
 	t_hash_pair *pair;
 	size_t cnt;
 
 	cnt = 0;
-	while (cnt < table->size)
+	while (cnt < table->buckets_size)
 	{
-		tmp = table->buckets[cnt];
-		while (tmp)
+		bucket = table->buckets[cnt];
+		while (bucket)
 		{
-			pair = tmp->content;
-			if (pair)
-				f(pair->value);
-			tmp = tmp->next;
+
+			f(bucket->content);
+			bucket = bucket->next;
 		}
 		cnt++;
 	}

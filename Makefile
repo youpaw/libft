@@ -129,62 +129,65 @@ SRC =   \
 		graph/graph_init.c \
 		graph/graph_new.c
 
-INC = 	-I . \
-		-I avl			\
-		-I char			\
-		-I file			\
-		-I graph		\
-		-I hash_map		\
-		-I list			\
-		-I math			\
-		-I memory		\
-		-I num			\
-		-I regex		\
-		-I string		\
-		-I vector
-
-OBJ_DIR = ./obj
-
-CMP_DIR	:= \
-		$(OBJ_DIR)/avl			\
-		$(OBJ_DIR)/char			\
-		$(OBJ_DIR)/file			\
-		$(OBJ_DIR)/graph		\
-		$(OBJ_DIR)/hash_map		\
-		$(OBJ_DIR)/list			\
-		$(OBJ_DIR)/math			\
-		$(OBJ_DIR)/memory		\
-		$(OBJ_DIR)/num			\
-		$(OBJ_DIR)/regex		\
-		$(OBJ_DIR)/string		\
-		$(OBJ_DIR)/vector
-
-
-OBJ	= $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
+DIRS = \
+		avl			\
+		char		\
+		file		\
+		graph		\
+		hash_map	\
+		list		\
+		math		\
+		memory		\
+		num			\
+		regex		\
+		string		\
+		vector
 
 NAME = libft.a
 
-#CFLAGS = -Wall -Wextra -Werror
-CFLAGS = -g
+INC = -I . $(addprefix -I ,$(DIRS))
+
+OBJ_DIR = ./obj
+OBJ_DIRS = 	$(addprefix $(OBJ_DIR)/,$(DIRS))
+OBJ = $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
+
+DEP_DIR = ./dep
+DEP_DIRS = 	$(addprefix $(DEP_DIR)/,$(DIRS))
+DEP = $(addprefix $(DEP_DIR)/,$(SRC:.c=.d))
+
+ifeq (1,$(DEBUG))
+	CFLAGS = -g
+else
+	CFLAGS = -Wall -Wextra -Werror
+endif
 
 .PHONY: all clean fclean re
 
 all: $(NAME)
 
-$(NAME): $(OBJ_DIR) $(OBJ)
+$(NAME): $(DEP) $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
+$(OBJ): | $(OBJ_DIR)
 $(OBJ_DIR):
-	mkdir -p $(OBJ_DIR) $(CMP_DIR)
+	mkdir -p $(OBJ_DIRS)
 
-$(OBJ_DIR)/%.o: %.c $(HEAD)
-	gcc $(INC) $(CFLAGS) -c $< -o $@
+$(DEP): | $(DEP_DIR)
+$(DEP_DIR):
+	mkdir -p $(DEP_DIRS)
+
+M_FLAGS = -MMD -MF $(patsubst %.c,$(DEP_DIR)/%.d,$<)
+
+$(OBJ_DIR)/%.o: %.c
+	gcc $(INC) $(CFLAGS) -c $< -o $@  $(M_FLAGS)
 
 clean:
-	rm -rf $(OBJ_DIR)
+	rm -rf $(OBJ_DIR) $(DEP_DIR)
 	rm -f *~
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+include $(wildcard $(DEP))
