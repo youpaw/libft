@@ -10,6 +10,8 @@ void 			hash_map_iter(t_hash_map *table, void (*f)(void *content))
 	size_t cnt;
 
 	cnt = 0;
+	if (!table || !f)
+		return ;
 	while (cnt < table->buckets_size)
 	{
 		bucket = table->buckets[cnt];

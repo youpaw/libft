@@ -10,8 +10,9 @@ size_t 			hash_map_get_size(const t_hash_map *map)
 
 	i = 0;
 	count = 0;
-	while (i < map->buckets_size)
-		count += lst_get_size(map->buckets[i++]);
+	if (map)
+		while (i < map->buckets_size)
+			count += lst_get_size(map->buckets[i++]);
 	return (count);
 }
 

@@ -19,6 +19,8 @@ int				hash_map_insert(t_hash_map *table, t_hash_pair *pair)
 	size_t index;
 	t_list *item;
 
+	if (!table || !pair)
+		return (1);
 	index = table->hasher(pair->key) % table->buckets_size;
 	if ((item = lst_find(table->buckets[index], pair, table->cmp)))
 		replace_item(item, pair, table->del);
