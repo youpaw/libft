@@ -14,21 +14,13 @@ static void		replace_item(t_list *item, t_hash_pair *pair, void (*del)(t_hash_pa
 	memmove(item->content, pair, item->content_size);
 }
 
-static t_list	*get_item(t_list *bucket, void *key, \
-	int (*cmp)(const void *, const void *))
-{
-	while (bucket && cmp(((t_hash_pair*)(bucket->content))->key, key))
-		bucket = bucket->next;
-	return (bucket);
-}
-
 int				hash_map_insert(t_hash_map *table, t_hash_pair *pair)
 {
 	size_t index;
 	t_list *item;
 
 	index = table->hasher(pair->key) % table->buckets_size;
-	if ((item = get_item(table->buckets[index], pair->key, table->cmp)))
+	if ((item = lst_find(table->buckets[index], pair, table->cmp)))
 		replace_item(item, pair, table->del);
 	else
 		lst_add(&(table->buckets[index]), lst_new(pair, sizeof(t_hash_pair)));

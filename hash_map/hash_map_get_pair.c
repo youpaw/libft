@@ -13,7 +13,7 @@ t_hash_pair		*hash_map_get_pair(const t_hash_map *table, const void *key)
 	if (!table || !key)
 		return (NULL);
 	index = table->hasher(key) % table->buckets_size;
-	pair.key = key;
+	pair.key = (void *)key;
 	item = lst_find(table->buckets[index], &pair, table->cmp);
 	if (item)
 		return (item->content);

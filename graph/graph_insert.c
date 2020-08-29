@@ -22,14 +22,14 @@ void			graph_insert(t_graph *graph, const char *word)
 	new.symbol = *word;
 	new.index = graph->index + 1;
 	new.childs = NULL;
-	found = lst_find(graph->childs, (int (*)(const void *,
-			const void *))graph_cmp, &new);
+	found = lst_find(graph->childs, &new, (int (*)(const void *,
+			const void *))graph_cmp);
 	if (!found)
 	{
 		lst_add_sort(&(graph->childs), lst_new(&new, sizeof(new)),
 					(int (*)(const void *, const void *))graph_cmp);
-		found = lst_find(graph->childs,
-				(int (*)(const void *, const void *))graph_cmp, &new);
+		found = lst_find(graph->childs, &new,
+				(int (*)(const void *, const void *))graph_cmp);
 	}
 	if (!(*word))
 		return ;

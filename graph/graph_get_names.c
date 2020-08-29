@@ -22,8 +22,8 @@ static const t_graph	*graph_find_entry(const t_graph *graph,
 	if (!word || !(*word))
 		return (graph);
 	new.symbol = *word;
-	found = lst_find(graph->childs, (int (*)(const void *,
-			const void *))graph_cmp, &new);
+	found = lst_find(graph->childs, &new, (int (*)(const void *,
+			const void *))graph_cmp);
 	if (!found)
 		return (NULL);
 	return (graph_find_entry(found->content, ++word));
