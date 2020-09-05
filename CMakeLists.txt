@@ -124,6 +124,6 @@ ADD_LIBRARY(cc STATIC
 		vector/vec_push_at.c
 		vector/vec_rm_at.c
 		vector/vec_rm_last.c
-        hash_map/hash_map_get_size.c list/lst_get_size.c list/lst_del_one_if.c)
+        hash_map/hash_map_get_size.c list/lst_get_size.c list/lst_del_one_if.c char/getch.c char/get_utf8_len.c)
 
 target_include_directories(cc PUBLIC avl char file graph hash_map list math memory num string vector .)

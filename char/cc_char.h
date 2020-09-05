@@ -4,7 +4,7 @@
 
 #ifndef CC_CHAR_H
 # define CC_CHAR_H
-
+# define CHAR_BUFF_SIZE 1024
 # undef isupper
 # undef islower
 # undef isalpha
@@ -18,6 +18,7 @@
 # undef fdputchar
 # undef tolower
 # undef toupper
+# undef getch
 
 int 		isupper(int c);
 int 		islower(int c);
@@ -32,5 +33,7 @@ int			putchar(int c);
 int			fdputchar(int c, int fd);
 int			tolower(int c);
 int			toupper(int c);
+int			getch(void);
+int			get_utf8_len(char ch);
 
 #endif //CC_CHAR_H

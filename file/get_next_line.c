@@ -40,7 +40,7 @@ static void			insert_file(t_avl_obj *files, int fd)
 
 static int		readline(t_avl_pair *file, char **line)
 {
-	char	buff[BUFF_SIZE + 1];
+	char	buff[FILE_BUFF_SIZE + 1];
 	char	*rst;
 	char	*tmp;
 	size_t	size;
@@ -58,7 +58,7 @@ static int		readline(t_avl_pair *file, char **line)
 			*rst ? strcpy(file->value, rst) : bzero(file->value, 1);
 			return (1);
 		}
-		size = read(*(int*)(file->key), buff, BUFF_SIZE);
+		size = read(*(int*)(file->key), buff, FILE_BUFF_SIZE);
 		if (!size && **line)
 			return (1);
 		free(file->value);
