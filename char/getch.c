@@ -12,24 +12,31 @@
 int 	getch(void)
 {
 	static char	buf[CHAR_BUFF_SIZE];
+	static int	escape_flag;
 	char 		ch[5];
 	int 		len;
 
 	bzero(ch, 5);
 	if (buf[0] == '\0')
+	{
 		read(STDIN_FILENO, buf, CHAR_BUFF_SIZE);
+		escape_flag = 0;
+	}
 	if (buf[0] == '\33' && buf[1] == '\133')
 	{
-		strncpy(ch, buf, 4);
-		bzero(buf, CHAR_BUFF_SIZE);
+		len = 2;
+		escape_flag = 1;
 	}
 	else
 	{
-		len = get_utf8_len(buf[0]);
-		strncpy(ch, buf, len);
-		memmove(buf, &buf[len], CHAR_BUFF_SIZE - len);
-		bzero(&buf[CHAR_BUFF_SIZE - len], len);
+		if (escape_flag)
+			len = 4;
+		else
+			len = get_utf8_len(buf[0]);
 	}
+	strncpy(ch, buf, len);
+	memmove(buf, &buf[len], CHAR_BUFF_SIZE - len);
+	bzero(&buf[CHAR_BUFF_SIZE - len], len);
 	memcpy(&len, ch, sizeof(int));
 	return (len);
 }
