@@ -4,9 +4,9 @@
 
 #include <stdlib.h>
 
-void			arr2_del(char **m)
+void			strarr_del(char **arr)
 {
-	if (m)
-		while (*m)
-			free(*m++);
+	if (arr)
+		while (*arr)
+			free(*arr++);
 }

@@ -13,6 +13,6 @@
 #include "regex/cc_regex.h"
 #include "string/cc_str.h"
 #include "vector/cc_vec.h"
-#include "arr2/cc_arr2.h"
+#include "sort/cc_sort.h"
 
 #endif

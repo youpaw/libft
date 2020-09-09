@@ -4,7 +4,7 @@
 
 #include "cc_str.h"
 
-void			arr2_print(const char **args, const char *st, const char *en)
+void			strarr_print(const char **args, const char *st, const char *en)
 {
 	const char *start = "";
 	const char *end = "\n";

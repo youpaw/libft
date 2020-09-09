@@ -84,7 +84,7 @@ ADD_LIBRARY(cc STATIC
 		string/fdputs.c
 		string/itoa.c
 		string/itoabase.c
-		string/nstrjoin.c
+		string/strnjoin.c
 		string/putendl.c
 		string/puts.c
 		string/strcat.c
@@ -129,7 +129,9 @@ ADD_LIBRARY(cc STATIC
 		list/lst_del_one_if.c
 		char/getch.c
 		char/get_utf8_len.c
-		arr2/arr2_quick_sort.c
-		arr2/arr2_del.c arr2/arr2_get_size.c arr2/arr2_print.c)
+		sort/quick_sort.c
+		string/strarr_del.c
+		string/strarr_getsize.c
+		string/strarr_print.c)
 
-target_include_directories(cc PUBLIC avl char file graph hash_map list math memory num string vector arr2 .)
+target_include_directories(cc PUBLIC avl char file graph hash_map list math memory num string vector sort .)

@@ -54,7 +54,7 @@ void		fdputendl(char const *s, int fd);
 int			fdputs(const char *restrict s, int stream);
 char		*itoa(long long int n);
 char		*itoabase(size_t n, size_t base, char reg);
-char		*nstrjoin(int n, ...);
+char		*strnjoin(const char **arr);
 void		putendl(char const *s);
 int			puts(char const *s);
 char		*strcat(char *s1, const char *s2);
@@ -85,5 +85,8 @@ char		**strsplitcharset(char const *s, char *charset);
 char 		*strstr(const char *haystack, const char *needle);
 char		*strsub(char const *s, unsigned int start, size_t len);
 char		*strtrim(char const *s);
+void		strarr_del(char **arr);
+size_t		strarr_getsize(const char **m);
+void		strarr_print(const char **args, const char *st, const char *en);
 
 #endif //CC_STR_H

@@ -10,35 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
 #include "cc_str.h"
-#include "cc_mem.h"
 
-char		*nstrjoin(int n, ...)
+char		*strnjoin(const char **arr)
 {
-	va_list		argptr;
-	int			n_cpy;
-	size_t		len;
-	char		*ptr;
+	int 		n_str;
+	int			index;
 	char		*str;
+	size_t		len;
 
-	n_cpy = n;
+	if (!arr || !*arr)
+		return (NULL);
+	n_str = 0;
 	len = 0;
-	va_start(argptr, n);
-	while (n--)
-	{
-		ptr = va_arg(argptr, char *);
-		len += strlen(ptr);
-	}
-	va_end(argptr);
-	str = (char *)xmalloc(len + 1);
-	bzero(str, len + 1);
-	va_start(argptr, n);
-	while (n_cpy--)
-	{
-		ptr = va_arg(argptr, char *);
-		str = strcat(str, ptr);
-	}
-	va_end(argptr);
+	while (arr[n_str])
+		len += strlen(arr[n_str++]);
+	str = strnew(len);
+	index = 0;
+	while (index < n_str)
+		str = strcat(str, arr[index++]);
 	return (str);
 }

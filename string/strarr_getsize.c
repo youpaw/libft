@@ -4,7 +4,7 @@
 
 #include <stddef.h>
 
-size_t			arr2_get_size(const char **m)
+size_t			strarr_getsize(const char **m)
 {
 	size_t	len;
 
