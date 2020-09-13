@@ -132,6 +132,7 @@ ADD_LIBRARY(cc STATIC
 		sort/quick_sort.c
 		string/strarr_del.c
 		string/strarr_getsize.c
-		string/strarr_print.c)
+		string/strarr_print.c
+		optparse/optparse.c)
 
-target_include_directories(cc PUBLIC avl char file graph hash_map list math memory num string vector sort .)
+target_include_directories(cc PUBLIC avl char file graph hash_map list math memory num string vector sort optparse .)

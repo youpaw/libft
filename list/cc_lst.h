@@ -39,5 +39,5 @@ int					lst_del_one_if(t_list **alst, const void *content,
 						  void (*del)(void *));
 
 # define LST_OK 0
-# define LST_DNE LST_OK + 1
+# define LST_DNE (LST_OK + 1)
 #endif //CC_LST_H

@@ -55,6 +55,6 @@ int						avl_del_one(t_avl_obj *obj, const void *key);
 void 					avl_del(t_avl_obj **obj);
 
 #define AVL_OK 0
-#define AVL_DNE AVL_OK + 1
+#define AVL_DNE (AVL_OK + 1)
 
 #endif //CC_AVL_H
