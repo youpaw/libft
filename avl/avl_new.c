@@ -6,8 +6,7 @@
 #include "cc_avl.h"
 #include "cc_mem.h"
 
-t_avl_obj 				*avl_new(int params, \
-	int (*cmp)(const void *, const void *, int), \
+t_avl_obj 				*avl_new(int (*cmp)(const void *, const void *), \
 	void (*del)(void *))
 {
 	t_avl_obj *obj;
@@ -15,7 +14,6 @@ t_avl_obj 				*avl_new(int params, \
 	if (!cmp)
 		return (NULL);
 	obj = xmalloc(sizeof(t_avl_obj));
-	obj->params = params;
 	obj->cmp = cmp;
 	obj->del = del;
 	obj->tree = NULL;

@@ -37,26 +37,26 @@ static t_avl_tree		*left_rotate(t_avl_tree *x)
 	return (y);
 }
 
-t_avl_tree		*avl_balance(t_avl_tree *node, int params, \
-int (*cmp)(const void *, const void *, int))
+t_avl_tree		*avl_balance(t_avl_tree *node, \
+int (*cmp)(const void *, const void *))
 {
 	int balance;
 
 	if (!node)
 		return (node);
 	balance = avl_get_height(node->left) - avl_get_height(node->right);
-	if (balance > 1 && cmp(node->left->pair->key, node->pair->key, params) < 0)
+	if (balance > 1 && cmp(node->left->pair->key, node->pair->key) < 0)
 		return (right_rotate(node));
 	if (balance < -1 && \
-	        cmp( node->right->pair->key, node->pair->key, params) > 0)
+	        cmp( node->right->pair->key, node->pair->key) > 0)
 		return (left_rotate(node));
-	if (balance > 1 && cmp(node->left->pair->key, node->pair->key, params) > 0)
+	if (balance > 1 && cmp(node->left->pair->key, node->pair->key) > 0)
 	{
 		node->left = left_rotate(node->left);
 		return (right_rotate(node));
 	}
 	if (balance < -1 && \
-		cmp(node->right->pair->key, node->pair->key, params) < 0)
+		cmp(node->right->pair->key, node->pair->key) < 0)
 	{
 		node->right = right_rotate(node->right);
 		return (left_rotate(node));

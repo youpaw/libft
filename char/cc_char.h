@@ -28,7 +28,7 @@ int			isspace(int c);
 int			isdigit(int c);
 int			isascii(int c);
 int			isprint(int c);
-int			iswspace(char c);
+int			iswspace(int c);
 int			putchar(int c);
 int			fdputchar(int c, int fd);
 int			tolower(int c);

@@ -17,9 +17,8 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-static int			cmp(const int *fd1, const int *fd2, void *param)
+static int			cmp(const int *fd1, const int *fd2)
 {
-	(void)param;
 	return (*fd1 - *fd2);
 }
 
@@ -75,7 +74,7 @@ int				get_next_line(const int fd, char **line)
 	if (fd < 0 || !line || read(fd, NULL, 0) < 0)
 		return (-1);
 	if (!files)
-		files = avl_new(0, (int (*)(const void *, const void *, int)) &cmp, &del);
+		files = avl_new((int (*)(const void *, const void *)) &cmp, &del);
 	if (!(file = avl_get_pair(files, &fd)))
 	{
 		insert_file(files, fd);
