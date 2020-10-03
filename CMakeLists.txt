@@ -133,6 +133,6 @@ ADD_LIBRARY(cc STATIC
 		string/strarr_del.c
 		string/strarr_getsize.c
 		string/strarr_print.c
-		optparse/optparse.c)
+		optparse/optparse.c vector/vec_pop.c)
 
 target_include_directories(cc PUBLIC avl char file graph hash_map list math memory num string vector sort optparse .)
