@@ -12,7 +12,7 @@ static	size_t is_opt_invalid(const char *opt, const char *validopt)
 			return ((size_t)(*opt));
 		opt++;
 	}
-	return (0);
+	return ((size_t) '0');
 }
 
 static size_t is_option(const char *opt)
