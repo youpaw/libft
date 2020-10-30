@@ -32,7 +32,7 @@ int 	getch(void)
 		if (escape_flag)
 			len = 4;
 		else
-			len = get_utf8_len(buf[0]);
+			len = utf8_sizeof_symbol(buf[0]);
 	}
 	strncpy(ch, buf, len);
 	memmove(buf, &buf[len], CHAR_BUFF_SIZE - len);

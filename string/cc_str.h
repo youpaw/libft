@@ -88,5 +88,6 @@ char		*strtrim(char const *s);
 void		strarr_del(char **arr);
 size_t		strarr_getsize(const char **m);
 void		strarr_print(const char **args, const char *st, const char *en);
+size_t		utf8_display_strlen(char *str);
 
 #endif //CC_STR_H

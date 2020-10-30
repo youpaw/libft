@@ -34,6 +34,6 @@ int			fdputchar(int c, int fd);
 int			tolower(int c);
 int			toupper(int c);
 int			getch(void);
-int			get_utf8_len(char ch);
+int			utf8_sizeof_symbol(char ch);
 
 #endif //CC_CHAR_H
