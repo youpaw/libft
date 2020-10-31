@@ -57,7 +57,7 @@ size_t	optparse(const char **args, const char *optstr, t_parsed_opt *result)
 		if ((error_opt = is_opt_invalid(&args[skip][1], optstr)))
 		{
 			result->invalid_opt = (char)error_opt;
-			break;
+			return (0);
 		}
 		opt_count += (strlen(args[skip++]) - 1);
 	}
