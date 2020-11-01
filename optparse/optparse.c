@@ -14,10 +14,17 @@ static	size_t is_opt_invalid(const char *opt, const char *validopt)
 	}
 	return (0);
 }
-
+/*
 static size_t is_option(const char *opt)
 {
 	if (opt && opt[0] == '-' && opt[1] && opt[1] != '-')
+		return (1);
+	return (0);
+}
+ */
+static size_t is_option(const char *opt)
+{
+	if (opt && opt[0] == '-' && opt[1] && strcmp(opt, "--") != 0)
 		return (1);
 	return (0);
 }
@@ -52,6 +59,7 @@ size_t	optparse(const char **args, const char *optstr, t_parsed_opt *result)
 	opt_count = 0;
 	if (!args || !*args || !optstr || !result)
 		return (0);
+	result->options = NULL;
 	while (is_option(args[skip]))
 	{
 		if ((error_opt = is_opt_invalid(&args[skip][1], optstr)))

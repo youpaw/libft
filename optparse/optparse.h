@@ -13,5 +13,6 @@ typedef struct	s_parsed_opt
 }				t_parsed_opt;
 
 size_t	optparse(const char **args, const char *optstr, t_parsed_opt *result);
+void	print_usage(int fd, const char *bin, const char *usage);
 
 #endif //OPTPARSE_H
