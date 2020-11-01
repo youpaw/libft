@@ -135,4 +135,4 @@ ADD_LIBRARY(cc STATIC
 		string/strarr_print.c
 		optparse/optparse.c vector/vec_pop.c string/utf8_display_strlen.c optparse/print_usage.c)
 
-target_include_directories(cc PUBLIC avl char file graph hash_map list math memory num string vector sort optparse .)
+target_include_directories(cc PUBLIC avl char file graph hash_map list math memory num string vector sort optparse regex .)
