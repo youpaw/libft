@@ -22,7 +22,7 @@ static int		get_char_len(char buf[CHAR_BUFF_SIZE], int *escape_flag)
 	if (buf[0] == '\0')
 	{
 		read(STDIN_FILENO, buf, CHAR_BUFF_SIZE);
-		escape_flag = 0;
+		*escape_flag = 0;
 	}
 	if (buf[0] == '\33' && buf[1] == '\133')
 	{
@@ -31,7 +31,7 @@ static int		get_char_len(char buf[CHAR_BUFF_SIZE], int *escape_flag)
 	}
 	else
 	{
-		if (escape_flag)
+		if (*escape_flag)
 			len = 4;
 		else
 			len = utf8_sizeof_symbol(buf[0]);
