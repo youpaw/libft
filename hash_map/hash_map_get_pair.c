@@ -1,13 +1,21 @@
-//
-// Created by youpaw on 6/21/20.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   hash_map_get_pair.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hlorrine <hlorrine@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/12 22:58:44 by hlorrine          #+#    #+#             */
+/*   Updated: 2020/11/12 22:58:46 by hlorrine         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "cc_hash_map.h"
 
 t_hash_pair		*hash_map_get_pair(const t_hash_map *table, const void *key)
 {
-	t_list 		*item;
-	size_t 		index;
+	t_list		*item;
+	size_t		index;
 	t_hash_pair	pair;
 
 	if (!table || !key)

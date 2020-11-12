@@ -12,7 +12,7 @@
 
 #include "cc_lst.h"
 
-int lst_circle(t_list *list)
+int			lst_circle(t_list *list)
 {
 	t_list *head;
 

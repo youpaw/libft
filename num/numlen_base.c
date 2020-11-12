@@ -1,10 +1,18 @@
-//
-// Created by youpaw on 30.03.2020.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   numlen_base.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hlorrine <hlorrine@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/12 23:00:17 by hlorrine          #+#    #+#             */
+/*   Updated: 2020/11/12 23:00:19 by hlorrine         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <zconf.h>
 
-int numlen_base(ssize_t num, int base)
+int		numlen_base(ssize_t num, int base)
 {
 	int lng;
 

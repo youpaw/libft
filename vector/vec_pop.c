@@ -1,10 +1,18 @@
-//
-// Created by youpaw on 10/2/20.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   vec_pop.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hlorrine <hlorrine@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/12 23:02:36 by hlorrine          #+#    #+#             */
+/*   Updated: 2020/11/12 23:02:38 by hlorrine         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "cc_vec.h"
 
-int 				vec_pop(void *data, t_vec *vector)
+int		vec_pop(void *data, t_vec *vector)
 {
 	int error;
 

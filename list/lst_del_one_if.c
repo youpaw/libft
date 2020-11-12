@@ -1,13 +1,21 @@
-//
-// Created by Azzak Omega on 8/27/20.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   lst_del_one_if.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hlorrine <hlorrine@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/12 22:59:24 by hlorrine          #+#    #+#             */
+/*   Updated: 2020/11/12 22:59:26 by hlorrine         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "cc_lst.h"
-# include <stdlib.h>
+#include <stdlib.h>
 
-int		lst_del_one_if(t_list **alst, const void *content,
-						 int (*cmp)(const void *, const void *),
-						 void (*del)(void *))
+int		lst_del_one_if(t_list **alst, const void *content,\
+			int (*cmp)(const void *, const void *),\
+			void (*del)(void *))
 {
 	t_list *prev;
 	t_list *head;

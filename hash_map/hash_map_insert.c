@@ -1,11 +1,20 @@
-//
-// Created by youpaw on 6/21/20.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   hash_map_insert.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hlorrine <hlorrine@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/12 22:58:57 by hlorrine          #+#    #+#             */
+/*   Updated: 2020/11/12 22:58:59 by hlorrine         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "cc_hash_map.h"
 #include "cc_mem.h"
 
-static void		replace_item(t_list *item, t_hash_pair *pair, void (*del)(t_hash_pair *))
+static void		replace_item(t_list *item, t_hash_pair *pair,\
+				void (*del)(t_hash_pair *))
 {
 	if (!item)
 		return ;

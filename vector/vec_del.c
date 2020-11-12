@@ -12,7 +12,7 @@
 
 #include "cc_vec.h"
 
-int vec_del(t_vec **vector)
+int			vec_del(t_vec **vector)
 {
 	size_t	cnt;
 	t_vec	*tmp;

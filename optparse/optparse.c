@@ -1,10 +1,19 @@
-//
-// Created by Azzak Omega on 9/13/20.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   optparse.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hlorrine <hlorrine@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/12 23:00:30 by hlorrine          #+#    #+#             */
+/*   Updated: 2020/11/12 23:00:34 by hlorrine         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "cc_str.h"
 #include "optparse.h"
 
-static	size_t is_opt_invalid(const char *opt, const char *validopt)
+static	size_t		is_opt_invalid(const char *opt, const char *validopt)
 {
 	while (*opt)
 	{
@@ -14,22 +23,15 @@ static	size_t is_opt_invalid(const char *opt, const char *validopt)
 	}
 	return (0);
 }
-/*
-static size_t is_option(const char *opt)
-{
-	if (opt && opt[0] == '-' && opt[1] && opt[1] != '-')
-		return (1);
-	return (0);
-}
- */
-static size_t is_option(const char *opt)
+
+static size_t		is_option(const char *opt)
 {
 	if (opt && opt[0] == '-' && opt[1] && strcmp(opt, "--") != 0)
 		return (1);
 	return (0);
 }
 
-static	char	*get_options(const char **args, size_t len)
+static	char		*get_options(const char **args, size_t len)
 {
 	char		*result;
 	const char	*str;
@@ -49,10 +51,11 @@ static	char	*get_options(const char **args, size_t len)
 	return (result);
 }
 
-size_t	optparse(const char **args, const char *optstr, t_parsed_opt *result)
+size_t				optparse(const char **args,\
+		const char *optstr, t_parsed_opt *result)
 {
-	size_t 	skip;
-	size_t 	opt_count;
+	size_t	skip;
+	size_t	opt_count;
 	size_t	error_opt;
 
 	skip = 1;

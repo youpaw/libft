@@ -12,8 +12,8 @@
 
 #include "cc_lst.h"
 
-t_list		*lst_find(t_list *lst, const void *content,
-		  	int (*cmp)(const void *, const void *))
+t_list		*lst_find(t_list *lst, const void *content,\
+			int (*cmp)(const void *, const void *))
 {
 	t_list	*next;
 

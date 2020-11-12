@@ -1,16 +1,25 @@
-//
-// Created by youpaw on 6/21/20.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   hash_map_new.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hlorrine <hlorrine@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/12 22:59:08 by hlorrine          #+#    #+#             */
+/*   Updated: 2020/11/12 22:59:10 by hlorrine         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "cc_hash_map.h"
 #include "cc_mem.h"
 
-t_hash_map 	*hash_map_new(size_t n_buckets, \
-	size_t (*hasher)(const void *), \
+t_hash_map	*hash_map_new(size_t n_buckets, \
+	size_t (*hasher)(const void *),\
 	int (*cmp)(const void *, const void *), \
-	void 	(*del)(t_hash_pair *))
+	void (*del)(t_hash_pair *))
 {
-	t_hash_map *table;
-	size_t cnt;
+	t_hash_map	*table;
+	size_t		cnt;
 
 	if (!hasher || !cmp || !n_buckets)
 		return (NULL);

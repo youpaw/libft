@@ -1,11 +1,19 @@
-//
-// Created by youpaw on 17.03.2020.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   avl_del.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hlorrine <hlorrine@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/12 22:55:59 by hlorrine          #+#    #+#             */
+/*   Updated: 2020/11/12 22:56:02 by hlorrine         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <stdlib.h>
 #include "cc_avl.h"
 
-static void walk_nodes(t_avl_tree *node, void (*del)(void *))
+static void		walk_nodes(t_avl_tree *node, void (*del)(void *))
 {
 	if (!node)
 		return ;
@@ -17,7 +25,7 @@ static void walk_nodes(t_avl_tree *node, void (*del)(void *))
 	free(node);
 }
 
-void	avl_del(t_avl_obj **obj)
+void			avl_del(t_avl_obj **obj)
 {
 	if (!obj || !*obj)
 		return ;

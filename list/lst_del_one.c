@@ -12,7 +12,7 @@
 
 #include "cc_lst.h"
 
-int lst_del_one(t_list **alst, void (*del)(void*))
+int		lst_del_one(t_list **alst, void (*del)(void*))
 {
 	if (!alst)
 		return (LST_DNE);

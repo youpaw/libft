@@ -12,7 +12,7 @@
 
 #include "cc_num.h"
 
-ssize_t	putnbr(int n)
+ssize_t		putnbr(int n)
 {
 	return (fdputnbr(n, 1));
 }

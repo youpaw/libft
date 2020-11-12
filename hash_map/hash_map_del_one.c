@@ -1,12 +1,20 @@
-//
-// Created by youpaw on 6/21/20.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   hash_map_del_one.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hlorrine <hlorrine@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/12 22:58:34 by hlorrine          #+#    #+#             */
+/*   Updated: 2020/11/12 22:58:37 by hlorrine         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "cc_hash_map.h"
 
-int 			hash_map_del_one(t_hash_map *table, const void *key)
+int				hash_map_del_one(t_hash_map *table, const void *key)
 {
-	size_t 		index;
+	size_t		index;
 	t_hash_pair pair;
 
 	if (!table || !key)

@@ -1,13 +1,21 @@
-//
-// Created by Darth Butterwell on 8/2/20.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   vec_del_one.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hlorrine <hlorrine@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/12 23:02:24 by hlorrine          #+#    #+#             */
+/*   Updated: 2020/11/12 23:02:26 by hlorrine         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "cc_vec.h"
 #include "cc_mem.h"
 
-int vec_del_one(t_vec *vector, size_t index)
+int			vec_del_one(t_vec *vector, size_t index)
 {
-	void *data;
+	void	*data;
 
 	if (!vector)
 		return (VEC_DNE);

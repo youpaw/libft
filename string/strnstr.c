@@ -14,7 +14,7 @@
 #include "cc_mem.h"
 #include <stdlib.h>
 
-static void	init_table(const char *needle, int *table)
+static void		init_table(const char *needle, int *table)
 {
 	int	pos;
 	int	cnt;
@@ -38,7 +38,8 @@ static void	init_table(const char *needle, int *table)
 	}
 }
 
-static char	*findstr(const char *haystack, const char *needle, const int *table, size_t len)
+static char		*findstr(const char *haystack, const char *needle,\
+	const int *table, size_t len)
 {
 	int		ndcnt;
 	size_t	hscnt;
@@ -63,7 +64,7 @@ static char	*findstr(const char *haystack, const char *needle, const int *table,
 	return (NULL);
 }
 
-char	*strnstr(const char *haystack, const char *needle, size_t len)
+char			*strnstr(const char *haystack, const char *needle, size_t len)
 {
 	char	*res;
 	int		*table;

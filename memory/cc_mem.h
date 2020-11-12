@@ -1,6 +1,14 @@
-//
-// Created by youpaw on 05.05.2020.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cc_mem.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hlorrine <hlorrine@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/12 22:59:53 by hlorrine          #+#    #+#             */
+/*   Updated: 2020/11/12 22:59:55 by hlorrine         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef CC_MEM_H
 # define CC_MEM_H
@@ -28,4 +36,4 @@ int			memcmp(const void *s1, const void *s2, size_t n);
 void		memdel(void **ap);
 void		bzero(void *s, size_t n);
 
-#endif //CC_MEM_H
+#endif

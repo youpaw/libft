@@ -1,9 +1,18 @@
-//
-// Created by Azzak Omega on 8/26/20.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   hash_map_get_size.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hlorrine <hlorrine@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/12 22:58:48 by hlorrine          #+#    #+#             */
+/*   Updated: 2020/11/12 22:58:50 by hlorrine         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "cc_hash_map.h"
 
-size_t 			hash_map_get_size(const t_hash_map *map)
+size_t		hash_map_get_size(const t_hash_map *map)
 {
 	size_t	count;
 	size_t	i;
@@ -15,4 +24,3 @@ size_t 			hash_map_get_size(const t_hash_map *map)
 			count += lst_get_size(map->buckets[i++]);
 	return (count);
 }
-

@@ -1,15 +1,23 @@
-//
-// Created by youpaw on 02.06.2020.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   avl_del_one.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hlorrine <hlorrine@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/12 22:55:55 by hlorrine          #+#    #+#             */
+/*   Updated: 2020/11/12 22:55:58 by hlorrine         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <stdlib.h>
 #include "cc_avl.h"
 #include "cc_math.h"
 
-static t_avl_tree	*insert_node(t_avl_tree *new, t_avl_tree *node,\
+static t_avl_tree		*insert_node(t_avl_tree *new, t_avl_tree *node,\
 	int (*cmp)(const void *, const void *))
 {
-	int cmp_val;
+	int					cmp_val;
 
 	cmp_val = cmp(new->pair->key, node->pair->key);
 	if (cmp_val < 0)
@@ -17,7 +25,7 @@ static t_avl_tree	*insert_node(t_avl_tree *new, t_avl_tree *node,\
 	else if (cmp_val > 0)
 		node->right = insert_node(new, node->right, cmp);
 	node->height = (int)max(avl_get_height(node->left), \
-    avl_get_height(node->right)) + 1;
+		avl_get_height(node->right)) + 1;
 	return (avl_balance(node, cmp));
 }
 
@@ -33,7 +41,7 @@ static t_avl_tree		*merge_childs(t_avl_tree *node, \
 	return (insert_node(node->right, node->left, cmp));
 }
 
-static t_avl_tree 		*del_node(t_avl_tree *node, const void *key, \
+static t_avl_tree		*del_node(t_avl_tree *node, const void *key, \
 	int (*cmp)(const void *, const void *))
 {
 	int		cmp_val;
@@ -46,13 +54,13 @@ static t_avl_tree 		*del_node(t_avl_tree *node, const void *key, \
 	else
 		return (merge_childs(node, cmp));
 	node->height = (int)max(avl_get_height(node->left), \
-    avl_get_height(node->right)) + 1;
+		avl_get_height(node->right)) + 1;
 	return (avl_balance(node, cmp));
 }
 
-int					avl_del_one(t_avl_obj *obj, const void *key)
+int						avl_del_one(t_avl_obj *obj, const void *key)
 {
-	t_avl_tree *node;
+	t_avl_tree			*node;
 
 	if (!(node = avl_get(obj, key)))
 		return (AVL_DNE);

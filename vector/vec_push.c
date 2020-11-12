@@ -12,7 +12,7 @@
 
 #include "cc_vec.h"
 
-int vec_push(t_vec *vector, void *data)
+int		vec_push(t_vec *vector, void *data)
 {
 	return (vec_push_at(vector, data, vector->size));
 }

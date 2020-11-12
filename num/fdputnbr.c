@@ -13,7 +13,7 @@
 #include <monetary.h>
 #include "cc_char.h"
 
-static int	fdputunsnbr(unsigned int n, int fd)
+static int		fdputunsnbr(unsigned int n, int fd)
 {
 	static int cnt;
 
@@ -24,7 +24,7 @@ static int	fdputunsnbr(unsigned int n, int fd)
 	return (cnt);
 }
 
-ssize_t	fdputnbr(int n, int fd)
+ssize_t			fdputnbr(int n, int fd)
 {
 	unsigned int t;
 

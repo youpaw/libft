@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   avl_insert.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hlorrine <hlorrine@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/12 22:56:54 by hlorrine          #+#    #+#             */
+/*   Updated: 2020/11/12 22:56:56 by hlorrine         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "cc_avl.h"
 #include "cc_math.h"
 #include "cc_mem.h"
@@ -25,7 +37,7 @@ static t_avl_tree	*insert_pair(t_avl_obj *obj, t_avl_pair *pair, \
 	else
 		return (replace_node(obj, pair, node));
 	node->height = (int)max(avl_get_height(node->left), \
-    avl_get_height(node->right)) + 1;
+		avl_get_height(node->right)) + 1;
 	return (avl_balance(node, obj->cmp));
 }
 

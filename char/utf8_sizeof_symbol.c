@@ -1,16 +1,24 @@
-//
-// Created by Darth Butterwell on 9/5/20.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utf8_sizeof_symbol.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hlorrine <hlorrine@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/12 22:58:01 by hlorrine          #+#    #+#             */
+/*   Updated: 2020/11/12 22:58:05 by hlorrine         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int			utf8_sizeof_symbol(char ch)
+int		utf8_sizeof_symbol(char ch)
 {
 	if (ch >= 0)
 		return (1);
 	else if ((ch & -16) == -16)
-		return(4);
+		return (4);
 	else if ((ch & -32) == -32)
-		return(3);
+		return (3);
 	else if ((ch & -64) == -64)
-		return(2);
-	return 0;
+		return (2);
+	return (0);
 }

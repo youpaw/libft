@@ -12,7 +12,7 @@
 
 #include "cc_lst.h"
 
-int lst_del(t_list **alst, void (*del)(void *))
+int			lst_del(t_list **alst, void (*del)(void *))
 {
 	t_list *tmp;
 

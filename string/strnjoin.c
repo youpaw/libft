@@ -14,7 +14,7 @@
 
 char		*strnjoin(const char **arr)
 {
-	int 		n_str;
+	int			n_str;
 	int			index;
 	char		*str;
 	size_t		len;

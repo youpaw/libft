@@ -1,13 +1,21 @@
-//
-// Created by Darth Butterwell on 9/6/20.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   cc_sort.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hlorrine <hlorrine@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/11/12 23:00:56 by hlorrine          #+#    #+#             */
+/*   Updated: 2020/11/12 23:00:59 by hlorrine         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#ifndef CC_ARR2_H
-#define CC_ARR2_H
+#ifndef CC_SORT_H
+# define CC_SORT_H
 
-#include <stddef.h>
+# include <stddef.h>
 
-void			quick_sort(void **items, int left, int right,
-						   int (*cmp)(const void *l, const void *r));
+void		quick_sort(void **items, int left, int right,\
+	int (*cmp)(const void *l, const void *r));
 
-#endif //CC_ARR2_H
+#endif

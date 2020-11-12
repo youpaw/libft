@@ -37,7 +37,7 @@ static void			insert_file(t_avl_obj *files, int fd)
 	avl_insert(files, &pair);
 }
 
-static int		readline(t_avl_pair *file, char **line)
+static int			readline(t_avl_pair *file, char **line)
 {
 	char	buff[FILE_BUFF_SIZE + 1];
 	char	*rst;
@@ -66,10 +66,10 @@ static int		readline(t_avl_pair *file, char **line)
 	return (0);
 }
 
-int				get_next_line(const int fd, char **line)
+int					get_next_line(const int fd, char **line)
 {
-	static t_avl_obj 	*files = NULL;
-	t_avl_pair 			*file;
+	static t_avl_obj	*files = NULL;
+	t_avl_pair			*file;
 
 	if (fd < 0 || !line || read(fd, NULL, 0) < 0)
 		return (-1);
