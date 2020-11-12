@@ -27,7 +27,7 @@ static int		get_char_len(char buf[CHAR_BUFF_SIZE], int *escape_flag)
 	if (buf[0] == '\33' && buf[1] == '\133')
 	{
 		len = 2;
-		escape_flag = 1;
+		*escape_flag = 1;
 	}
 	else
 	{
