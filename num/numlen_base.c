@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <zconf.h>
+#include <unistd.h>
 
-int		numlen_base(ssize_t num, int base)
+int		numlen_base(size_t num, int base)
 {
 	int lng;
 
