@@ -12,7 +12,7 @@
 
 #include "cc_char.h"
 #include "cc_mem.h"
-#include "unistd.h"
+#include <unistd.h>
 #include "cc_str.h"
 
 static int		get_char_len(char buf[CHAR_BUFF_SIZE], int *escape_flag)
@@ -39,7 +39,7 @@ static int		get_char_len(char buf[CHAR_BUFF_SIZE], int *escape_flag)
 	return (len);
 }
 
-int				getch(void)
+int				sh_getch(void)
 {
 	static char	buf[CHAR_BUFF_SIZE];
 	static int	escape_flag;

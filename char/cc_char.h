@@ -41,7 +41,7 @@ int			putchar(int c);
 int			fdputchar(int c, int fd);
 int			tolower(int c);
 int			toupper(int c);
-int			getch(void);
+int			sh_getch(void);
 int			utf8_sizeof_symbol(char ch);
 
 #endif
