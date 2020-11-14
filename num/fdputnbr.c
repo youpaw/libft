@@ -24,7 +24,7 @@ static int		fdputunsnbr(unsigned int n, int fd)
 	return (cnt);
 }
 
-ssize_t			fdputnbr(int n, int fd)
+size_t			fdputnbr(int n, int fd)
 {
 	unsigned int t;
 

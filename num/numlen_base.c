@@ -12,14 +12,14 @@
 
 #include <unistd.h>
 
-int		numlen_base(size_t num, int base)
+int		numlen_base(size_t num, unsigned int base)
 {
 	int lng;
 
 	if (base < 2)
 		return (0);
 	lng = 1;
-	while (num >= base || num <= (-base))
+	while (num >= base)
 	{
 		num /= base;
 		lng++;

@@ -12,7 +12,7 @@
 
 #include "cc_num.h"
 
-int		numlen(ssize_t num)
+int		numlen(int num)
 {
 	return (numlen_base(num, 10));
 }

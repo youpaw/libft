@@ -15,7 +15,6 @@
 void		hash_map_iter(t_hash_map *table, void (*f)(void *content))
 {
 	t_list		*bucket;
-	t_hash_pair	*pair;
 	size_t		cnt;
 
 	cnt = 0;
