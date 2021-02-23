@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   fdputendl.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbutterw <dbutterw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/08 20:39:25 by dbutterw          #+#    #+#             */
-/*   Updated: 2020/01/06 14:39:22 by dbutterw         ###   ########.fr       */
+/*   Created: 2021/02/23 16:46:58 by dbutterw          #+#    #+#             */
+/*   Updated: 2021/02/23 16:46:58 by dbutterw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ void	ft_fdputendl(char const *s, int fd)
 {
 	if (!s && fd == -1)
 		return ;
-    ft_fdputs(s, fd);
-    ft_fdputchar('\n', fd);
+	ft_fdputs(s, fd);
+	ft_fdputchar('\n', fd);
 }

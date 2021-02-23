@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbutterw <dbutterw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/23 16:10:36 by dbutterw          #+#    #+#             */
-/*   Updated: 2021/02/23 16:10:36 by dbutterw         ###   ########.fr       */
+/*   Created: 2021/02/23 16:44:36 by dbutterw          #+#    #+#             */
+/*   Updated: 2021/02/23 16:44:36 by dbutterw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int			ft_vec_del(t_vec **vector)
 	tmp = *vector;
 	if (tmp->del)
 		while (cnt < tmp->size)
-            ft_vec_del_one(tmp, cnt++);
+			ft_vec_del_one(tmp, cnt++);
 	free(tmp->data);
 	free(tmp);
 	return (VEC_OK);

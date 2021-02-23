@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbutterw <dbutterw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/20 21:17:21 by dbutterw          #+#    #+#             */
-/*   Updated: 2019/11/25 20:06:09 by dbutterw         ###   ########.fr       */
+/*   Created: 2021/02/23 16:45:11 by dbutterw          #+#    #+#             */
+/*   Updated: 2021/02/23 16:45:11 by dbutterw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ char		*ft_strnew(size_t size)
 	if (!(size + 1))
 		return (NULL);
 	res = ft_xmalloc(size + 1);
-    ft_memset(res, 0, size + 1);
+	ft_memset(res, 0, size + 1);
 	return (res);
 }

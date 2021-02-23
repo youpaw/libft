@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cc_avl.h                                           :+:      :+:    :+:   */
+/*   ft_avl.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hlorrine <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dbutterw <dbutterw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/12 23:12:34 by hlorrine          #+#    #+#             */
-/*   Updated: 2020/11/12 23:12:36 by hlorrine         ###   ########.fr       */
+/*   Created: 2021/02/23 16:51:22 by dbutterw          #+#    #+#             */
+/*   Updated: 2021/02/23 16:53:07 by dbutterw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ typedef struct s_avl_pair	t_avl_pair;
 typedef struct s_avl_tree	t_avl_tree;
 typedef struct s_avl_obj	t_avl_obj;
 
-t_avl_obj					*ft_avl_new(int (*cmp)(const void *, const void *), \
+t_avl_obj					*ft_avl_new(int (*cmp)(const void *, const void *),\
 	void (*del)(void *));
 
 t_avl_tree					*ft_avl_balance(t_avl_tree *node, \
@@ -53,9 +53,12 @@ t_avl_tree					*ft_avl_get(t_avl_obj *obj, const void *key);
 t_avl_pair					*ft_avl_get_pair(t_avl_obj *obj, const void *key);
 void						*ft_avl_get_val(t_avl_obj *obj, const void *key);
 
-void						ft_avl_map_prefix(t_avl_obj *obj, void (*f)(void *));
-void						ft_avl_map_infix(t_avl_obj *obj, void (*f)(void *));
-void						ft_avl_map_postfix(t_avl_obj *obj, void (*f)(void *));
+void						ft_avl_map_prefix(t_avl_obj *obj, \
+	void (*f)(void *));
+void						ft_avl_map_infix(t_avl_obj *obj, \
+	void (*f)(void *));
+void						ft_avl_map_postfix(t_avl_obj *obj, \
+	void (*f)(void *));
 
 int							ft_avl_del_one(t_avl_obj *obj, const void *key);
 void						ft_avl_del(t_avl_obj **obj);

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   fdputnbr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbutterw <dbutterw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/08 20:42:30 by dbutterw          #+#    #+#             */
-/*   Updated: 2020/01/06 14:39:22 by dbutterw         ###   ########.fr       */
+/*   Created: 2021/02/23 16:47:26 by dbutterw          #+#    #+#             */
+/*   Updated: 2021/02/23 16:47:26 by dbutterw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int		fdputunsnbr(unsigned int n, int fd)
 	cnt++;
 	if (n > 9)
 		fdputunsnbr(n / 10, fd);
-    ft_fdputchar(n % 10 + '0', fd);
+	ft_fdputchar(n % 10 + '0', fd);
 	return (cnt);
 }
 
@@ -32,7 +32,7 @@ size_t			ft_fdputnbr(int n, int fd)
 		return (-1);
 	if (n < 0)
 	{
-        ft_fdputchar('-', fd);
+		ft_fdputchar('-', fd);
 		t = (unsigned int)(~n + 1);
 	}
 	else

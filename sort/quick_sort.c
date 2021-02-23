@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   quick_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hlorrine <hlorrine@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dbutterw <dbutterw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/12 23:01:01 by hlorrine          #+#    #+#             */
-/*   Updated: 2020/11/12 23:01:04 by hlorrine         ###   ########.fr       */
+/*   Created: 2021/02/23 16:47:02 by dbutterw          #+#    #+#             */
+/*   Updated: 2021/02/23 16:47:02 by dbutterw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void		ft_quick_sort(void **items, int left, int right, \
 			swap(items, i++, j--);
 	}
 	if (left < j)
-        ft_quick_sort(items, left, j, cmp);
+		ft_quick_sort(items, left, j, cmp);
 	if (i < right)
-        ft_quick_sort(items, i, right, cmp);
+		ft_quick_sort(items, i, right, cmp);
 }

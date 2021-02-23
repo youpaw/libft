@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbutterw <dbutterw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/23 16:11:38 by dbutterw          #+#    #+#             */
-/*   Updated: 2021/02/23 16:11:38 by dbutterw         ###   ########.fr       */
+/*   Created: 2021/02/23 16:44:45 by dbutterw          #+#    #+#             */
+/*   Updated: 2021/02/23 16:44:45 by dbutterw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ size_t		ft_utf8_display_strlen(char *str)
 	while (str[i])
 	{
 		i += ft_utf8_sizeof_symbol(str[i]);
-		if (ft_strncmp(&str[i], "\xcc\x86", 2) && ft_strncmp(&str[i], "\xcc\x88", 2))
+		if (ft_strncmp(&str[i], "\xcc\x86", 2) && \
+			ft_strncmp(&str[i], "\xcc\x88", 2))
 			len++;
 	}
 	return (len);

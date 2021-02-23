@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbutterw <dbutterw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/23 16:10:15 by dbutterw          #+#    #+#             */
-/*   Updated: 2021/02/23 16:10:15 by dbutterw         ###   ########.fr       */
+/*   Created: 2021/02/23 16:44:25 by dbutterw          #+#    #+#             */
+/*   Updated: 2021/02/23 16:44:25 by dbutterw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ t_vec	*ft_vec_new(size_t capacity, size_t datasize, void (*del)(void *))
 	vector->datasize = datasize;
 	vector->size = 0;
 	vector->del = del;
-    ft_bzero(vector->data, datasize);
+	ft_bzero(vector->data, datasize);
 	return (vector);
 }

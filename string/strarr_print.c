@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   strarr_print.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hlorrine <hlorrine@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dbutterw <dbutterw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/12 23:01:25 by hlorrine          #+#    #+#             */
-/*   Updated: 2020/11/12 23:01:27 by hlorrine         ###   ########.fr       */
+/*   Created: 2021/02/23 16:46:40 by dbutterw          #+#    #+#             */
+/*   Updated: 2021/02/23 16:46:40 by dbutterw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_str.h"
 
-void			ft_strarr_print(const char **args, const char *st, const char *en)
+void	ft_strarr_print(const char **args, const char *st, const char *en)
 {
 	const char *start = "";
 	const char *end = "\n";
@@ -25,9 +25,9 @@ void			ft_strarr_print(const char **args, const char *st, const char *en)
 			end = en;
 		while (*args)
 		{
-            ft_puts(start);
-            ft_puts(*args++);
-            ft_puts(end);
+			ft_puts(start);
+			ft_puts(*args++);
+			ft_puts(end);
 		}
 	}
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lst_del_one_if.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hlorrine <hlorrine@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dbutterw <dbutterw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/12 22:59:24 by hlorrine          #+#    #+#             */
-/*   Updated: 2020/11/12 22:59:26 by hlorrine         ###   ########.fr       */
+/*   Created: 2021/02/23 16:48:06 by dbutterw          #+#    #+#             */
+/*   Updated: 2021/02/23 16:48:06 by dbutterw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		ft_lst_del_one_if(t_list **alst, const void *content,\
 			head = head->next;
 		else
 			prev->next = (*alst)->next;
-        ft_lst_del_one(alst, del);
+		ft_lst_del_one(alst, del);
 		*alst = head;
 		return (0);
 	}

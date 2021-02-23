@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   graph_insert.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: azomega <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: dbutterw <dbutterw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/08/19 19:15:16 by azomega           #+#    #+#             */
-/*   Updated: 2020/08/19 19:15:19 by azomega          ###   ########.fr       */
+/*   Created: 2021/02/23 16:48:42 by dbutterw          #+#    #+#             */
+/*   Updated: 2021/02/23 16:48:42 by dbutterw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ void			ft_graph_insert(t_graph *graph, const char *word)
 			const void *))ft_graph_cmp);
 	if (!found)
 	{
-        ft_lst_add_sort(&(graph->childs), ft_lst_new(&new, sizeof(new)),
+		ft_lst_add_sort(&(graph->childs), ft_lst_new(&new, sizeof(new)),
 					(int (*)(const void *, const void *))ft_graph_cmp);
 		found = ft_lst_find(graph->childs, &new,
 				(int (*)(const void *, const void *))ft_graph_cmp);
 	}
 	if (!(*word))
 		return ;
-    ft_graph_insert(found->content, ++word);
+	ft_graph_insert(found->content, ++word);
 }

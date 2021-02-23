@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbutterw <dbutterw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/23 16:10:09 by dbutterw          #+#    #+#             */
-/*   Updated: 2021/02/23 16:10:09 by dbutterw         ###   ########.fr       */
+/*   Created: 2021/02/23 16:44:22 by dbutterw          #+#    #+#             */
+/*   Updated: 2021/02/23 16:44:22 by dbutterw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@ int		ft_vec_pop(void *data, t_vec *vector)
 	int error;
 
 	if (!(error = ft_vec_get_last(data, vector)))
-        ft_vec_rm_last(vector);
+		ft_vec_rm_last(vector);
 	return (error);
 }

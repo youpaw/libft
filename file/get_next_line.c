@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbutterw <dbutterw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/10 20:25:30 by dbutterw          #+#    #+#             */
-/*   Updated: 2020/01/06 14:39:22 by dbutterw         ###   ########.fr       */
+/*   Created: 2021/02/23 16:49:01 by dbutterw          #+#    #+#             */
+/*   Updated: 2021/02/23 16:49:01 by dbutterw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ static void			insert_file(t_avl_obj *files, int fd)
 	t_avl_pair pair;
 
 	pair.key = ft_xmalloc(sizeof(int));
-    ft_memmove(pair.key, &fd, sizeof(int));
+	ft_memmove(pair.key, &fd, sizeof(int));
 	pair.value = ft_strnew(0);
-    ft_avl_insert(files, &pair);
+	ft_avl_insert(files, &pair);
 }
 
 static int			readline(t_avl_pair *file, char **line)

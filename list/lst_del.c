@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   lst_del.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbutterw <dbutterw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/08 22:09:38 by dbutterw          #+#    #+#             */
-/*   Updated: 2020/01/06 14:39:22 by dbutterw         ###   ########.fr       */
+/*   Created: 2021/02/23 16:48:13 by dbutterw          #+#    #+#             */
+/*   Updated: 2021/02/23 16:48:13 by dbutterw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int			ft_lst_del(t_list **alst, void (*del)(void *))
 	while (*alst)
 	{
 		tmp = (*alst)->next;
-        ft_lst_del_one(alst, del);
+		ft_lst_del_one(alst, del);
 		*alst = tmp;
 	}
 	return (LST_OK);

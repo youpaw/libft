@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   strarr_del.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hlorrine <hlorrine@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dbutterw <dbutterw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/12 23:01:15 by hlorrine          #+#    #+#             */
-/*   Updated: 2020/11/12 23:01:18 by hlorrine         ###   ########.fr       */
+/*   Created: 2021/02/23 16:46:44 by dbutterw          #+#    #+#             */
+/*   Updated: 2021/02/23 16:46:44 by dbutterw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void    ft_strarr_del(char **arr)
+void	ft_strarr_del(char **arr)
 {
 	if (arr)
 		while (*arr)
