@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_lst.h"
+#include "ft_lst.h"
 
-t_list		*lst_find(t_list *lst, const void *content,\
+t_list		*ft_lst_find(t_list *lst, const void *content,\
 			int (*cmp)(const void *, const void *))
 {
 	t_list	*next;

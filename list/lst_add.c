@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_lst.h"
+#include "ft_lst.h"
 
-int		lst_add(t_list **alst, t_list *new)
+int		ft_lst_add(t_list **alst, t_list *new)
 {
 	if (!alst || !new)
 		return (LST_DNE);

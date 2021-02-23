@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_str.h"
+#include "ft_str.h"
 
-char			**strsplit(char const *s)
+char			**ft_strsplit(char const *s)
 {
 	static char charset[] = " \t\n";
 
-	return (strsplitcharset(s, charset));
+	return (ft_strsplitcharset(s, charset));
 }

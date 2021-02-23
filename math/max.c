@@ -12,7 +12,7 @@
 
 #include <stdint.h>
 
-int64_t		max(int64_t x, int64_t y)
+int64_t		ft_max(int64_t x, int64_t y)
 {
 	if (x < y)
 		return (y);

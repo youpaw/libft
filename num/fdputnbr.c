@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <monetary.h>
-#include "cc_char.h"
+#include "ft_char.h"
 
 static int		fdputunsnbr(unsigned int n, int fd)
 {
@@ -20,11 +20,11 @@ static int		fdputunsnbr(unsigned int n, int fd)
 	cnt++;
 	if (n > 9)
 		fdputunsnbr(n / 10, fd);
-	fdputchar(n % 10 + '0', fd);
+    ft_fdputchar(n % 10 + '0', fd);
 	return (cnt);
 }
 
-size_t			fdputnbr(int n, int fd)
+size_t			ft_fdputnbr(int n, int fd)
 {
 	unsigned int t;
 
@@ -32,7 +32,7 @@ size_t			fdputnbr(int n, int fd)
 		return (-1);
 	if (n < 0)
 	{
-		fdputchar('-', fd);
+        ft_fdputchar('-', fd);
 		t = (unsigned int)(~n + 1);
 	}
 	else

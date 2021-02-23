@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_lst.h"
+#include "ft_lst.h"
 
-int			lst_circle(t_list *list)
+int			ft_lst_circle(t_list *list)
 {
 	t_list *head;
 

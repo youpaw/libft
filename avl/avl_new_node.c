@@ -10,16 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_avl.h"
-#include "cc_mem.h"
+#include "ft_avl.h"
+#include "ft_mem.h"
 
-t_avl_tree				*avl_new_node(t_avl_pair *pair)
+t_avl_tree				*ft_avl_new_node(t_avl_pair *pair)
 {
 	t_avl_tree *node;
 
-	node = (t_avl_tree*)xmalloc(sizeof(t_avl_tree));
-	node->pair = (t_avl_pair*)xmalloc(sizeof(t_avl_pair));
-	memmove(node->pair, pair, sizeof(t_avl_pair));
+	node = (t_avl_tree*)ft_xmalloc(sizeof(t_avl_tree));
+	node->pair = (t_avl_pair*)ft_xmalloc(sizeof(t_avl_pair));
+    ft_memmove(node->pair, pair, sizeof(t_avl_pair));
 	node->left = NULL;
 	node->right = NULL;
 	node->height = 1;

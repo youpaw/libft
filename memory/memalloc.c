@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_mem.h"
+#include "ft_mem.h"
 
-void	*memalloc(size_t size)
+void	*ft_memalloc(size_t size)
 {
 	void	*ptr;
 
-	ptr = xmalloc(size);
-	bzero(ptr, size);
+	ptr = ft_xmalloc(size);
+    ft_bzero(ptr, size);
 	return (ptr);
 }

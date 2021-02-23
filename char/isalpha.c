@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_char.h"
+#include "ft_char.h"
 
-int		isalpha(int c)
+int		ft_isalpha(int c)
 {
-	return (isupper(c) || islower(c));
+	return (ft_isupper(c) || ft_islower(c));
 }

@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_str.h"
+#include "ft_str.h"
 
-void			strarr_print(const char **args, const char *st, const char *en)
+void			ft_strarr_print(const char **args, const char *st, const char *en)
 {
 	const char *start = "";
 	const char *end = "\n";
@@ -25,9 +25,9 @@ void			strarr_print(const char **args, const char *st, const char *en)
 			end = en;
 		while (*args)
 		{
-			puts(start);
-			puts(*args++);
-			puts(end);
+            ft_puts(start);
+            ft_puts(*args++);
+            ft_puts(end);
 		}
 	}
 }

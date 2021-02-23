@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_mem.h"
+#include "ft_mem.h"
 
-void	strdel(char **as)
+void	ft_strdel(char **as)
 {
-	memdel((void**)as);
+    ft_memdel((void**)as);
 }

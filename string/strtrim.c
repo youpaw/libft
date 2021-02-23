@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_str.h"
-#include "cc_char.h"
+#include "ft_str.h"
+#include "ft_char.h"
 
-char	*strtrim(char const *s)
+char	*ft_strtrim(char const *s)
 {
 	size_t	len;
 	size_t	i;
@@ -21,10 +21,10 @@ char	*strtrim(char const *s)
 	if (!s)
 		return (NULL);
 	i = 0;
-	len = strlen(s);
-	while (i < len && isspace(s[i]))
+	len = ft_strlen(s);
+	while (i < len && ft_isspace(s[i]))
 		i++;
-	while (len > i && isspace(s[len - 1]))
+	while (len > i && ft_isspace(s[len - 1]))
 		len--;
-	return (strsub(s, i, len - i));
+	return (ft_strsub(s, i, len - i));
 }

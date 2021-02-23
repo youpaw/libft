@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   vec_pop.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hlorrine <hlorrine@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dbutterw <dbutterw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/12 23:02:36 by hlorrine          #+#    #+#             */
-/*   Updated: 2020/11/12 23:02:38 by hlorrine         ###   ########.fr       */
+/*   Created: 2021/02/23 16:10:09 by dbutterw          #+#    #+#             */
+/*   Updated: 2021/02/23 16:10:09 by dbutterw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_vec.h"
+#include "ft_vec.h"
 
-int		vec_pop(void *data, t_vec *vector)
+int		ft_vec_pop(void *data, t_vec *vector)
 {
 	int error;
 
-	if (!(error = vec_get_last(data, vector)))
-		vec_rm_last(vector);
+	if (!(error = ft_vec_get_last(data, vector)))
+        ft_vec_rm_last(vector);
 	return (error);
 }

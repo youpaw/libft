@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_char.h"
-#include "cc_mem.h"
+#include "ft_char.h"
+#include "ft_mem.h"
 #include <unistd.h>
-#include "cc_str.h"
+#include "ft_str.h"
 
 static int		get_char_len(char buf[CHAR_BUFF_SIZE], int *escape_flag)
 {
@@ -34,23 +34,23 @@ static int		get_char_len(char buf[CHAR_BUFF_SIZE], int *escape_flag)
 		if (*escape_flag)
 			len = 4;
 		else
-			len = utf8_sizeof_symbol(buf[0]);
+			len = ft_utf8_sizeof_symbol(buf[0]);
 	}
 	return (len);
 }
 
-int				sh_getch(void)
+int				ft_getch(void)
 {
 	static char	buf[CHAR_BUFF_SIZE];
 	static int	escape_flag;
 	char		ch[5];
 	int			len;
 
-	bzero(ch, 5);
+    ft_bzero(ch, 5);
 	len = get_char_len(buf, &escape_flag);
-	strncpy(ch, buf, len);
-	memmove(buf, &buf[len], CHAR_BUFF_SIZE - len);
-	bzero(&buf[CHAR_BUFF_SIZE - len], len);
-	memcpy(&len, ch, sizeof(int));
+    ft_strncpy(ch, buf, len);
+    ft_memmove(buf, &buf[len], CHAR_BUFF_SIZE - len);
+    ft_bzero(&buf[CHAR_BUFF_SIZE - len], len);
+    ft_memcpy(&len, ch, sizeof(int));
 	return (len);
 }

@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_avl.h"
+#include "ft_avl.h"
 
-void			*avl_get_val(t_avl_obj *obj, const void *key)
+void			*ft_avl_get_val(t_avl_obj *obj, const void *key)
 {
 	t_avl_pair	*pair;
 
-	if ((pair = avl_get_pair(obj, key)))
+	if ((pair = ft_avl_get_pair(obj, key)))
 		return (pair->value);
 	return (NULL);
 }

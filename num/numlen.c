@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_num.h"
+#include "ft_num.h"
 
-int		numlen(int num)
+int		ft_numlen(int num)
 {
-	return (numlen_base(num, 10));
+	return (ft_numlen_base(num, 10));
 }

@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_str.h"
+#include "ft_str.h"
 
-char	*strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
 	size_t	sum;
@@ -21,14 +21,14 @@ char	*strjoin(char const *s1, char const *s2)
 
 	if (!s1 || !s2)
 		return (NULL);
-	len1 = strlen(s1);
-	len2 = strlen(s2);
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
 	sum = len1 + len2;
 	if (sum < len1 || sum < len2)
 		return (NULL);
-	if (!(str = strnew(sum)))
+	if (!(str = ft_strnew(sum)))
 		return (NULL);
-	strcpy(str, s1);
-	strcat(str, s2);
+    ft_strcpy(str, s1);
+    ft_strcat(str, s2);
 	return (str);
 }

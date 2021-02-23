@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_str.h"
-#include "cc_mem.h"
+#include "ft_str.h"
+#include "ft_mem.h"
 #include <stdlib.h>
 
 static void		init_table(const char *needle, int *table)
@@ -64,17 +64,17 @@ static char		*findstr(const char *haystack, const char *needle,\
 	return (NULL);
 }
 
-char			*strnstr(const char *haystack, const char *needle, size_t len)
+char			*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	char	*res;
 	int		*table;
 	size_t	nlen;
 
-	if (!(nlen = strlen(needle)))
+	if (!(nlen = ft_strlen(needle)))
 		return ((char *)haystack);
-	if (strlen(haystack) < nlen || len < nlen)
+	if (ft_strlen(haystack) < nlen || len < nlen)
 		return (NULL);
-	table = (int*)xmalloc(sizeof(int) * nlen);
+	table = (int*)ft_xmalloc(sizeof(int) * nlen);
 	init_table(needle, table);
 	res = findstr(haystack, needle, table, len);
 	free(table);

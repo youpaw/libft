@@ -12,7 +12,7 @@
 
 #include <stddef.h>
 
-size_t			strarr_getsize(const char **m)
+size_t			ft_strarr_getsize(const char **m)
 {
 	size_t	len;
 

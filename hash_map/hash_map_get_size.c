@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_hash_map.h"
+#include "ft_hash_map.h"
 
-size_t		hash_map_get_size(const t_hash_map *map)
+size_t		ft_hash_map_get_size(const t_hash_map *map)
 {
 	size_t	count;
 	size_t	i;
@@ -21,6 +21,6 @@ size_t		hash_map_get_size(const t_hash_map *map)
 	count = 0;
 	if (map)
 		while (i < map->buckets_size)
-			count += lst_get_size(map->buckets[i++]);
+			count += ft_lst_get_size(map->buckets[i++]);
 	return (count);
 }

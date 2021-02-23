@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_lst.h"
+#include "ft_lst.h"
 
-int	lst_del_circle(t_list **list, void (*del)(void*))
+int	ft_lst_del_circle(t_list **list, void (*del)(void*))
 {
 	t_list *check;
 	t_list *head;
@@ -28,8 +28,8 @@ int	lst_del_circle(t_list **list, void (*del)(void*))
 	{
 		tmp = head;
 		head = head->next;
-		lst_del_one(&tmp, del);
+        ft_lst_del_one(&tmp, del);
 	}
-	lst_del_one(&check, del);
+    ft_lst_del_one(&check, del);
 	return (LST_OK);
 }

@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_str.h"
+#include "ft_str.h"
 
-void	putendl(char const *s)
+void	ft_putendl(char const *s)
 {
-	fdputendl(s, 1);
+    ft_fdputendl(s, 1);
 }

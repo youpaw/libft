@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_lst.h"
+#include "ft_lst.h"
 
-int			lst_del(t_list **alst, void (*del)(void *))
+int			ft_lst_del(t_list **alst, void (*del)(void *))
 {
 	t_list *tmp;
 
@@ -21,7 +21,7 @@ int			lst_del(t_list **alst, void (*del)(void *))
 	while (*alst)
 	{
 		tmp = (*alst)->next;
-		lst_del_one(alst, del);
+        ft_lst_del_one(alst, del);
 		*alst = tmp;
 	}
 	return (LST_OK);

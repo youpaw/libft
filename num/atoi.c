@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_char.h"
+#include "ft_char.h"
 
-int		atoi(const char *str)
+int		ft_atoi(const char *str)
 {
 	int					sig;
 	long long			res;
@@ -20,13 +20,13 @@ int		atoi(const char *str)
 
 	sig = 1;
 	res = 0;
-	while (isspace(*str))
+	while (ft_isspace(*str))
 		str++;
 	if (*str == '-')
 		sig = -1;
 	if (*str == '-' || *str == '+')
 		str++;
-	while (*str && isdigit(*str))
+	while (*str && ft_isdigit(*str))
 	{
 		tmp = res;
 		res = res * 10 + (*str - '0');

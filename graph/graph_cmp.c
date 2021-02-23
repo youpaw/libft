@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_graph.h"
+#include "ft_graph.h"
 
-int		graph_cmp(const t_graph *lhs, const t_graph *rhs)
+int		ft_graph_cmp(const t_graph *lhs, const t_graph *rhs)
 {
 	return (lhs->symbol - rhs->symbol);
 }

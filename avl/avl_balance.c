@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_avl.h"
-#include "cc_math.h"
+#include "ft_avl.h"
+#include "ft_math.h"
 
 static t_avl_tree		*right_rotate(t_avl_tree *y)
 {
@@ -22,10 +22,10 @@ static t_avl_tree		*right_rotate(t_avl_tree *y)
 	t = x->right;
 	x->right = y;
 	y->left = t;
-	y->height = (int)max(avl_get_height(x->right), \
-	avl_get_height(x->left)) + 1;
-	y->height = (int)max(avl_get_height(y->right), \
-	avl_get_height(y->left)) + 1;
+	y->height = (int)ft_max(ft_avl_get_height(x->right), \
+	ft_avl_get_height(x->left)) + 1;
+	y->height = (int)ft_max(ft_avl_get_height(y->right), \
+	ft_avl_get_height(y->left)) + 1;
 	return (x);
 }
 
@@ -38,21 +38,21 @@ static t_avl_tree		*left_rotate(t_avl_tree *x)
 	t = y->left;
 	y->left = x;
 	x->right = t;
-	y->height = (int)max(avl_get_height(x->right), \
-	avl_get_height(x->left)) + 1;
-	y->height = (int)max(avl_get_height(y->right), \
-	avl_get_height(y->left)) + 1;
+	y->height = (int)ft_max(ft_avl_get_height(x->right), \
+	ft_avl_get_height(x->left)) + 1;
+	y->height = (int)ft_max(ft_avl_get_height(y->right), \
+	ft_avl_get_height(y->left)) + 1;
 	return (y);
 }
 
-t_avl_tree				*avl_balance(t_avl_tree *node, \
+t_avl_tree				*ft_avl_balance(t_avl_tree *node, \
 int (*cmp)(const void *, const void *))
 {
 	int					balance;
 
 	if (!node)
 		return (node);
-	balance = avl_get_height(node->left) - avl_get_height(node->right);
+	balance = ft_avl_get_height(node->left) - ft_avl_get_height(node->right);
 	if (balance > 1 && cmp(node->left->pair->key, node->pair->key) < 0)
 		return (right_rotate(node));
 	if (balance < -1 && cmp(node->right->pair->key, node->pair->key) > 0)

@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_str.h"
+#include "ft_str.h"
 
-char	*strcat(char *s1, const char *s2)
+char	*ft_strcat(char *s1, const char *s2)
 {
 	size_t i;
 
-	i = strlen(s1);
+	i = ft_strlen(s1);
 	while (*s2)
 	{
 		s1[i] = *s2;

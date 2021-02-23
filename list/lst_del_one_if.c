@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_lst.h"
+#include "ft_lst.h"
 #include <stdlib.h>
 
-int		lst_del_one_if(t_list **alst, const void *content,\
+int		ft_lst_del_one_if(t_list **alst, const void *content,\
 			int (*cmp)(const void *, const void *),\
 			void (*del)(void *))
 {
@@ -35,7 +35,7 @@ int		lst_del_one_if(t_list **alst, const void *content,\
 			head = head->next;
 		else
 			prev->next = (*alst)->next;
-		lst_del_one(alst, del);
+        ft_lst_del_one(alst, del);
 		*alst = head;
 		return (0);
 	}

@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_num.h"
+#include "ft_num.h"
 
-int		putnbr(int n)
+int		ft_putnbr(int n)
 {
-	return (fdputnbr(n, 1));
+	return (ft_fdputnbr(n, 1));
 }

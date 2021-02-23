@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_str.h"
+#include "ft_str.h"
 
-char		*strstr(const char *haystack, const char *needle)
+char		*ft_strstr(const char *haystack, const char *needle)
 {
-	return (strnstr(haystack, needle, strlen(haystack)));
+	return (ft_strnstr(haystack, needle, ft_strlen(haystack)));
 }

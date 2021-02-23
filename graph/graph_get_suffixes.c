@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_graph.h"
-#include "cc_mem.h"
+#include "ft_graph.h"
+#include "ft_mem.h"
 
 static size_t	graph_get_size(const t_graph *graph)
 {
@@ -34,7 +34,7 @@ static char		**alloc_arr(size_t size)
 {
 	char	**ret;
 
-	ret = (char	**)xmalloc(sizeof(char *) * (size + 1));
+	ret = (char	**)ft_xmalloc(sizeof(char *) * (size + 1));
 	ret[size] = NULL;
 	return (ret);
 }
@@ -44,7 +44,7 @@ static char		**mv_arr(char **dest, t_graph *graph)
 	char	**suf;
 	char	**head;
 
-	suf = graph_get_suffixes(graph);
+	suf = ft_graph_get_suffixes(graph);
 	head = suf;
 	while (*suf)
 		*dest++ = *suf++;
@@ -52,7 +52,7 @@ static char		**mv_arr(char **dest, t_graph *graph)
 	return (dest);
 }
 
-char			**graph_get_suffixes(const t_graph *graph)
+char			**ft_graph_get_suffixes(const t_graph *graph)
 {
 	char	**head;
 	char	**ret;
@@ -62,7 +62,7 @@ char			**graph_get_suffixes(const t_graph *graph)
 	if (graph->symbol == '\0' && graph->index > 0)
 	{
 		ret = alloc_arr(1);
-		ret[0] = (char *)xmalloc(sizeof(char) * graph->index);
+		ret[0] = (char *)ft_xmalloc(sizeof(char) * graph->index);
 		ret[0][graph->index - 1] = '\0';
 		return (ret);
 	}

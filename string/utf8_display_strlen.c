@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   utf8_display_strlen.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hlorrine <hlorrine@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dbutterw <dbutterw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/12 23:02:14 by hlorrine          #+#    #+#             */
-/*   Updated: 2020/11/12 23:02:18 by hlorrine         ###   ########.fr       */
+/*   Created: 2021/02/23 16:11:38 by dbutterw          #+#    #+#             */
+/*   Updated: 2021/02/23 16:11:38 by dbutterw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_char.h"
+#include "ft_char.h"
 #include <unistd.h>
-#include "cc_str.h"
+#include "ft_str.h"
 
-size_t		utf8_display_strlen(char *str)
+size_t		ft_utf8_display_strlen(char *str)
 {
 	size_t		len;
 	size_t		i;
@@ -23,8 +23,8 @@ size_t		utf8_display_strlen(char *str)
 	i = 0;
 	while (str[i])
 	{
-		i += utf8_sizeof_symbol(str[i]);
-		if (strncmp(&str[i], "\xcc\x86", 2) && strncmp(&str[i], "\xcc\x88", 2))
+		i += ft_utf8_sizeof_symbol(str[i]);
+		if (ft_strncmp(&str[i], "\xcc\x86", 2) && ft_strncmp(&str[i], "\xcc\x88", 2))
 			len++;
 	}
 	return (len);

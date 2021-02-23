@@ -12,7 +12,7 @@
 
 #include <unistd.h>
 
-int		numlen_base(size_t num, unsigned int base)
+int		ft_numlen_base(size_t num, unsigned int base)
 {
 	int lng;
 

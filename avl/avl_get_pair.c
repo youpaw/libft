@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_avl.h"
+#include "ft_avl.h"
 
-t_avl_pair	*avl_get_pair(t_avl_obj *obj, const void *key)
+t_avl_pair	*ft_avl_get_pair(t_avl_obj *obj, const void *key)
 {
 	t_avl_tree *node;
 
-	if ((node = avl_get(obj, key)))
+	if ((node = ft_avl_get(obj, key)))
 		return (node->pair);
 	return (NULL);
 }

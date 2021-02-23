@@ -10,14 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_graph.h"
-#include "cc_lst.h"
+#include "ft_graph.h"
+#include "ft_lst.h"
 
-void	graph_del(t_graph *graph)
+void	ft_graph_del(t_graph *graph)
 {
 	if (graph)
 	{
-		lst_del(&(graph->childs), (void (*)(void *))graph_del);
+        ft_lst_del(&(graph->childs), (void (*)(void *))ft_graph_del);
 		graph->childs = NULL;
 	}
 }

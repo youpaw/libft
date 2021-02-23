@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_str.h"
+#include "ft_str.h"
 
-char		*strnjoin(const char **arr)
+char		*ft_strnjoin(const char **arr)
 {
 	int			n_str;
 	int			index;
@@ -24,10 +24,10 @@ char		*strnjoin(const char **arr)
 	n_str = 0;
 	len = 0;
 	while (arr[n_str])
-		len += strlen(arr[n_str++]);
-	str = strnew(len);
+		len += ft_strlen(arr[n_str++]);
+	str = ft_strnew(len);
 	index = 0;
 	while (index < n_str)
-		str = strcat(str, arr[index++]);
+		str = ft_strcat(str, arr[index++]);
 	return (str);
 }

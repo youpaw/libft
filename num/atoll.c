@@ -10,23 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_char.h"
+#include "ft_char.h"
 #include <limits.h>
 
-long long	atoll(const char *str)
+long long	ft_atoll(const char *str)
 {
 	int			sig;
 	long long	res;
 
 	sig = 1;
 	res = 0;
-	while (isspace(*str))
+	while (ft_isspace(*str))
 		str++;
 	if (*str == '-')
 		sig = -1;
 	if (*str == '-' || *str == '+')
 		str++;
-	while (*str && isdigit(*str))
+	while (*str && ft_isdigit(*str))
 	{
 		if (sig > 0 && res > (LONG_MAX - (*str - '0')) / 10)
 			return (LONG_MAX);

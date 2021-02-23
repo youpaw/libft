@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_hash_map.h"
+#include "ft_hash_map.h"
 
-void		hash_map_iter(t_hash_map *table, void (*f)(void *content))
+void		ft_hash_map_iter(t_hash_map *table, void (*f)(void *content))
 {
 	t_list		*bucket;
 	size_t		cnt;

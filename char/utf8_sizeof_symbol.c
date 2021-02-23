@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int		utf8_sizeof_symbol(char ch)
+int		ft_utf8_sizeof_symbol(char ch)
 {
 	if (ch >= 0)
 		return (1);

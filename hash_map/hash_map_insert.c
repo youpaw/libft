@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_hash_map.h"
-#include "cc_mem.h"
+#include "ft_hash_map.h"
+#include "ft_mem.h"
 
 static void		replace_item(t_list *item, t_hash_pair *pair,\
 				void (*del)(t_hash_pair *))
@@ -20,7 +20,7 @@ static void		replace_item(t_list *item, t_hash_pair *pair,\
 		return ;
 	if (del)
 		del(item->content);
-	memmove(item->content, pair, item->content_size);
+    ft_memmove(item->content, pair, item->content_size);
 }
 
 int				hash_map_insert(t_hash_map *table, t_hash_pair *pair)
@@ -31,9 +31,9 @@ int				hash_map_insert(t_hash_map *table, t_hash_pair *pair)
 	if (!table || !pair)
 		return (1);
 	index = table->hasher(pair->key) % table->buckets_size;
-	if ((item = lst_find(table->buckets[index], pair, table->cmp)))
+	if ((item = ft_lst_find(table->buckets[index], pair, table->cmp)))
 		replace_item(item, pair, table->del);
 	else
-		lst_add(&(table->buckets[index]), lst_new(pair, sizeof(t_hash_pair)));
+        ft_lst_add(&(table->buckets[index]), ft_lst_new(pair, sizeof(t_hash_pair)));
 	return (0);
 }

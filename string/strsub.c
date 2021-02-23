@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_str.h"
+#include "ft_str.h"
 
-char	*strsub(char const *s, unsigned int start, size_t len)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
 	char *sub;
 
-	if (!s || !(sub = strnew(len)))
+	if (!s || !(sub = ft_strnew(len)))
 		return (NULL);
-	return (strncpy(sub, &s[start], len));
+	return (ft_strncpy(sub, &s[start], len));
 }

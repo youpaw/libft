@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_str.h"
+#include "ft_str.h"
 
-char	*strmap(char const *s, char (*f)(char))
+char	*ft_strmap(char const *s, char (*f)(char))
 {
 	char	*str;
 	size_t	len;
@@ -22,8 +22,8 @@ char	*strmap(char const *s, char (*f)(char))
 		return (NULL);
 	else
 		str = (char *)s;
-	len = strlen(str);
-	if (!(str = strnew(len)))
+	len = ft_strlen(str);
+	if (!(str = ft_strnew(len)))
 		return (NULL);
 	i = 0;
 	while (i < len)

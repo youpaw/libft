@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_str.h"
+#include "ft_str.h"
 
-char	*strdup(const char *s1)
+char	*ft_strdup(const char *s1)
 {
 	char	*str;
 
-	if (!(str = strnew(strlen(s1))))
+	if (!(str = ft_strnew(ft_strlen(s1))))
 		return (NULL);
-	return (strcpy(str, s1));
+	return (ft_strcpy(str, s1));
 }

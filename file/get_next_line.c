@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_file.h"
-#include "cc_avl.h"
-#include "cc_str.h"
-#include "cc_mem.h"
+#include "ft_file.h"
+#include "ft_avl.h"
+#include "ft_str.h"
+#include "ft_mem.h"
 #include <unistd.h>
 #include <stdlib.h>
 
@@ -31,10 +31,10 @@ static void			insert_file(t_avl_obj *files, int fd)
 {
 	t_avl_pair pair;
 
-	pair.key = xmalloc(sizeof(int));
-	memmove(pair.key, &fd, sizeof(int));
-	pair.value = strnew(0);
-	avl_insert(files, &pair);
+	pair.key = ft_xmalloc(sizeof(int));
+    ft_memmove(pair.key, &fd, sizeof(int));
+	pair.value = ft_strnew(0);
+    ft_avl_insert(files, &pair);
 }
 
 static int			readline(t_avl_pair *file, char **line)
@@ -47,21 +47,21 @@ static int			readline(t_avl_pair *file, char **line)
 	size = 1;
 	while (size > 0)
 	{
-		if ((rst = strchr(file->value, '\n')))
+		if ((rst = ft_strchr(file->value, '\n')))
 			*rst++ = '\0';
-		tmp = strjoin(*line, file->value);
+		tmp = ft_strjoin(*line, file->value);
 		free(*line);
 		*line = tmp;
 		if (rst)
 		{
-			*rst ? strcpy(file->value, rst) : bzero(file->value, 1);
+			*rst ? ft_strcpy(file->value, rst) : ft_bzero(file->value, 1);
 			return (1);
 		}
 		size = read(*(int*)(file->key), buff, FILE_BUFF_SIZE);
 		if (!size && **line)
 			return (1);
 		free(file->value);
-		file->value = strsub(buff, 0, size);
+		file->value = ft_strsub(buff, 0, size);
 	}
 	return (0);
 }
@@ -74,12 +74,12 @@ int					get_next_line(const int fd, char **line)
 	if (fd < 0 || !line || read(fd, NULL, 0) < 0)
 		return (-1);
 	if (!files)
-		files = avl_new((int (*)(const void *, const void *)) &cmp, &del);
-	if (!(file = avl_get_pair(files, &fd)))
+		files = ft_avl_new((int (*)(const void *, const void *)) &cmp, &del);
+	if (!(file = ft_avl_get_pair(files, &fd)))
 	{
 		insert_file(files, fd);
-		file = avl_get_pair(files, &fd);
+		file = ft_avl_get_pair(files, &fd);
 	}
-	*line = strnew(0);
+	*line = ft_strnew(0);
 	return (readline(file, line));
 }

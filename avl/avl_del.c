@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "cc_avl.h"
+#include "ft_avl.h"
 
 static void		walk_nodes(t_avl_tree *node, void (*del)(void *))
 {
@@ -25,7 +25,7 @@ static void		walk_nodes(t_avl_tree *node, void (*del)(void *))
 	free(node);
 }
 
-void			avl_del(t_avl_obj **obj)
+void			ft_avl_del(t_avl_obj **obj)
 {
 	if (!obj || !*obj)
 		return ;

@@ -1,14 +1,11 @@
 cmake_minimum_required(VERSION 3.8)
-project(cc)
+project(ft)
 # CMake instructions to compile libcc as static lib
 
-set(LIBCC_BUILD_DIRECTORY "build")
-file(MAKE_DIRECTORY ${LIBCC_BUILD_DIRECTORY})
+set(LIBFT_BUILD_DIRECTORY "build")
+file(MAKE_DIRECTORY ${LIBFT_BUILD_DIRECTORY})
 
-#set(LIBRARY_OUTPUT_PATH "build")
-#set(CMAKE_CACHEFILE_DIR ${LIBCC_BUILD_DIRECTORY})
-
-ADD_LIBRARY(cc STATIC
+ADD_LIBRARY(ft STATIC
 		avl/avl_balance.c
 		avl/avl_del.c
 		avl/avl_del_one.c
@@ -135,4 +132,4 @@ ADD_LIBRARY(cc STATIC
 		string/strarr_print.c
 		optparse/optparse.c vector/vec_pop.c string/utf8_display_strlen.c optparse/print_usage.c string/strisnum.c string/strispath.c)
 
-target_include_directories(cc PUBLIC avl char file graph hash_map list math memory num string vector sort optparse regex .)
+target_include_directories(ft PUBLIC avl char file graph hash_map list math memory num string vector sort optparse regex .)

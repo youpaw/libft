@@ -20,8 +20,8 @@ typedef struct	s_parsed_opt
 	char		invalid_opt;
 }				t_parsed_opt;
 
-size_t			optparse(const char **args, const char *optstr,\
+size_t			ft_optparse(const char **args, const char *optstr,\
 	t_parsed_opt *result);
-void			print_usage(int fd, const char *bin, const char *usage);
+void			ft_print_usage(int fd, const char *bin, const char *usage);
 
 #endif

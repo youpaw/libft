@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdputs.c                                           :+:      :+:    :+:   */
+/*   ft_fdputs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbutterw <dbutterw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,10 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_str.h"
+#include "ft_str.h"
 #include <unistd.h>
 
-int	fdputs(const char *restrict s, int stream)
+int	ft_fdputs(const char *restrict s, int stream)
 {
-	return (write(stream, s, strlen(s)));
+	return (write(stream, s, ft_strlen(s)));
 }

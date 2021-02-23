@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_str.h"
-#include "cc_char.h"
+#include "ft_str.h"
+#include "ft_char.h"
 
-void	fdputendl(char const *s, int fd)
+void	ft_fdputendl(char const *s, int fd)
 {
 	if (!s && fd == -1)
 		return ;
-	fdputs(s, fd);
-	fdputchar('\n', fd);
+    ft_fdputs(s, fd);
+    ft_fdputchar('\n', fd);
 }

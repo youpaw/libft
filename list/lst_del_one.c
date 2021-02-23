@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_lst.h"
+#include "ft_lst.h"
 
-int		lst_del_one(t_list **alst, void (*del)(void*))
+int		ft_lst_del_one(t_list **alst, void (*del)(void*))
 {
 	if (!alst)
 		return (LST_DNE);

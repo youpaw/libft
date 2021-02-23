@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_lst.h"
+#include "ft_lst.h"
 
-void	lst_iter(t_list *lst, void (*f)(t_list *elem))
+void	ft_lst_iter(t_list *lst, void (*f)(t_list *elem))
 {
 	if (!f)
 		return ;

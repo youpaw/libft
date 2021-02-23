@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_str.h"
+#include "ft_str.h"
 
 static int	intlen(long long int n)
 {
@@ -28,7 +28,7 @@ static int	intlen(long long int n)
 	return (++len);
 }
 
-char		*itoa(long long int n)
+char		*ft_itoa(long long int n)
 {
 	size_t	t;
 	char	*str;
@@ -39,7 +39,7 @@ char		*itoa(long long int n)
 		t = (size_t)(~n + 1);
 	else
 		t = (size_t)n;
-	if (!(str = strnew(size)))
+	if (!(str = ft_strnew(size)))
 		return (NULL);
 	while (t > 9)
 	{

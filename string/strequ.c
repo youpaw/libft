@@ -10,12 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_str.h"
+#include "ft_str.h"
 
-int		strequ(char const *s1, char const *s2)
+int		ft_strequ(char const *s1, char const *s2)
 {
 	if (s1 && s2)
-		if (strcmp(s1, s2) == 0)
+		if (ft_strcmp(s1, s2) == 0)
 			return (1);
 	if (!s1 && !s2)
 		return (1);

@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 
-void			strarr_del(char **arr)
+void    ft_strarr_del(char **arr)
 {
 	if (arr)
 		while (*arr)

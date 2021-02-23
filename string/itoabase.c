@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_str.h"
+#include "ft_str.h"
 
 static char		get_basechar(size_t n, char reg)
 {
@@ -36,7 +36,7 @@ static int		get_size(size_t n, size_t base)
 	return (++len);
 }
 
-char			*itoabase(size_t n, size_t base, char reg)
+char			*ft_itoabase(size_t n, size_t base, char reg)
 {
 	char		*str;
 	int			size;
@@ -44,7 +44,7 @@ char			*itoabase(size_t n, size_t base, char reg)
 	if (base > 16 || base < 2)
 		return (NULL);
 	size = get_size(n, base);
-	if (!(str = strnew(size)))
+	if (!(str = ft_strnew(size)))
 		return (NULL);
 	while (n > base - 1)
 	{

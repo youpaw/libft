@@ -10,12 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CC_SORT_H
-# define CC_SORT_H
+#ifndef FT_SORT_H
+# define FT_SORT_H
 
 # include <stddef.h>
 
-void		quick_sort(void **items, int left, int right,\
+void		ft_quick_sort(void **items, int left, int right,\
 	int (*cmp)(const void *l, const void *r));
 
 #endif

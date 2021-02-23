@@ -11,17 +11,17 @@
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include "cc_avl.h"
-#include "cc_mem.h"
+#include "ft_avl.h"
+#include "ft_mem.h"
 
-t_avl_obj			*avl_new(int (*cmp)(const void *, const void *), \
+t_avl_obj			*ft_avl_new(int (*cmp)(const void *, const void *), \
 	void (*del)(void *))
 {
 	t_avl_obj		*obj;
 
 	if (!cmp)
 		return (NULL);
-	obj = xmalloc(sizeof(t_avl_obj));
+	obj = ft_xmalloc(sizeof(t_avl_obj));
 	obj->cmp = cmp;
 	obj->del = del;
 	obj->tree = NULL;

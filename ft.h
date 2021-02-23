@@ -10,21 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBCC_H
-# define LIBCC_H
+#ifndef LIBFT_H
+# define LIBFT_H
 
-# include "avl/cc_avl.h"
-# include "char/cc_char.h"
-# include "file/cc_file.h"
-# include "graph/cc_graph.h"
-# include "hash_map/cc_hash_map.h"
-# include "list/cc_lst.h"
-# include "math/cc_math.h"
-# include "memory/cc_mem.h"
-# include "num/cc_num.h"
-# include "regex/cc_regex.h"
-# include "string/cc_str.h"
-# include "vector/cc_vec.h"
-# include "sort/cc_sort.h"
+# include "avl/ft_avl.h"
+# include "char/ft_char.h"
+# include "file/ft_file.h"
+# include "graph/ft_graph.h"
+# include "hash_map/ft_hash_map.h"
+# include "list/ft_lst.h"
+# include "math/ft_math.h"
+# include "memory/ft_mem.h"
+# include "num/ft_num.h"
+# include "regex/ft_regex.h"
+# include "string/ft_str.h"
+# include "vector/ft_vec.h"
+# include "sort/ft_sort.h"
+# include "optparse/optparse.h"
 
 #endif

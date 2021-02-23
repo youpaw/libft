@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_graph.h"
+#include "ft_graph.h"
 
-void	graph_init(t_graph *graph)
+void	ft_graph_init(t_graph *graph)
 {
 	if (graph)
 	{

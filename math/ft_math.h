@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cc_regex.h                                         :+:      :+:    :+:   */
+/*   cc_math.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hlorrine <hlorrine@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dbutterw <dbutterw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/12 23:00:48 by hlorrine          #+#    #+#             */
-/*   Updated: 2020/11/12 23:00:51 by hlorrine         ###   ########.fr       */
+/*   Created: 2020/07/17 17:21:30 by dbutterw          #+#    #+#             */
+/*   Updated: 2020/07/25 16:44:08 by dbutterw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CC_REGEX_H
-# define CC_REGEX_H
+#ifndef FT_MATH_H
+# define FT_MATH_H
+# include <stdlib.h>
+# include <stdint.h>
 
-int					match(char *s1, char *s2);
-int					nmatch(char *s1, char *s2);
+int64_t		ft_min(int64_t x, int64_t y);
+int64_t		ft_max(int64_t x, int64_t y);
 
 #endif

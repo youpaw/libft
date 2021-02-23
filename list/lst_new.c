@@ -10,14 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_lst.h"
-#include "cc_mem.h"
+#include "ft_lst.h"
+#include "ft_mem.h"
 
-t_list	*lst_new(void *content, size_t size)
+t_list	*ft_lst_new(void *content, size_t size)
 {
 	t_list *newlst;
 
-	newlst = (t_list*)xmalloc(sizeof(t_list));
+	newlst = (t_list*)ft_xmalloc(sizeof(t_list));
 	if (!content)
 	{
 		newlst->content = NULL;
@@ -25,8 +25,8 @@ t_list	*lst_new(void *content, size_t size)
 	}
 	else
 	{
-		newlst->content = xmalloc(size);
-		newlst->content = memmove(newlst->content, content, size);
+		newlst->content = ft_xmalloc(size);
+		newlst->content = ft_memmove(newlst->content, content, size);
 		newlst->content_size = size;
 	}
 	newlst->next = NULL;

@@ -3,22 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   vec_get_at.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hlorrine <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: dbutterw <dbutterw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/13 00:31:39 by hlorrine          #+#    #+#             */
-/*   Updated: 2020/11/13 00:31:43 by hlorrine         ###   ########.fr       */
+/*   Created: 2021/02/23 16:10:27 by dbutterw          #+#    #+#             */
+/*   Updated: 2021/02/23 16:10:27 by dbutterw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_vec.h"
-#include "cc_mem.h"
+#include "ft_vec.h"
+#include "ft_mem.h"
 
-int		vec_get_at(void *dst, t_vec *vector, size_t index)
+int		ft_vec_get_at(void *dst, t_vec *vector, size_t index)
 {
 	if (!vector)
 		return (VEC_DNE);
 	if (!vector->size || index >= vector->size)
 		return (VEC_OOB);
-	memmove(dst, vector->data + (index * vector->datasize), vector->datasize);
+    ft_memmove(dst, vector->data + (index * vector->datasize), vector->datasize);
 	return (VEC_OK);
 }

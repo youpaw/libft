@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_hash_map.h"
+#include "ft_hash_map.h"
 
-void		hash_map_del(t_hash_map **table)
+void		ft_hash_map_del(t_hash_map **table)
 {
 	size_t	cnt;
 
@@ -20,7 +20,7 @@ void		hash_map_del(t_hash_map **table)
 	if (table && *table)
 	{
 		while (cnt < (*table)->buckets_size)
-			lst_del(&((*table)->buckets[cnt++]),\
+            ft_lst_del(&((*table)->buckets[cnt++]),\
 			(void (*)(void *)) (*table)->del);
 		free((*table)->buckets);
 		free(*table);

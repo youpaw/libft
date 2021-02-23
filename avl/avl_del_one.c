@@ -11,8 +11,8 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "cc_avl.h"
-#include "cc_math.h"
+#include "ft_avl.h"
+#include "ft_math.h"
 
 static t_avl_tree		*insert_node(t_avl_tree *new, t_avl_tree *node,\
 	int (*cmp)(const void *, const void *))
@@ -24,9 +24,9 @@ static t_avl_tree		*insert_node(t_avl_tree *new, t_avl_tree *node,\
 		node->left = insert_node(new, node->left, cmp);
 	else if (cmp_val > 0)
 		node->right = insert_node(new, node->right, cmp);
-	node->height = (int)max(avl_get_height(node->left), \
-		avl_get_height(node->right)) + 1;
-	return (avl_balance(node, cmp));
+	node->height = (int)ft_max(ft_avl_get_height(node->left), \
+		ft_avl_get_height(node->right)) + 1;
+	return (ft_avl_balance(node, cmp));
 }
 
 static t_avl_tree		*merge_childs(t_avl_tree *node, \
@@ -53,16 +53,16 @@ static t_avl_tree		*del_node(t_avl_tree *node, const void *key, \
 		node->right = del_node(node->right, key, cmp);
 	else
 		return (merge_childs(node, cmp));
-	node->height = (int)max(avl_get_height(node->left), \
-		avl_get_height(node->right)) + 1;
-	return (avl_balance(node, cmp));
+	node->height = (int)ft_max(ft_avl_get_height(node->left), \
+		ft_avl_get_height(node->right)) + 1;
+	return (ft_avl_balance(node, cmp));
 }
 
-int						avl_del_one(t_avl_obj *obj, const void *key)
+int						ft_avl_del_one(t_avl_obj *obj, const void *key)
 {
 	t_avl_tree			*node;
 
-	if (!(node = avl_get(obj, key)))
+	if (!(node = ft_avl_get(obj, key)))
 		return (AVL_DNE);
 	obj->tree = del_node(obj->tree, key, obj->cmp);
 	if (obj->del)

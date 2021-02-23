@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_str.h"
+#include "ft_str.h"
 
-int	puts(char const *s)
+int	ft_puts(char const *s)
 {
-	return (fdputs(s, 1));
+	return (ft_fdputs(s, 1));
 }

@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_mem.h"
-#include "cc_str.h"
+#include "ft_mem.h"
+#include "ft_str.h"
 
 static int		is_separator(char c, char *charset)
 {
@@ -54,17 +54,17 @@ static void		getwords(char **arr, const char *s, char *charset)
 			len++;
 		else if (len)
 		{
-			arr[j] = strsub(s, i - len, len);
+			arr[j] = ft_strsub(s, i - len, len);
 			j++;
 			len = 0;
 		}
 		i++;
 	}
 	if (len)
-		arr[j] = strsub(s, i - len, len);
+		arr[j] = ft_strsub(s, i - len, len);
 }
 
-char			**strsplitcharset(char const *s, char *charset)
+char			**ft_strsplitcharset(char const *s, char *charset)
 {
 	size_t	wrdcnt;
 	char	**sp;
@@ -72,7 +72,7 @@ char			**strsplitcharset(char const *s, char *charset)
 	if (!s)
 		return (NULL);
 	wrdcnt = cntwords(s, charset);
-	sp = (char**)xmalloc(sizeof(char*) * (wrdcnt + 1));
+	sp = (char**)ft_xmalloc(sizeof(char*) * (wrdcnt + 1));
 	getwords(sp, s, charset);
 	sp[wrdcnt] = NULL;
 	return (sp);

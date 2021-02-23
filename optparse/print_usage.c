@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_str.h"
+#include "ft_str.h"
 
-void	print_usage(int fd, const char *bin, const char *usage)
+void	ft_print_usage(int fd, const char *bin, const char *usage)
 {
-	fdputs(bin, fd);
-	fdputs(": usage: ", fd);
-	fdputs(bin, fd);
-	fdputs(" ", fd);
-	fdputendl(usage, fd);
+	ft_fdputs(bin, fd);
+	ft_fdputs(": usage: ", fd);
+	ft_fdputs(bin, fd);
+	ft_fdputs(" ", fd);
+    ft_fdputendl(usage, fd);
 }

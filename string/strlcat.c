@@ -10,16 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_str.h"
-#include "cc_math.h"
+#include "ft_str.h"
+#include "ft_math.h"
 
-size_t		strlcat(char *dst, const char *src, size_t size)
+size_t		ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t dstlen;
 	size_t reslen;
 
-	dstlen = strlen(dst);
-	reslen = min(dstlen, size) + strlen(src);
+	dstlen = ft_strlen(dst);
+	reslen = ft_min(dstlen, size) + ft_strlen(src);
 	if (size > dstlen)
 	{
 		dst += dstlen;

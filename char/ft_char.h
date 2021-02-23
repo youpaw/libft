@@ -10,38 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CC_CHAR_H
-# define CC_CHAR_H
+#ifndef FT_CHAR_H
+# define FT_CHAR_H
 # define CHAR_BUFF_SIZE 1024
-# undef isupper
-# undef islower
-# undef isalpha
-# undef isalnum
-# undef isspace
-# undef isdigit
-# undef isascii
-# undef isprint
-# undef iswspace
-# undef putchar
-# undef fdputchar
-# undef tolower
-# undef toupper
-# undef getch
 
-int			isupper(int c);
-int			islower(int c);
-int			isalpha(int c);
-int			isalnum(int c);
-int			isspace(int c);
-int			isdigit(int c);
-int			isascii(int c);
-int			isprint(int c);
-int			iswspace(int c);
-int			putchar(int c);
-int			fdputchar(int c, int fd);
-int			tolower(int c);
-int			toupper(int c);
-int			sh_getch(void);
-int			utf8_sizeof_symbol(char ch);
+int			ft_isupper(int c);
+int			ft_islower(int c);
+int			ft_isalpha(int c);
+int			ft_isalnum(int c);
+int			ft_isspace(int c);
+int			ft_isdigit(int c);
+int			ft_isascii(int c);
+int			ft_isprint(int c);
+int			ft_iswspace(int c);
+int			ft_putchar(int c);
+int			ft_fdputchar(int c, int fd);
+int			ft_tolower(int c);
+int			ft_toupper(int c);
+int			ft_getch(void);
+int			ft_utf8_sizeof_symbol(char ch);
 
 #endif

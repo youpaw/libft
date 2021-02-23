@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_avl.h"
+#include "ft_avl.h"
 
 static void		walk_nodes(t_avl_tree *node, void (*f)(void *))
 {
@@ -21,7 +21,7 @@ static void		walk_nodes(t_avl_tree *node, void (*f)(void *))
 	walk_nodes(node->right, f);
 }
 
-void			avl_map_prefix(t_avl_obj *obj, void (*f)(void *))
+void			ft_avl_map_prefix(t_avl_obj *obj, void (*f)(void *))
 {
 	if (!obj || !f)
 		return ;

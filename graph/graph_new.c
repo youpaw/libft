@@ -10,15 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_graph.h"
-#include "cc_mem.h"
+#include "ft_graph.h"
+#include "ft_mem.h"
 #include <stdlib.h>
 
-t_graph	*graph_new(char symbol, size_t index)
+t_graph	*ft_graph_new(char symbol, size_t index)
 {
 	t_graph	*graph;
 
-	graph = (t_graph *)xmalloc(sizeof(t_graph));
+	graph = (t_graph *)ft_xmalloc(sizeof(t_graph));
 	graph->symbol = symbol;
 	graph->index = index;
 	graph->childs = NULL;

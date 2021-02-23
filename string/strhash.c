@@ -12,7 +12,7 @@
 
 #include <stddef.h>
 
-size_t		strhash(const unsigned char *str)
+size_t		ft_strhash(const unsigned char *str)
 {
 	size_t	hash;
 	int		c;

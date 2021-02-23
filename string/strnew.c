@@ -10,15 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_mem.h"
+#include "ft_mem.h"
 
-char		*strnew(size_t size)
+char		*ft_strnew(size_t size)
 {
 	char	*res;
 
 	if (!(size + 1))
 		return (NULL);
-	res = xmalloc(size + 1);
-	memset(res, 0, size + 1);
+	res = ft_xmalloc(size + 1);
+    ft_memset(res, 0, size + 1);
 	return (res);
 }

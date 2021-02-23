@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_char.h"
+#include "ft_char.h"
 
-int	strisnum(const char *str)
+int	ft_strisnum(const char *str)
 {
 	if (!str || !*str)
 		return (0);
-	while (isdigit(*str))
+	while (ft_isdigit(*str))
 		str++;
 	if (!*str)
 		return (1);

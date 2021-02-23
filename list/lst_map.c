@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_lst.h"
+#include "ft_lst.h"
 
-t_list		*lst_map(t_list *lst, t_list *f(t_list *elem))
+t_list		*ft_lst_map(t_list *lst, t_list *f(t_list *elem))
 {
 	if (lst && f)
 	{
-		lst->next = lst_map(lst->next, f);
+		lst->next = ft_lst_map(lst->next, f);
 		return (f(lst));
 	}
 	return (NULL);

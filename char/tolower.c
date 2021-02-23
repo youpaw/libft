@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_char.h"
+#include "ft_char.h"
 
-int		tolower(int c)
+int		ft_tolower(int c)
 {
-	if (isupper(c))
+	if (ft_isupper(c))
 		return (c - (int)'A' + (int)'a');
 	return (c);
 }

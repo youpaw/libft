@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cc_lst.h"
+#include "ft_lst.h"
 
-size_t				lst_get_size(const t_list *lst)
+size_t				ft_lst_get_size(const t_list *lst)
 {
 	size_t	count;
 
