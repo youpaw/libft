@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.8)
 project(ft)
 # CMake instructions to compile libft as static lib
 
+include_directories(avl char file graph hash_map list math memory num string vector sort optparse regex .)
+
 ADD_LIBRARY(ft STATIC
 		avl/avl_balance.c
 		avl/avl_del.c
