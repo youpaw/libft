@@ -1,9 +1,6 @@
 cmake_minimum_required(VERSION 3.8)
 project(ft)
-# CMake instructions to compile libcc as static lib
-
-set(LIBFT_BUILD_DIRECTORY "build")
-file(MAKE_DIRECTORY ${LIBFT_BUILD_DIRECTORY})
+# CMake instructions to compile libft as static lib
 
 ADD_LIBRARY(ft STATIC
 		avl/avl_balance.c
