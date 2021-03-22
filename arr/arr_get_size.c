@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort.h                                          :+:      :+:    :+:   */
+/*   arr_get_size.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbutterw <dbutterw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/23 16:47:04 by dbutterw          #+#    #+#             */
-/*   Updated: 2021/02/23 16:47:04 by dbutterw         ###   ########.fr       */
+/*   Created: 2021/03/22 23:15:54 by dbutterw          #+#    #+#             */
+/*   Updated: 2021/03/22 23:17:01 by dbutterw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_SORT_H
-# define FT_SORT_H
+#include <unistd.h>
 
-# include <stddef.h>
+size_t	ft_arr_get_size(void **arr)
+{
+	size_t	size;
 
-void		ft_quick_sort(void **items, int left, int right,\
-	int (*cmp)(const void *l, const void *r));
-
-#endif
+	if (!arr || !*arr)
+		return (0);
+	size = 0;
+	while (*arr)
+	{
+		arr++;
+		size++;
+	}
+	return (size);
+}

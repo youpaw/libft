@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strarr_getsize.c                                   :+:      :+:    :+:   */
+/*   narr_del.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbutterw <dbutterw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/23 16:46:41 by dbutterw          #+#    #+#             */
-/*   Updated: 2021/02/23 16:46:41 by dbutterw         ###   ########.fr       */
+/*   Created: 2021/03/22 23:16:03 by dbutterw          #+#    #+#             */
+/*   Updated: 2021/03/22 23:26:49 by dbutterw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <stdlib.h>
 
-size_t			ft_strarr_getsize(const char **m)
+void	ft_narr_del(void **arr, size_t n, void (*del)(void *))
 {
-	size_t	len;
+	size_t	cnt;
 
-	len = 0;
-	if (m)
-		while (*m++)
-			len++;
-	return (len);
+	if (!arr || !*arr)
+		return ;
+	cnt = 0;
+	while (cnt < n)
+	{
+		if (del)
+			del(arr[cnt]);
+		free(arr[cnt]);
+		cnt++;
+	}
+	free(arr);
 }

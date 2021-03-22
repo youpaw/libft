@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.8)
 project(ft)
 # CMake instructions to compile libft as static lib
 
-include_directories(avl char file graph hash_map list math memory num string vector sort optparse regex .)
+include_directories(avl char file graph hash_map list math memory num string vector arr optparse regex .)
 
 ADD_LIBRARY(ft STATIC
 		avl/avl_balance.c
@@ -125,10 +125,7 @@ ADD_LIBRARY(ft STATIC
 		list/lst_del_one_if.c
 		char/getch.c
 		char/utf8_sizeof_symbol.c
-		sort/quick_sort.c
-		string/strarr_del.c
-		string/strarr_getsize.c
-		string/strarr_print.c
-		optparse/optparse.c vector/vec_pop.c string/utf8_display_strlen.c optparse/print_usage.c string/strisnum.c string/strispath.c)
+		arr/arr_quick_sort.c
+		optparse/optparse.c vector/vec_pop.c string/utf8_display_strlen.c optparse/print_usage.c string/strisnum.c string/strispath.c arr/arr_del.c arr/arr_get_size.c arr/narr_del.c)
 
-target_include_directories(ft PUBLIC avl char file graph hash_map list math memory num string vector sort optparse regex .)
+target_include_directories(ft PUBLIC avl char file graph hash_map list math memory num string vector arr optparse regex .)

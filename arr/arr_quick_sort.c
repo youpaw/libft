@@ -21,7 +21,7 @@ static void	swap(void **items, int lhs, int rhs)
 	items[lhs] = temp;
 }
 
-void		ft_quick_sort(void **items, int left, int right, \
+void		ft_arr_quick_sort(void **items, int left, int right, \
 			int (*cmp)(const void *l, const void *r))
 {
 	int		i;
@@ -41,7 +41,7 @@ void		ft_quick_sort(void **items, int left, int right, \
 			swap(items, i++, j--);
 	}
 	if (left < j)
-		ft_quick_sort(items, left, j, cmp);
+		ft_arr_quick_sort(items, left, j, cmp);
 	if (i < right)
-		ft_quick_sort(items, i, right, cmp);
+		ft_arr_quick_sort(items, i, right, cmp);
 }

@@ -6,7 +6,7 @@
 /*   By: dbutterw <dbutterw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 16:29:28 by dbutterw          #+#    #+#             */
-/*   Updated: 2021/02/23 16:43:33 by dbutterw         ###   ########.fr       */
+/*   Updated: 2021/03/22 22:34:46 by dbutterw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 # include "regex/ft_regex.h"
 # include "string/ft_str.h"
 # include "vector/ft_vec.h"
-# include "sort/ft_sort.h"
+# include "arr/ft_arr.h"
 # include "optparse/optparse.h"
 
 #endif

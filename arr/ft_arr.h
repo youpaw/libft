@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strarr_print.c                                     :+:      :+:    :+:   */
+/*   ft_arr.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbutterw <dbutterw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/23 16:46:40 by dbutterw          #+#    #+#             */
-/*   Updated: 2021/02/23 16:46:40 by dbutterw         ###   ########.fr       */
+/*   Created: 2021/03/22 22:02:39 by dbutterw          #+#    #+#             */
+/*   Updated: 2021/03/22 22:13:39 by dbutterw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_str.h"
+#ifndef FT_ARR_H
+# define FT_ARR_H
 
-void	ft_strarr_print(const char **args, const char *st, const char *en)
-{
-	const char *start = "";
-	const char *end = "\n";
+# include <stddef.h>
 
-	if (args)
-	{
-		if (st)
-			start = st;
-		if (en)
-			end = en;
-		while (*args)
-		{
-			ft_puts(start);
-			ft_puts(*args++);
-			ft_puts(end);
-		}
-	}
-}
+void		ft_arr_quick_sort(void **items, int left, int right,\
+	int (*cmp)(const void *l, const void *r));
+void		ft_arr_del(void **arr, void (*del)(void *));
+void		ft_narr_del(void **arr, size_t n, void (*del)(void *));
+size_t		ft_arr_get_size(void **arr);
+
+#endif
