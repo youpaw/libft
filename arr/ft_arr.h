@@ -15,8 +15,8 @@
 
 # include <stddef.h>
 
-void		ft_arr_quick_sort(void **items, int left, int right,\
-	int (*cmp)(const void *l, const void *r));
+void		ft_arr_quick_sort(void **items, size_t left, size_t right,\
+	int (*cmp)(const void *, const void *));
 void		ft_arr_del(void **arr, void (*del)(void *));
 void		ft_narr_del(void **arr, size_t n, void (*del)(void *));
 size_t		ft_arr_get_size(void **arr);
