@@ -12,19 +12,20 @@
 
 #include <stdlib.h>
 
-void	ft_arr_del(void **arr, void (*del)(void *))
+void	ft_arr_del(void ***arr, void (*del)(void *))
 {
 	void **arr_head;
 
 	if (!arr || !*arr)
 		return ;
-	arr_head = arr;
-	while (*arr)
+	arr_head = *arr;
+	while (*arr_head)
 	{
 		if (del)
-			del(*arr);
-		free(*arr);
-		arr++;
+			del(*arr_head);
+		free(*arr_head);
+		arr_head++;
 	}
-	free(arr_head);
+	free(*arr);
+	*arr = NULL;
 }

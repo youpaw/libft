@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 
-void	ft_narr_del(void **arr, size_t n, void (*del)(void *))
+void	ft_narr_del(void ***arr, size_t n, void (*del)(void *))
 {
 	size_t	cnt;
 
@@ -22,9 +22,10 @@ void	ft_narr_del(void **arr, size_t n, void (*del)(void *))
 	while (cnt < n)
 	{
 		if (del)
-			del(arr[cnt]);
-		free(arr[cnt]);
+			del((*arr)[cnt]);
+		free((*arr)[cnt]);
 		cnt++;
 	}
-	free(arr);
+	free(*arr);
+	*arr = NULL;
 }
