@@ -26,5 +26,6 @@ int			ft_vec_del(t_vec **vector)
 			ft_vec_del_one(tmp, cnt++);
 	free(tmp->data);
 	free(tmp);
+	*vector = NULL;
 	return (VEC_OK);
 }
