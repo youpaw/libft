@@ -18,7 +18,7 @@ int			ft_vec_del(t_vec **vector)
 	t_vec	*tmp;
 
 	if (!vector || !*vector)
-		return (VEC_DNE);
+		return (-1);
 	cnt = 0;
 	tmp = *vector;
 	if (tmp->del)
@@ -27,5 +27,5 @@ int			ft_vec_del(t_vec **vector)
 	free(tmp->data);
 	free(tmp);
 	*vector = NULL;
-	return (VEC_OK);
+	return (0);
 }

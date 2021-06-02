@@ -62,12 +62,15 @@ int						ft_avl_del_one(t_avl_obj *obj, const void *key)
 {
 	t_avl_tree			*node;
 
-	if (!(node = ft_avl_get(obj, key)))
-		return (AVL_DNE);
-	obj->tree = del_node(obj->tree, key, obj->cmp);
-	if (obj->del)
-		obj->del(node->pair);
-	free(node->pair);
-	free(node);
-	return (AVL_OK);
+	node = ft_avl_get(obj, key);
+	if (node)
+	{
+		obj->tree = del_node(obj->tree, key, obj->cmp);
+		if (obj->del)
+			obj->del(node->pair);
+		free(node->pair);
+		free(node);
+		return (0);
+	}
+	return (-1);
 }

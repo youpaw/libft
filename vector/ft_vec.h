@@ -35,8 +35,4 @@ int					ft_vec_get_at(void *dst, t_vec *vector, size_t index);
 int					ft_vec_del(t_vec **vector);
 int					ft_vec_del_one(t_vec *vector, size_t index);
 
-# define VEC_OK 0
-# define VEC_DNE (VEC_OK + 1)
-# define VEC_OOB (VEC_DNE + 1)
-
 #endif

@@ -14,9 +14,7 @@
 
 int		ft_vec_get_last(void *dst, t_vec *vector)
 {
-	if (!vector)
-		return (VEC_DNE);
-	if (!vector->size)
-		return (VEC_OOB);
+	if (!vector || !vector->size)
+		return (-1);
 	return (ft_vec_get_at(dst, vector, vector->size - 1));
 }

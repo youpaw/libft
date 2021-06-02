@@ -17,14 +17,12 @@ int			ft_vec_del_one(t_vec *vector, size_t index)
 {
 	void	*data;
 
-	if (!vector)
-		return (VEC_DNE);
-	if (index >= vector->size)
-		return (VEC_OOB);
+	if (!vector || index >= vector->size)
+		return (-1);
 	data = ft_xmalloc(vector->datasize);
 	ft_memmove(data, vector->data + (index * vector->datasize), \
 		vector->datasize);
 	vector->del(data);
 	free(data);
-	return (VEC_OK);
+	return (0);
 }

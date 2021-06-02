@@ -19,9 +19,9 @@ int	ft_lst_del_circle(t_list **list, void (*del)(void*))
 	t_list *tmp;
 
 	if (!list)
-		return (LST_DNE);
+		return (-1);
 	if (!*list)
-		return (LST_OK);
+		return (0);
 	check = *list;
 	head = (*list)->next;
 	while (check != head)
@@ -31,5 +31,5 @@ int	ft_lst_del_circle(t_list **list, void (*del)(void*))
 		ft_lst_del_one(&tmp, del);
 	}
 	ft_lst_del_one(&check, del);
-	return (LST_OK);
+	return (0);
 }

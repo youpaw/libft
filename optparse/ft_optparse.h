@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef OPTPARSE_H
-# define OPTPARSE_H
+#ifndef FT_OPTPARSE_H
+# define FT_OPTPARSE_H
 # include <stddef.h>
 
 typedef struct	s_parsed_opt

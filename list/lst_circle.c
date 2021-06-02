@@ -17,10 +17,10 @@ int			ft_lst_circle(t_list *list)
 	t_list *head;
 
 	if (!list)
-		return (LST_DNE);
+		return (-1);
 	head = list;
 	while (list->next)
 		list = list->next;
 	list->next = head;
-	return (LST_OK);
+	return (0);
 }

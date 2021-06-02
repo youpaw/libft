@@ -19,11 +19,11 @@ int			ft_lst_add_sort(t_list **list, t_list *newlist, \
 	t_list *head;
 
 	if (!list || !newlist || !cmp)
-		return (LST_DNE);
+		return (-1);
 	if (!*list)
 	{
 		*list = newlist;
-		return (LST_OK);
+		return (0);
 	}
 	prev = NULL;
 	head = *list;
@@ -37,5 +37,5 @@ int			ft_lst_add_sort(t_list **list, t_list *newlist, \
 		*list = newlist;
 	else
 		prev->next = newlist;
-	return (LST_OK);
+	return (0);
 }

@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_str.h"
-#include "optparse.h"
+#include "ft_optparse.h"
 
 static	size_t		is_opt_invalid(const char *opt, const char *validopt)
 {

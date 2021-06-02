@@ -15,7 +15,7 @@
 int		ft_lst_add(t_list **alst, t_list *new)
 {
 	if (!alst || !new)
-		return (LST_DNE);
+		return (-1);
 	if (!*alst)
 		*alst = new;
 	else
@@ -23,5 +23,5 @@ int		ft_lst_add(t_list **alst, t_list *new)
 		new->next = *alst;
 		*alst = new;
 	}
-	return (LST_OK);
+	return (0);
 }

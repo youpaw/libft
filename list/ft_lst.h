@@ -38,6 +38,4 @@ int					ft_lst_del_one_if(t_list **alst, const void *content,\
 					int (*cmp)(const void *, const void *),\
 					void (*del)(void *));
 
-# define LST_OK 0
-# define LST_DNE (LST_OK + 1)
 #endif

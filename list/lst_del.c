@@ -17,12 +17,12 @@ int			ft_lst_del(t_list **alst, void (*del)(void *))
 	t_list *tmp;
 
 	if (!alst)
-		return (LST_DNE);
+		return (-1);
 	while (*alst)
 	{
 		tmp = (*alst)->next;
 		ft_lst_del_one(alst, del);
 		*alst = tmp;
 	}
-	return (LST_OK);
+	return (0);
 }

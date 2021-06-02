@@ -17,10 +17,8 @@ int			ft_vec_push_at(t_vec *vector, void *data, size_t index)
 {
 	void	*pdata;
 
-	if (!vector)
-		return (VEC_DNE);
-	if (index > vector->size)
-		return (VEC_OOB);
+	if (!vector || index > vector->size)
+		return (-1);
 	if (vector->size >= vector->capacity)
 	{
 		pdata = vector->data;
@@ -39,5 +37,5 @@ int			ft_vec_push_at(t_vec *vector, void *data, size_t index)
 	vector->size++;
 	ft_bzero(vector->data + (vector->size * vector->datasize), \
 		vector->datasize);
-	return (VEC_OK);
+	return (0);
 }

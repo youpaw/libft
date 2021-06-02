@@ -15,11 +15,9 @@
 
 int		ft_vec_get_at(void *dst, t_vec *vector, size_t index)
 {
-	if (!vector)
-		return (VEC_DNE);
-	if (!vector->size || index >= vector->size)
-		return (VEC_OOB);
+	if (!vector || !vector->size || index >= vector->size)
+		return (-1);
 	ft_memmove(dst, vector->data + (index * vector->datasize),\
 		vector->datasize);
-	return (VEC_OK);
+	return (0);
 }

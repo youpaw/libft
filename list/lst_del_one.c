@@ -15,13 +15,13 @@
 int		ft_lst_del_one(t_list **alst, void (*del)(void*))
 {
 	if (!alst)
-		return (LST_DNE);
+		return (-1);
 	if (!*alst)
-		return (LST_OK);
+		return (0);
 	if ((*alst)->content && del)
 		del((*alst)->content);
 	free((*alst)->content);
 	free(*alst);
 	*alst = NULL;
-	return (LST_OK);
+	return (0);
 }

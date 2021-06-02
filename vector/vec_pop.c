@@ -14,9 +14,10 @@
 
 int		ft_vec_pop(void *data, t_vec *vector)
 {
-	int error;
-
-	if (!(error = ft_vec_get_last(data, vector)))
+	if (!ft_vec_get_last(data, vector))
+	{
 		ft_vec_rm_last(vector);
-	return (error);
+		return (0);
+	}
+	return (-1);
 }
