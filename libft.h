@@ -13,6 +13,7 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# include "env/ft_env.h"
 # include "avl/ft_avl.h"
 # include "char/ft_char.h"
 # include "file/ft_file.h"

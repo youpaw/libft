@@ -19,13 +19,13 @@ const char *g_df_err[N_DF_ERRORS] = {
 		"Permission denied."
 };
 
-int 	ft_print_error(const char *name, const char *arg, const char *msg)
+int 	ft_print_error(const char *msg)
 {
-	ft_fdputs(name, 2);
+	ft_fdputs(g_av[0], 2);
 	ft_fdputs(": error: ", 2);
-	if (arg)
+	if (g_nc > 0 && g_nc < g_ac)
 	{
-		ft_fdputs(arg, 2);
+		ft_fdputs(g_av[g_nc], 2);
 		ft_fdputs(": ", 2);
 	}
 	if (msg)
@@ -38,5 +38,6 @@ int 	ft_print_error(const char *name, const char *arg, const char *msg)
 	}
 	else if (!msg)
 		ft_fdputs("Unknown error.", 2);
+	ft_fdputs("\n", 2);
 	return (errno);
 }
