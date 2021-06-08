@@ -135,13 +135,13 @@ SRCS		:= 	arr/arr_del.c					\
 				vector/vec_rm_at.c				\
 				vector/vec_rm_last.c
 
-OBJ_DIR	:= ./obj
-OBJS	:= $(addprefix $(OBJ_DIR)/,$(SRCS:.c=.o))
+OBJ_DIR		:= ./obj
+OBJS		:= $(addprefix $(OBJ_DIR)/,$(SRCS:.c=.o))
 
-DEPS    := $(OBJS:.o=.d)
+DEPS    	:= $(OBJS:.o=.d)
 
-CFLAGS	:= -MD -MP -Wall -Wextra -Werror
-NAME	:= libft.a
+CFLAGS		:= -MD -MP -Wall -Wextra -Werror
+NAME		:= libft.a
 
 .PHONY: all clean fclean re
 
