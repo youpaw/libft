@@ -14,7 +14,7 @@
 
 int64_t		ft_min(int64_t x, int64_t y)
 {
-	if (x < y)
+	if (x > y)
 		return (y);
 	return (x);
 }
