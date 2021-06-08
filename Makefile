@@ -140,7 +140,7 @@ OBJS		:= $(addprefix $(OBJ_DIR)/,$(SRCS:.c=.o))
 
 DEPS    	:= $(OBJS:.o=.d)
 
-CFLAGS		:= -MD -MP -Wall -Wextra -Werror
+CFLAGS		:= -MMD -Wall -Wextra -Werror
 NAME		:= libft.a
 
 .PHONY: all clean fclean re
