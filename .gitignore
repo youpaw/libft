@@ -2,3 +2,5 @@
 build
 .idea
 main.c
+obj
+libft.a
