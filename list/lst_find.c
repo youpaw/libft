@@ -12,8 +12,8 @@
 
 #include "ft_lst.h"
 
-t_list		*ft_lst_find(t_list *lst, const void *content,\
-			int (*cmp)(const void *, const void *))
+t_list	*ft_lst_find(t_list *lst, const void *content, \
+	int (*cmp)(const void *, const void *))
 {
 	t_list	*next;
 

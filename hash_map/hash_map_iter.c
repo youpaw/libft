@@ -12,7 +12,7 @@
 
 #include "ft_hash_map.h"
 
-void		ft_hash_map_iter(t_hash_map *table, void (*f)(void *content))
+void	ft_hash_map_iter(t_hash_map *table, void (*f)(void *content))
 {
 	t_list		*bucket;
 	size_t		cnt;

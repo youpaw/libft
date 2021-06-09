@@ -14,9 +14,9 @@
 
 int	ft_lst_del_circle(t_list **list, void (*del)(void*))
 {
-	t_list *check;
-	t_list *head;
-	t_list *tmp;
+	t_list	*check;
+	t_list	*head;
+	t_list	*tmp;
 
 	if (!list)
 		return (-1);

@@ -17,8 +17,8 @@ t_avl_tree	*ft_avl_new_node(t_avl_pair *pair)
 {
 	t_avl_tree	*node;
 
-	node = (t_avl_tree*)ft_xmalloc(sizeof(t_avl_tree));
-	node->pair = (t_avl_pair*)ft_xmalloc(sizeof(t_avl_pair));
+	node = (t_avl_tree *)ft_xmalloc(sizeof(t_avl_tree));
+	node->pair = (t_avl_pair *)ft_xmalloc(sizeof(t_avl_pair));
 	ft_memmove(node->pair, pair, sizeof(t_avl_pair));
 	node->left = NULL;
 	node->right = NULL;

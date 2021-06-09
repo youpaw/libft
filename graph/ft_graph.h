@@ -12,10 +12,9 @@
 
 #ifndef FT_GRAPH_H
 # define FT_GRAPH_H
-
 # include "ft_lst.h"
 
-typedef struct	s_graph
+typedef struct s_graph
 {
 	char		symbol;
 	size_t		index;

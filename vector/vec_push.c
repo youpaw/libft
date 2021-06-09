@@ -12,7 +12,7 @@
 
 #include "ft_vec.h"
 
-int		ft_vec_push(t_vec *vector, void *data)
+int	ft_vec_push(t_vec *vector, void *data)
 {
 	return (ft_vec_push_at(vector, data, vector->size));
 }

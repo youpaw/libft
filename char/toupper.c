@@ -12,9 +12,9 @@
 
 #include "ft_char.h"
 
-int		ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (ft_islower(c))
-		return (c - (int)'a' + (int)'A');
+		return (c - (int) 'a' + (int) 'A');
 	return (c);
 }

@@ -13,12 +13,12 @@
 #include "ft_lst.h"
 #include <stdlib.h>
 
-int		ft_lst_del_one_if(t_list **alst, const void *content,\
-			int (*cmp)(const void *, const void *),\
-			void (*del)(void *))
+int	ft_lst_del_one_if(t_list **alst, const void *content, \
+	int (*cmp)(const void *, const void *), \
+	void (*del)(void *))
 {
-	t_list *prev;
-	t_list *head;
+	t_list	*prev;
+	t_list	*head;
 
 	if (!alst || !*alst || !del || !content)
 		return (1);

@@ -12,13 +12,12 @@
 
 #include <stddef.h>
 
-size_t		ft_strhash(const unsigned char *str)
+size_t	ft_strhash(const unsigned char *str)
 {
 	size_t	hash;
-	int		c;
 
 	hash = 5381;
-	while ((c = *str++))
-		hash = ((hash << 5) + hash) + c;
+	while (*str)
+		hash = ((hash << 5) + hash) + *str++;
 	return (hash);
 }

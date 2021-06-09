@@ -12,12 +12,12 @@
 
 #include "ft_str.h"
 
-char		*ft_strnjoin(const char **arr)
+char	*ft_strnjoin(const char **arr)
 {
-	int			n_str;
-	int			index;
-	char		*str;
-	size_t		len;
+	int		n_str;
+	int		index;
+	char	*str;
+	size_t	len;
 
 	if (!arr || !*arr)
 		return (NULL);

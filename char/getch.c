@@ -15,9 +15,9 @@
 #include <unistd.h>
 #include "ft_str.h"
 
-static int		get_char_len(char buf[CHAR_BUFF_SIZE], int *escape_flag)
+static int	get_char_len(char buf[CHAR_BUFF_SIZE], int *escape_flag)
 {
-	int len;
+	int	len;
 
 	if (buf[0] == '\0')
 	{
@@ -39,7 +39,7 @@ static int		get_char_len(char buf[CHAR_BUFF_SIZE], int *escape_flag)
 	return (len);
 }
 
-int				ft_getch(void)
+int	ft_getch(void)
 {
 	static char	buf[CHAR_BUFF_SIZE];
 	static int	escape_flag;

@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdint.h>
+#include <unistd.h>
 
-int64_t		ft_min(int64_t x, int64_t y)
+ssize_t	ft_min(ssize_t x, ssize_t y)
 {
 	if (x > y)
 		return (y);

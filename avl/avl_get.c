@@ -15,7 +15,7 @@
 t_avl_tree	*walk_nodes(const void *key, t_avl_tree *node, \
 	int (*cmp)(const void *, const void *))
 {
-	int cmp_val;
+	int	cmp_val;
 
 	if (!node)
 		return (NULL);

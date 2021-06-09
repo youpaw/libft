@@ -13,7 +13,7 @@
 #include "ft_str.h"
 #include "ft_optparse.h"
 
-static	size_t		is_opt_invalid(const char *opt, const char *validopt)
+static	size_t	is_opt_invalid(const char *opt, const char *validopt)
 {
 	while (*opt)
 	{
@@ -24,14 +24,14 @@ static	size_t		is_opt_invalid(const char *opt, const char *validopt)
 	return (0);
 }
 
-static size_t		is_option(const char *opt)
+static size_t	is_option(const char *opt)
 {
 	if (opt && opt[0] == '-' && opt[1] && ft_strcmp(opt, "--") != 0)
 		return (1);
 	return (0);
 }
 
-static	char		*get_options(const char **args, size_t len)
+static	char	*get_options(const char **args, size_t len)
 {
 	char		*result;
 	const char	*str;
@@ -51,8 +51,8 @@ static	char		*get_options(const char **args, size_t len)
 	return (result);
 }
 
-size_t				ft_optparse(const char **args,\
-		const char *optstr, t_parsed_opt *result)
+size_t	ft_optparse(const char **args, \
+	const char *optstr, t_parsed_opt *result)
 {
 	size_t	skip;
 	size_t	opt_count;
@@ -65,7 +65,8 @@ size_t				ft_optparse(const char **args,\
 	result->options = NULL;
 	while (is_option(args[skip]))
 	{
-		if ((error_opt = is_opt_invalid(&args[skip][1], optstr)))
+		error_opt = is_opt_invalid(&args[skip][1], optstr);
+		if (error_opt)
 		{
 			result->invalid_opt = (char)error_opt;
 			return (0);

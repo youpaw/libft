@@ -12,9 +12,9 @@
 
 #include "ft_str.h"
 
-char			**ft_strsplit(char const *s)
+char	**ft_strsplit(char const *s)
 {
-	static char charset[] = " \t\n";
+	static char	charset[] = " \t\n";
 
 	return (ft_strsplitcharset(s, charset));
 }

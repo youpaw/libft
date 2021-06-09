@@ -12,7 +12,7 @@
 
 #include "ft_vec.h"
 
-int		ft_vec_get_last(void *dst, t_vec *vector)
+int	ft_vec_get_last(void *dst, t_vec *vector)
 {
 	if (!vector || !vector->size)
 		return (-1);

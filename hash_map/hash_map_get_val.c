@@ -12,9 +12,9 @@
 
 #include "ft_hash_map.h"
 
-void			*ft_hash_map_get_val(const t_hash_map *table, const void *key)
+void	*ft_hash_map_get_val(const t_hash_map *table, const void *key)
 {
-	t_hash_pair *pair;
+	t_hash_pair	*pair;
 
 	pair = ft_hash_map_get_pair(table, key);
 	if (pair)

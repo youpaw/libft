@@ -23,7 +23,8 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	else
 		str = (char *)s;
 	len = ft_strlen(str);
-	if (!(str = ft_strnew(len)))
+	str = ft_strnew(len);
+	if (!str)
 		return (NULL);
 	i = 0;
 	while (i < len)

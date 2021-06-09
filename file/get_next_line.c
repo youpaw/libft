@@ -17,19 +17,19 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-static int			cmp(const int *fd1, const int *fd2)
+static int	cmp(const int *fd1, const int *fd2)
 {
 	return (*fd1 - *fd2);
 }
 
-static void			del(void *str)
+static void	del(void *str)
 {
 	free(str);
 }
 
-static void			insert_file(t_avl_obj *files, int fd)
+static void	insert_file(t_avl_obj *files, int fd)
 {
-	t_avl_pair pair;
+	t_avl_pair	pair;
 
 	pair.key = ft_xmalloc(sizeof(int));
 	ft_memmove(pair.key, &fd, sizeof(int));
@@ -37,7 +37,7 @@ static void			insert_file(t_avl_obj *files, int fd)
 	ft_avl_insert(files, &pair);
 }
 
-static int			readline(t_avl_pair *file, char **line)
+static int	readline(t_avl_pair *file, char **line)
 {
 	char	buff[FILE_BUFF_SIZE + 1];
 	char	*rst;
@@ -47,17 +47,17 @@ static int			readline(t_avl_pair *file, char **line)
 	size = 1;
 	while (size > 0)
 	{
-		if ((rst = ft_strchr(file->value, '\n')))
+		rst = ft_strchr(file->value, '\n');
+		if (rst)
 			*rst++ = '\0';
 		tmp = ft_strjoin(*line, file->value);
 		free(*line);
 		*line = tmp;
 		if (rst)
-		{
-			*rst ? ft_strcpy(file->value, rst) : ft_bzero(file->value, 1);
+			ft_strncpy(file->value, rst, ft_strlen(rst) + 1);
+		if (rst)
 			return (1);
-		}
-		size = read(*(int*)(file->key), buff, FILE_BUFF_SIZE);
+		size = read(*(int *)(file->key), buff, FILE_BUFF_SIZE);
 		if (!size && **line)
 			return (1);
 		free(file->value);
@@ -66,7 +66,7 @@ static int			readline(t_avl_pair *file, char **line)
 	return (0);
 }
 
-int					get_next_line(const int fd, char **line)
+int	get_next_line(const int fd, char **line)
 {
 	static t_avl_obj	*files = NULL;
 	t_avl_pair			*file;
@@ -74,8 +74,9 @@ int					get_next_line(const int fd, char **line)
 	if (fd < 0 || !line || read(fd, NULL, 0) < 0)
 		return (-1);
 	if (!files)
-		files = ft_avl_new((int (*)(const void *, const void *)) &cmp, &del);
-	if (!(file = ft_avl_get_pair(files, &fd)))
+		files = ft_avl_new((int (*)(const void *, const void *)) & cmp, &del);
+	file = ft_avl_get_pair(files, &fd);
+	if (file)
 	{
 		insert_file(files, fd);
 		file = ft_avl_get_pair(files, &fd);

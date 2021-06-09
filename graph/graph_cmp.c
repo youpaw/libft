@@ -12,7 +12,7 @@
 
 #include "ft_graph.h"
 
-int		ft_graph_cmp(const t_graph *lhs, const t_graph *rhs)
+int	ft_graph_cmp(const t_graph *lhs, const t_graph *rhs)
 {
 	return (lhs->symbol - rhs->symbol);
 }

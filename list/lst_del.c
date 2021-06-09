@@ -12,9 +12,9 @@
 
 #include "ft_lst.h"
 
-int			ft_lst_del(t_list **alst, void (*del)(void *))
+int	ft_lst_del(t_list **alst, void (*del)(void *))
 {
-	t_list *tmp;
+	t_list	*tmp;
 
 	if (!alst)
 		return (-1);

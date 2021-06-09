@@ -12,9 +12,9 @@
 
 #include "ft_lst.h"
 
-int			ft_lst_circle(t_list *list)
+int	ft_lst_circle(t_list *list)
 {
-	t_list *head;
+	t_list	*head;
 
 	if (!list)
 		return (-1);

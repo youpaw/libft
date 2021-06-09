@@ -14,7 +14,7 @@
 # define FT_LST_H
 # include <stdlib.h>
 
-typedef struct		s_list
+typedef struct s_list
 {
 	void			*content;
 	size_t			content_size;
@@ -30,12 +30,12 @@ t_list				*ft_lst_map(t_list *lst, t_list *f(t_list *elem));
 int					ft_lst_circle(t_list *list);
 int					ft_lst_del_circle(t_list **list, void (*del)(void*));
 int					ft_lst_add_sort(t_list **list, t_list *newlist, \
-					int (*cmp)(const void *, const void *));
-t_list				*ft_lst_find(t_list *lst, const void *content,
-					int (*cmp)(const void *, const void *));
+	int (*cmp)(const void *, const void *));
+t_list				*ft_lst_find(t_list *lst, const void *content, \
+	int (*cmp)(const void *, const void *));
 size_t				ft_lst_get_size(const t_list *list);
-int					ft_lst_del_one_if(t_list **alst, const void *content,\
-					int (*cmp)(const void *, const void *),\
+int					ft_lst_del_one_if(t_list **alst, const void *content, \
+					int (*cmp)(const void *, const void *), \
 					void (*del)(void *));
 
 #endif

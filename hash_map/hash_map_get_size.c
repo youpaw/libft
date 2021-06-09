@@ -12,7 +12,7 @@
 
 #include "ft_hash_map.h"
 
-size_t		ft_hash_map_get_size(const t_hash_map *map)
+size_t	ft_hash_map_get_size(const t_hash_map *map)
 {
 	size_t	count;
 	size_t	i;

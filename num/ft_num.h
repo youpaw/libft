@@ -12,9 +12,10 @@
 
 #ifndef FT_NUM_H
 # define FT_NUM_H
+# include <unistd.h>
 
-int					ft_numlen(int num);
-int					ft_numlen_base(int num, int base);
+int					ft_numlen(ssize_t num);
+int					ft_numlen_base(size_t num, int base);
 int					ft_atoi(const char *str);
 long long			ft_atoll(const char *str);
 int					ft_putnbr(int n);

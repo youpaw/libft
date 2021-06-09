@@ -12,7 +12,7 @@
 
 #include "ft_num.h"
 
-int		ft_putnbr(int n)
+int	ft_putnbr(int n)
 {
 	return (ft_fdputnbr(n, 1));
 }

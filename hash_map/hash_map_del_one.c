@@ -12,10 +12,10 @@
 
 #include "ft_hash_map.h"
 
-int				ft_hash_map_del_one(t_hash_map *table, const void *key)
+int	ft_hash_map_del_one(t_hash_map *table, const void *key)
 {
 	size_t		index;
-	t_hash_pair pair;
+	t_hash_pair	pair;
 
 	if (!table || !key)
 		return (1);

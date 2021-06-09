@@ -13,10 +13,10 @@
 #include "ft_avl.h"
 #include "ft_math.h"
 
-static t_avl_tree		*right_rotate(t_avl_tree *y)
+static t_avl_tree	*right_rotate(t_avl_tree *y)
 {
-	t_avl_tree			*x;
-	t_avl_tree			*t;
+	t_avl_tree	*x;
+	t_avl_tree	*t;
 
 	x = y->left;
 	t = x->right;
@@ -29,10 +29,10 @@ static t_avl_tree		*right_rotate(t_avl_tree *y)
 	return (x);
 }
 
-static t_avl_tree		*left_rotate(t_avl_tree *x)
+static t_avl_tree	*left_rotate(t_avl_tree *x)
 {
-	t_avl_tree			*y;
-	t_avl_tree			*t;
+	t_avl_tree	*y;
+	t_avl_tree	*t;
 
 	y = x->right;
 	t = y->left;
@@ -45,10 +45,10 @@ static t_avl_tree		*left_rotate(t_avl_tree *x)
 	return (y);
 }
 
-t_avl_tree				*ft_avl_balance(t_avl_tree *node, \
+t_avl_tree	*ft_avl_balance(t_avl_tree *node, \
 int (*cmp)(const void *, const void *))
 {
-	int					balance;
+	int	balance;
 
 	if (!node)
 		return (node);

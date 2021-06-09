@@ -12,7 +12,7 @@
 
 #include "ft_lst.h"
 
-t_list		*ft_lst_map(t_list *lst, t_list *f(t_list *elem))
+t_list	*ft_lst_map(t_list *lst, t_list *f(t_list *elem))
 {
 	if (lst && f)
 	{

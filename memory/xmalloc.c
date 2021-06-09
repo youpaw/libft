@@ -13,7 +13,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-void		*ft_xmalloc(size_t size)
+void	*ft_xmalloc(size_t size)
 {
 	void	*ptr;
 

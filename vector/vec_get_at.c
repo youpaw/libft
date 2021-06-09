@@ -13,11 +13,11 @@
 #include "ft_vec.h"
 #include "ft_mem.h"
 
-int		ft_vec_get_at(void *dst, t_vec *vector, size_t index)
+int	ft_vec_get_at(void *dst, t_vec *vector, size_t index)
 {
 	if (!vector || !vector->size || index >= vector->size)
 		return (-1);
-	ft_memmove(dst, vector->data + (index * vector->datasize),\
+	ft_memmove(dst, vector->data + (index * vector->datasize), \
 		vector->datasize);
 	return (0);
 }

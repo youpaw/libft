@@ -23,7 +23,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	else
 		str = (char *)s;
 	len = (unsigned int)ft_strlen(str);
-	if (!(str = ft_strnew(len)))
+	str = ft_strnew(len);
+	if (!str)
 		return (NULL);
 	i = 0;
 	while (i < len)

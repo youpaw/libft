@@ -12,7 +12,7 @@
 
 #include "ft_avl.h"
 
-int		ft_avl_get_height(t_avl_tree *node)
+int	ft_avl_get_height(t_avl_tree *node)
 {
 	if (!node)
 		return (0);

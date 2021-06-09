@@ -12,7 +12,7 @@
 
 #include "ft_hash_map.h"
 
-t_hash_pair		*ft_hash_map_get_pair(const t_hash_map *table, const void *key)
+t_hash_pair	*ft_hash_map_get_pair(const t_hash_map *table, const void *key)
 {
 	t_list		*item;
 	size_t		index;

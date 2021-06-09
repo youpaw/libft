@@ -13,7 +13,7 @@
 #include "ft_vec.h"
 #include "ft_mem.h"
 
-int			ft_vec_push_at(t_vec *vector, void *data, size_t index)
+int	ft_vec_push_at(t_vec *vector, void *data, size_t index)
 {
 	void	*pdata;
 

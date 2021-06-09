@@ -12,10 +12,9 @@
 
 #ifndef FT_MATH_H
 # define FT_MATH_H
-# include <stdlib.h>
-# include <stdint.h>
+# include <unistd.h>
 
-int64_t		ft_min(int64_t x, int64_t y);
-int64_t		ft_max(int64_t x, int64_t y);
+ssize_t		ft_min(ssize_t x, ssize_t y);
+ssize_t		ft_max(ssize_t x, ssize_t y);
 
 #endif

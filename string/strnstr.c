@@ -14,7 +14,7 @@
 #include "ft_mem.h"
 #include <stdlib.h>
 
-static void		init_table(const char *needle, int *table)
+static void	init_table(const char *needle, int *table)
 {
 	int	pos;
 	int	cnt;
@@ -38,7 +38,7 @@ static void		init_table(const char *needle, int *table)
 	}
 }
 
-static char		*findstr(const char *haystack, const char *needle,\
+static char	*findstr(const char *haystack, const char *needle, \
 	const int *table, size_t len)
 {
 	int		ndcnt;
@@ -53,29 +53,34 @@ static char		*findstr(const char *haystack, const char *needle,\
 			ndcnt++;
 			hscnt++;
 			if (!needle[ndcnt])
-				return ((char*)&haystack[hscnt - ndcnt]);
+				return ((char *)&haystack[hscnt - ndcnt]);
 		}
-		else if ((ndcnt = table[ndcnt]) < 0)
+		else
 		{
-			ndcnt++;
-			hscnt++;
+			ndcnt = table[ndcnt];
+			if (ndcnt < 0)
+			{
+				ndcnt++;
+				hscnt++;
+			}
 		}
 	}
 	return (NULL);
 }
 
-char			*ft_strnstr(const char *haystack, const char *needle,\
+char	*ft_strnstr(const char *haystack, const char *needle, \
 	size_t len)
 {
 	char	*res;
 	int		*table;
 	size_t	nlen;
 
-	if (!(nlen = ft_strlen(needle)))
+	nlen = ft_strlen(needle);
+	if (!nlen)
 		return ((char *)haystack);
 	if (ft_strlen(haystack) < nlen || len < nlen)
 		return (NULL);
-	table = (int*)ft_xmalloc(sizeof(int) * nlen);
+	table = (int *)ft_xmalloc(sizeof(int) * nlen);
 	init_table(needle, table);
 	res = findstr(haystack, needle, table, len);
 	free(table);

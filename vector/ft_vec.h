@@ -14,7 +14,7 @@
 # define FT_VEC_H
 # include <stdlib.h>
 
-typedef struct		s_vec
+typedef struct s_vec
 {
 	void			*data;
 	size_t			datasize;
@@ -23,7 +23,7 @@ typedef struct		s_vec
 	void			(*del)(void *);
 }					t_vec;
 
-t_vec				*ft_vec_new(size_t capacity, size_t datasize,\
+t_vec				*ft_vec_new(size_t capacity, size_t datasize, \
 	void (*del)(void *));
 int					ft_vec_push(t_vec *vector, void *data);
 int					ft_vec_pop(void *data, t_vec *vector);

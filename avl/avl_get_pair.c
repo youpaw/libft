@@ -14,9 +14,10 @@
 
 t_avl_pair	*ft_avl_get_pair(t_avl_obj *obj, const void *key)
 {
-	t_avl_tree *node;
+	t_avl_tree	*node;
 
-	if ((node = ft_avl_get(obj, key)))
+	node = ft_avl_get(obj, key);
+	if (node)
 		return (node->pair);
 	return (NULL);
 }

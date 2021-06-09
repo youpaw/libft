@@ -30,16 +30,16 @@ static size_t	graph_get_size(const t_graph *graph)
 	return (size);
 }
 
-static char		**alloc_arr(size_t size)
+static char	**alloc_arr(size_t size)
 {
 	char	**ret;
 
-	ret = (char	**)ft_xmalloc(sizeof(char *) * (size + 1));
+	ret = (char **) ft_xmalloc(sizeof(char *) * (size + 1));
 	ret[size] = NULL;
 	return (ret);
 }
 
-static char		**mv_arr(char **dest, t_graph *graph)
+static char	**mv_arr(char **dest, t_graph *graph)
 {
 	char	**suf;
 	char	**head;
@@ -52,7 +52,7 @@ static char		**mv_arr(char **dest, t_graph *graph)
 	return (dest);
 }
 
-char			**ft_graph_get_suffixes(const t_graph *graph)
+char	**ft_graph_get_suffixes(const t_graph *graph)
 {
 	char	**head;
 	char	**ret;

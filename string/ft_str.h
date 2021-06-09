@@ -13,11 +13,12 @@
 #ifndef FT_STR_H
 # define FT_STR_H
 # include <stddef.h>
+# include <unistd.h>
 
 void		ft_fdputendl(char const *s, int fd);
 int			ft_fdputs(const char *restrict s, int stream);
-char		*ft_itoa(long long int n);
-char		*ft_itoabase(size_t n, size_t base, char reg);
+char		*ft_itoa(ssize_t n);
+char		*ft_itoabase(size_t n, int base, char reg);
 char		*ft_strnjoin(const char **arr);
 void		ft_putendl(char const *s);
 int			ft_puts(char const *s);

@@ -21,7 +21,7 @@ static void	walk_nodes(t_avl_tree *node, void (*f)(void *))
 	f(node->pair->value);
 }
 
-void		ft_avl_map_postfix(t_avl_obj *obj, void (*f)(void *))
+void	ft_avl_map_postfix(t_avl_obj *obj, void (*f)(void *))
 {
 	if (!obj || !f)
 		return ;

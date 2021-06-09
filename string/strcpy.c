@@ -12,7 +12,7 @@
 
 char	*ft_strcpy(char *dst, const char *src)
 {
-	char *head;
+	char	*head;
 
 	head = dst;
 	while (*src)

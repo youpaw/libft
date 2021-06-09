@@ -17,10 +17,10 @@ char	*ft_strchr(const char *s, int c)
 	while (*s)
 	{
 		if (*s++ == (char)c)
-			return ((char*)(s - 1));
+			return ((char *)(s - 1));
 	}
 	if (*s == (char)c)
-		return ((char*)s);
+		return ((char *)s);
 	else
 		return (NULL);
 }

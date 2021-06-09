@@ -25,7 +25,7 @@ static t_avl_tree	*replace_node(t_avl_obj *obj, t_avl_pair *pair, \
 static t_avl_tree	*insert_pair(t_avl_obj *obj, t_avl_pair *pair, \
 	t_avl_tree *node)
 {
-	int cmp_val;
+	int	cmp_val;
 
 	if (!node)
 		return (ft_avl_new_node(pair));
@@ -41,7 +41,7 @@ static t_avl_tree	*insert_pair(t_avl_obj *obj, t_avl_pair *pair, \
 	return (ft_avl_balance(node, obj->cmp));
 }
 
-t_avl_tree			*ft_avl_insert(t_avl_obj *obj, t_avl_pair *pair)
+t_avl_tree	*ft_avl_insert(t_avl_obj *obj, t_avl_pair *pair)
 {
 	if (!obj || !pair)
 		return (NULL);

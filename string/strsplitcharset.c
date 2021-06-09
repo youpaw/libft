@@ -13,7 +13,7 @@
 #include "ft_mem.h"
 #include "ft_str.h"
 
-static int		is_separator(char c, char *charset)
+static int	is_separator(char c, char *charset)
 {
 	if (!c)
 		return (1);
@@ -25,8 +25,8 @@ static int		is_separator(char c, char *charset)
 
 static size_t	cntwords(const char *s, char *charset)
 {
-	size_t words;
-	size_t i;
+	size_t	words;
+	size_t	i;
 
 	i = 0;
 	words = 0;
@@ -39,11 +39,11 @@ static size_t	cntwords(const char *s, char *charset)
 	return (words);
 }
 
-static void		getwords(char **arr, const char *s, char *charset)
+static void	getwords(char **arr, const char *s, char *charset)
 {
-	size_t i;
-	size_t j;
-	size_t len;
+	size_t	i;
+	size_t	j;
+	size_t	len;
 
 	len = 0;
 	i = 0;
@@ -64,7 +64,7 @@ static void		getwords(char **arr, const char *s, char *charset)
 		arr[j] = ft_strsub(s, i - len, len);
 }
 
-char			**ft_strsplitcharset(char const *s, char *charset)
+char	**ft_strsplitcharset(char const *s, char *charset)
 {
 	size_t	wrdcnt;
 	char	**sp;
@@ -72,7 +72,7 @@ char			**ft_strsplitcharset(char const *s, char *charset)
 	if (!s)
 		return (NULL);
 	wrdcnt = cntwords(s, charset);
-	sp = (char**)ft_xmalloc(sizeof(char*) * (wrdcnt + 1));
+	sp = (char **)ft_xmalloc(sizeof(char *) * (wrdcnt + 1));
 	getwords(sp, s, charset);
 	sp[wrdcnt] = NULL;
 	return (sp);

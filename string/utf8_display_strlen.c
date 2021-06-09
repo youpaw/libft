@@ -14,10 +14,10 @@
 #include <unistd.h>
 #include "ft_str.h"
 
-size_t		ft_utf8_display_strlen(char *str)
+size_t	ft_utf8_display_strlen(char *str)
 {
-	size_t		len;
-	size_t		i;
+	size_t	len;
+	size_t	i;
 
 	len = 0;
 	i = 0;

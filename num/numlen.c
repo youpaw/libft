@@ -12,7 +12,18 @@
 
 #include "ft_num.h"
 
-int		ft_numlen(int num)
+int	ft_numlen(ssize_t num)
 {
-	return (ft_numlen_base(num, 10));
+	int	lng;
+
+	if (num < 0)
+		lng = 2;
+	else
+		lng = 1;
+	while (num >= 10 || num <= -10)
+	{
+		num /= 10;
+		lng++;
+	}
+	return (lng);
 }

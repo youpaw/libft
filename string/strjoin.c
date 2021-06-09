@@ -26,7 +26,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	sum = len1 + len2;
 	if (sum < len1 || sum < len2)
 		return (NULL);
-	if (!(str = ft_strnew(sum)))
+	str = ft_strnew(sum);
+	if (!str)
 		return (NULL);
 	ft_strcpy(str, s1);
 	ft_strcat(str, s2);

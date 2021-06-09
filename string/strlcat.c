@@ -13,13 +13,13 @@
 #include "ft_str.h"
 #include "ft_math.h"
 
-size_t		ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t dstlen;
-	size_t reslen;
+	size_t	dstlen;
+	size_t	reslen;
 
 	dstlen = ft_strlen(dst);
-	reslen = ft_min(dstlen, size) + ft_strlen(src);
+	reslen = ft_min((ssize_t)dstlen, (ssize_t)size) + ft_strlen(src);
 	if (size > dstlen)
 	{
 		dst += dstlen;

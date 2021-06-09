@@ -11,35 +11,21 @@
 /* ************************************************************************** */
 
 #include "ft_str.h"
+#include "ft_num.h"
 
-static int	intlen(long long int n)
-{
-	int		len;
-
-	if (n < 0)
-		len = 1;
-	else
-		len = 0;
-	while (n > 9 || n < -9)
-	{
-		len++;
-		n /= 10;
-	}
-	return (++len);
-}
-
-char		*ft_itoa(long long int n)
+char	*ft_itoa(ssize_t n)
 {
 	size_t	t;
 	char	*str;
 	int		size;
 
-	size = intlen(n);
+	size = ft_numlen(n);
 	if (n < 0)
 		t = (size_t)(~n + 1);
 	else
 		t = (size_t)n;
-	if (!(str = ft_strnew(size)))
+	str = ft_strnew(size);
+	if (!str)
 		return (NULL);
 	while (t > 9)
 	{

@@ -13,9 +13,9 @@
 #include <monetary.h>
 #include "ft_char.h"
 
-static int		fdputunsnbr(unsigned int n, int fd)
+static int	fdputunsnbr(unsigned int n, int fd)
 {
-	static int cnt;
+	static int	cnt;
 
 	cnt++;
 	if (n > 9)
@@ -24,9 +24,9 @@ static int		fdputunsnbr(unsigned int n, int fd)
 	return (cnt);
 }
 
-size_t			ft_fdputnbr(int n, int fd)
+size_t	ft_fdputnbr(int n, int fd)
 {
-	unsigned int t;
+	unsigned int	t;
 
 	if (fd == -1)
 		return (-1);

@@ -14,10 +14,10 @@
 #include "ft_avl.h"
 #include "ft_math.h"
 
-static t_avl_tree		*insert_node(t_avl_tree *new, t_avl_tree *node,\
+static t_avl_tree	*insert_node(t_avl_tree *new, t_avl_tree *node, \
 	int (*cmp)(const void *, const void *))
 {
-	int					cmp_val;
+	int	cmp_val;
 
 	cmp_val = cmp(new->pair->key, node->pair->key);
 	if (cmp_val < 0)
@@ -29,7 +29,7 @@ static t_avl_tree		*insert_node(t_avl_tree *new, t_avl_tree *node,\
 	return (ft_avl_balance(node, cmp));
 }
 
-static t_avl_tree		*merge_childs(t_avl_tree *node, \
+static t_avl_tree	*merge_childs(t_avl_tree *node, \
 	int (*cmp)(const void *, const void *))
 {
 	if (!node->left && !node->right)
@@ -41,10 +41,10 @@ static t_avl_tree		*merge_childs(t_avl_tree *node, \
 	return (insert_node(node->right, node->left, cmp));
 }
 
-static t_avl_tree		*del_node(t_avl_tree *node, const void *key, \
+static t_avl_tree	*del_node(t_avl_tree *node, const void *key, \
 	int (*cmp)(const void *, const void *))
 {
-	int		cmp_val;
+	int	cmp_val;
 
 	cmp_val = cmp(key, node->pair->key);
 	if (cmp_val < 0)
@@ -58,9 +58,9 @@ static t_avl_tree		*del_node(t_avl_tree *node, const void *key, \
 	return (ft_avl_balance(node, cmp));
 }
 
-int						ft_avl_del_one(t_avl_obj *obj, const void *key)
+int	ft_avl_del_one(t_avl_obj *obj, const void *key)
 {
-	t_avl_tree			*node;
+	t_avl_tree	*node;
 
 	node = ft_avl_get(obj, key);
 	if (node)

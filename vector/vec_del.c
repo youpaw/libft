@@ -12,7 +12,7 @@
 
 #include "ft_vec.h"
 
-int			ft_vec_del(t_vec **vector)
+int	ft_vec_del(t_vec **vector)
 {
 	size_t	cnt;
 	t_vec	*tmp;

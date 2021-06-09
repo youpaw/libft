@@ -3,10 +3,10 @@
 //
 #include "ft_error.h"
 
-const char *g_df_err[N_DF_ERRORS] = {
+const char	*g_df_err[N_DF_ERRORS] = {
 		"Operation not permitted.",
 		"No such file or directory.",
-  		"No such process.",
+		"No such process.",
 		"Interrupted system call.",
 		"Input/output error.",
 		"Device not configured.",
@@ -19,7 +19,7 @@ const char *g_df_err[N_DF_ERRORS] = {
 		"Permission denied."
 };
 
-int 	ft_print_error(const char *msg)
+int	ft_print_error(const char *msg)
 {
 	ft_fdputs(g_av[0], 2);
 	ft_fdputs(": error: ", 2);

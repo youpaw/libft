@@ -12,11 +12,11 @@
 
 #include "ft_lst.h"
 
-int			ft_lst_add_sort(t_list **list, t_list *newlist, \
-				int (*cmp)(const void *, const void *))
+int	ft_lst_add_sort(t_list **list, t_list *newlist, \
+	int (*cmp)(const void *, const void *))
 {
-	t_list *prev;
-	t_list *head;
+	t_list	*prev;
+	t_list	*head;
 
 	if (!list || !newlist || !cmp)
 		return (-1);

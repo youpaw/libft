@@ -17,7 +17,7 @@ t_vec	*ft_vec_new(size_t capacity, size_t datasize, void (*del)(void *))
 {
 	t_vec	*vector;
 
-	vector = (t_vec*)ft_xmalloc(sizeof(t_vec));
+	vector = (t_vec *)ft_xmalloc(sizeof(t_vec));
 	vector->data = ft_xmalloc(datasize * (capacity + 1));
 	vector->capacity = capacity;
 	vector->datasize = datasize;

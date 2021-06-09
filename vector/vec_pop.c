@@ -12,7 +12,7 @@
 
 #include "ft_vec.h"
 
-int		ft_vec_pop(void *data, t_vec *vector)
+int	ft_vec_pop(void *data, t_vec *vector)
 {
 	if (!ft_vec_get_last(data, vector))
 	{

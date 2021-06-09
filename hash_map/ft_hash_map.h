@@ -14,13 +14,13 @@
 # define FT_HASH_MAP_H
 # include "ft_lst.h"
 
-typedef struct	s_hash_pair
+typedef struct s_hash_pair
 {
 	void		*key;
 	void		*value;
 }				t_hash_pair;
 
-typedef struct	s_hash_map
+typedef struct s_hash_map
 {
 	t_list		**buckets;
 	size_t		buckets_size;

@@ -39,8 +39,8 @@ typedef struct s_avl_pair	t_avl_pair;
 typedef struct s_avl_tree	t_avl_tree;
 typedef struct s_avl_obj	t_avl_obj;
 
-t_avl_obj					*ft_avl_new(int (*cmp)(const void *, const void *),\
-	void (*del)(void *));
+t_avl_obj					*ft_avl_new(\
+	int (*cmp)(const void *, const void *), void (*del)(void *));
 
 t_avl_tree					*ft_avl_balance(t_avl_tree *node, \
 	int (*cmp)(const void *, const void *));

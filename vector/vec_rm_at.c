@@ -15,7 +15,7 @@
 
 size_t	ft_vec_rm_at(t_vec *vector, size_t index)
 {
-	void *pdata;
+	void	*pdata;
 
 	if (!vector || !vector->size)
 		return (0);

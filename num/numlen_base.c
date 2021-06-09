@@ -12,9 +12,9 @@
 
 #include <unistd.h>
 
-int		ft_numlen_base(size_t num, unsigned int base)
+int	ft_numlen_base(size_t num, unsigned int base)
 {
-	int lng;
+	int	lng;
 
 	if (base < 2)
 		return (0);

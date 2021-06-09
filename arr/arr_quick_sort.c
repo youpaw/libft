@@ -12,7 +12,7 @@
 
 #include <stdlib.h>
 
-static void		swap(void **items, size_t lhs, size_t rhs)
+static void	swap(void **items, size_t lhs, size_t rhs)
 {
 	void	*temp;
 
@@ -23,12 +23,12 @@ static void		swap(void **items, size_t lhs, size_t rhs)
 	items[lhs] = temp;
 }
 
-void			ft_arr_quick_sort(void **items, size_t size,
-					   int (*cmp)(const void *, const void *))
+void	ft_arr_quick_sort(void **items, size_t size, \
+	int (*cmp)(const void *, const void *))
 {
 	size_t	i;
 	size_t	j;
-	void 	*p;
+	void	*p;
 
 	i = 0;
 	j = size - 1;

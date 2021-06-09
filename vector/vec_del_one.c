@@ -13,7 +13,7 @@
 #include "ft_vec.h"
 #include "ft_mem.h"
 
-int			ft_vec_del_one(t_vec *vector, size_t index)
+int	ft_vec_del_one(t_vec *vector, size_t index)
 {
 	void	*data;
 

@@ -14,7 +14,7 @@
 
 void	ft_arr_del(void ***arr, void (*del)(void *))
 {
-	void **arr_head;
+	void	**arr_head;
 
 	if (!arr || !*arr)
 		return ;

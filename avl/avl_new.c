@@ -14,10 +14,10 @@
 #include "ft_avl.h"
 #include "ft_mem.h"
 
-t_avl_obj			*ft_avl_new(int (*cmp)(const void *, const void *), \
+t_avl_obj	*ft_avl_new(int (*cmp)(const void *, const void *), \
 	void (*del)(void *))
 {
-	t_avl_obj		*obj;
+	t_avl_obj	*obj;
 
 	if (!cmp)
 		return (NULL);
