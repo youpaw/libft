@@ -34,7 +34,7 @@ char	*ft_itoabase(size_t n, int base, char reg)
 	str = ft_strnew(size);
 	if (!str)
 		return (NULL);
-	while (n > base - 1)
+	while (n > (size_t) base - 1)
 	{
 		str[--size] = get_basechar((int)(n % base), reg);
 		n /= base;
