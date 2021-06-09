@@ -4,7 +4,7 @@ project(ft)
 
 include_directories(env avl char file graph hash_map list math memory num string vector arr optparse regex error .)
 
-add_library(ft STATIC
+add_library(${PROJECT_NAME} STATIC
 		avl/avl_balance.c
 		avl/avl_del.c
 		avl/avl_del_one.c
@@ -137,4 +137,4 @@ add_library(ft STATIC
 		arr/narr_del.c
 		error/print_error.c env/init.c)
 
-target_include_directories(ft PUBLIC env avl char file graph hash_map list math memory num string vector arr optparse regex error .)
+target_include_directories(${PROJECT_NAME} PUBLIC env avl char file graph hash_map list math memory num string vector arr optparse regex error .)
