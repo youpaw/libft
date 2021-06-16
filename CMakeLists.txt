@@ -68,6 +68,8 @@ add_library(${PROJECT_NAME} STATIC
 		memory/memmove.c
 		memory/memset.c
 		memory/xmalloc.c
+		memory/swap_int.c
+		memory/swap_uint.c
 		num/atoi.c
 		num/atoll.c
 		num/fdputnbr.c
@@ -135,6 +137,7 @@ add_library(${PROJECT_NAME} STATIC
 		arr/arr_del.c
 		arr/arr_get_size.c
 		arr/narr_del.c
-		error/print_error.c env/init.c)
+		error/print_error.c
+		env/init.c)
 
 target_include_directories(${PROJECT_NAME} PUBLIC env avl char file graph hash_map list math memory num string vector arr optparse regex error .)

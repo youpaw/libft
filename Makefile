@@ -88,6 +88,8 @@ SRCS		:= 	arr/arr_del.c					\
 				memory/memmove.c				\
 				memory/memset.c					\
 				memory/xmalloc.c				\
+				memory/swap_int.c				\
+				memory/swap_uint.c				\
 				num/atoi.c						\
 				num/atoll.c						\
 				num/fdputnbr.c					\
