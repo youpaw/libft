@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdputs.c                                           :+:      :+:    :+:   */
+/*   fdputendl.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbutterw <dbutterw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/23 16:46:57 by dbutterw          #+#    #+#             */
-/*   Updated: 2021/02/23 16:46:57 by dbutterw         ###   ########.fr       */
+/*   Created: 2021/02/23 16:46:58 by dbutterw          #+#    #+#             */
+/*   Updated: 2021/02/23 16:46:58 by dbutterw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_str.h"
-#include <unistd.h>
+#include "ft_print.h"
+#include "char/ft_char.h"
 
-int	ft_fdputs(const char *restrict s, int stream)
+void	ft_fdputendl(char const *s, int fd)
 {
-	return (write(stream, s, ft_strlen(s)));
+	if (!s && fd == -1)
+		return ;
+	ft_fdputs(s, fd);
+	ft_fdputchar('\n', fd);
 }

@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fdputendl.c                                        :+:      :+:    :+:   */
+/*   putendl.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbutterw <dbutterw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/23 16:46:58 by dbutterw          #+#    #+#             */
-/*   Updated: 2021/02/23 16:46:58 by dbutterw         ###   ########.fr       */
+/*   Created: 2021/02/23 16:46:48 by dbutterw          #+#    #+#             */
+/*   Updated: 2021/02/23 16:46:48 by dbutterw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_str.h"
-#include "ft_char.h"
+#include "ft_print.h"
 
-void	ft_fdputendl(char const *s, int fd)
+void	ft_putendl(char const *s)
 {
-	if (!s && fd == -1)
-		return ;
-	ft_fdputs(s, fd);
-	ft_fdputchar('\n', fd);
+	ft_fdputendl(s, 1);
 }

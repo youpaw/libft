@@ -28,5 +28,7 @@
 # include "vector/ft_vec.h"
 # include "arr/ft_arr.h"
 # include "optparse/ft_optparse.h"
+# include "hash/ft_hash.h"
+# include "print/ft_print.h"
 
 #endif

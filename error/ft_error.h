@@ -15,7 +15,6 @@
 # define N_DF_ERRORS 13
 # include <errno.h>
 # include "ft_env.h"
-# include "ft_str.h"
 
 int	ft_print_error(const char *msg);
 

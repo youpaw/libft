@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   putendl.c                                          :+:      :+:    :+:   */
+/*   fdputs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbutterw <dbutterw@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/23 16:46:48 by dbutterw          #+#    #+#             */
-/*   Updated: 2021/02/23 16:46:48 by dbutterw         ###   ########.fr       */
+/*   Created: 2021/02/23 16:46:57 by dbutterw          #+#    #+#             */
+/*   Updated: 2021/02/23 16:46:57 by dbutterw         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_str.h"
+#include "string/ft_str.h"
+#include <unistd.h>
 
-void	ft_putendl(char const *s)
+int	ft_fdputs(const char *restrict s, int stream)
 {
-	ft_fdputendl(s, 1);
+	return (write(stream, s, ft_strlen(s)));
 }

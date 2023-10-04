@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "print/ft_print.h"
 #include "ft_error.h"
 
 const char	*g_df_err[N_DF_ERRORS] = {

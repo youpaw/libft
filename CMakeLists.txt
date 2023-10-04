@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.8)
 project(ft)
 # CMake instructions to compile libft as static lib
 
-include_directories(env avl char file graph hash_map list math memory num string vector arr optparse regex error .)
+include_directories(env avl char file graph hash hash_map list math memory num print string vector arr optparse regex error .)
 
 add_library(${PROJECT_NAME} STATIC
 		avl/avl_balance.c
@@ -78,13 +78,14 @@ add_library(${PROJECT_NAME} STATIC
 		num/putnbr.c
 		regex/match.c
 		regex/nmatch.c
-		string/fdputendl.c
-		string/fdputs.c
+		print/fdputendl.c
+		print/fdputs.c
 		string/itoa.c
 		string/itoabase.c
 		string/strnjoin.c
-		string/putendl.c
-		string/puts.c
+		print/putendl.c
+		print/puts.c
+		print/puthex.c
 		string/strcat.c
 		string/strchr.c
 		string/strclr.c
@@ -138,6 +139,7 @@ add_library(${PROJECT_NAME} STATIC
 		arr/arr_get_size.c
 		arr/narr_del.c
 		error/print_error.c
-		env/init.c)
+		env/init.c
+		hash/hash_md2.c print/fdputhex.c)
 
-target_include_directories(${PROJECT_NAME} PUBLIC env avl char file graph hash_map list math memory num string vector arr optparse regex error .)
+target_include_directories(${PROJECT_NAME} PUBLIC env avl char file graph hash hash_map list math memory num print string vector arr optparse regex error .)

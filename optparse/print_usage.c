@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_str.h"
+#include "print/ft_print.h"
 
 void	ft_print_usage(int fd, const char *bin, const char *usage)
 {
